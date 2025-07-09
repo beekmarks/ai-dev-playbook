@@ -19,6 +19,13 @@ This workflow is built on a few key ideas:
 | **Permanent Log (AIDEV.md)** | **The Project's Memory** | **Why this exists:** While Git history tells you *what* changed line-by-line, AIDEV.md tells you *why*. It's a human-readable ledger of all work completed, capturing the high-level plan and intent behind each feature. This creates an invaluable resource for long-term maintenance and onboarding, as it preserves the design decisions that are often lost over time. |
 | **Minimal Code Generation** | Enforced in Agent Prompts | **The AI should write as little code as possible.** It should only generate the minimum code necessary to implement the requested feature. This prevents code bloat and keeps commits small, focused, and easy to review. |
 
+## **Getting Started**
+
+1. Clone this repository.  
+2. Read this README.md file carefully.  
+3. For instructions on adopting this for a new or existing project, see [ai-docs/adoption-guide.md](ai-docs/adoption-guide.md).  
+4. For a more detailed guide on the day-to-day process, review [ai-docs/ai-dev-playbook-workflow.md](ai-docs/ai-dev-playbook-workflow.md).
+
 ## **The Workflow: A Real-World Example**
 
 Let's walk through adding a new feature: **"Create a new API endpoint /api/items that returns a list of items."**
@@ -101,11 +108,3 @@ Use GitHub Copilot's built-in features with our custom instructions and prompt f
 This approach is ideal for quick tasks and teams already familiar with Copilot Chat.
 
 For more details on the GitHub Copilot integration, see [ai-docs/github-copilot-integration.md](ai-docs/github-copilot-integration.md).
-
-## **Getting Started**
-
-1. Clone this repository.  
-2. Read this README.md file carefully.  
-3. For instructions on adopting this for a new or existing project, see docs/adoption-guide.md.  
-4. For a more detailed guide on the day-to-day process, review docs/ai-dev-playbook-workflow.md.  
-5. Start your first task by using the 01-planner-agent.md to build a plan.
