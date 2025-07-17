@@ -1,6 +1,6 @@
 # Plan Feature
 
-Your goal is to create a detailed implementation plan for a new feature or task.
+Your goal is to create a detailed implementation plan for a new feature or task, based on specifications when available.
 
 ## Requirements
 
@@ -13,6 +13,8 @@ Break down the feature request into clear, actionable technical steps that a dev
 
 ## Guidelines
 
+- Use specifications as the primary source of truth when available
+- Ensure your plan aligns with requirements and design decisions in the specifications
 - Do not write any actual code
 - Be specific about file locations and naming
 - Consider the existing architecture and patterns

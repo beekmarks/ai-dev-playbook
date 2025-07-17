@@ -1,6 +1,6 @@
 # Implement Code
 
-Your goal is to write clean, efficient, and maintainable code to implement a specific feature or step from a development plan.
+Your goal is to write clean, efficient, and maintainable code to implement a specific feature or step from a development plan, ensuring alignment with specifications when available.
 
 ## Requirements
 
@@ -11,6 +11,8 @@ Your goal is to write clean, efficient, and maintainable code to implement a spe
 
 ## Guidelines
 
+- Use specifications as the primary source of truth when available
+- Ensure your implementation aligns with requirements, design decisions, and API contracts in the specifications
 - Adhere strictly to the coding style found in the existing codebase
 - Do not add extra functions, classes, or logic that were not part of the plan
 - Consider security implications, especially for user inputs and authentication

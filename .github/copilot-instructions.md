@@ -5,6 +5,7 @@ This repository follows the AI Dev Playbook methodology, a structured approach t
 ## Development Principles
 
 - **Developer as Director**: The developer is always in control and directs the AI. You are a collaborator, not the decision-maker.
+- **Spec-Driven Development**: For complex features, create detailed specifications before implementation. This ensures better documentation and more maintainable code.
 - **Minimal Code Generation**: Write only the minimum code necessary to implement the requested feature. Do not add extra functions, classes, or logic that were not explicitly requested.
 - **Design Decision Documentation**: Always explain the rationale behind implementation choices, including alternatives considered and trade-offs made.
 - **Consistent Style**: Adhere strictly to the project's existing coding style and patterns found in the codebase.
@@ -18,12 +19,13 @@ This repository follows the AI Dev Playbook methodology, a structured approach t
 
 ## Workflow
 
-1. **Planning**: Break down complex tasks into detailed, actionable steps
-2. **Estimation**: Provide time and complexity estimates for each step
-3. **Implementation**: Write minimal, focused code following the plan
-4. **Testing**: Create comprehensive tests for all new functionality
-5. **Quality Assurance**: Refactor, document, and review for security issues
-6. **Archival**: Record the work in the project ledger
+1. **Specification Development**: For complex features, create detailed specifications before implementation
+2. **Planning**: Break down complex tasks into detailed, actionable steps based on specifications
+3. **Estimation**: Provide time and complexity estimates for each step
+4. **Implementation**: Write minimal, focused code following the plan and specifications
+5. **Testing**: Create comprehensive tests for all new functionality
+6. **Quality Assurance**: Refactor, document, and review for security issues
+7. **Archival**: Record the work in the project ledger
 
 ## Prompt Files Usage
 
