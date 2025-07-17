@@ -21,7 +21,7 @@ Organizations are rapidly adopting AI coding assistants like GitHub Copilot, but
 The AI Dev Playbook addresses these challenges by providing:
 
 1. **Clear Developer Workflows**: A repeatable process for using AI throughout the development lifecycle
-2. **Specialized Agent Templates**: Purpose-built prompts for specific tasks (planning, estimation, coding, testing, security review)
+2. **Specialized Agent Templates**: Purpose-built prompts for specific tasks (specification development, planning, estimation, coding, testing, security review)
 3. **Human-in-the-Loop (HITL) Safeguards**: Structured patterns for human oversight including approval workflows, audit trails, and designated never-automate zones
 4. **Design Decision Documentation**: Explicit capture of implementation choices, alternatives considered, and rationale
 5. **Template Variables**: Customizable prompts that adapt to specific project requirements without modifying core templates
@@ -60,6 +60,11 @@ Teams can choose either approach or combine them based on their specific needs:
 
 - **For Complex Features**: Use the full workflow with specialized agents for planning, estimation, coding, testing, and documentation
 - **For Quick Tasks**: Use GitHub Copilot with custom instructions and prompt files for more conversational assistance
+
+Additionally, the AI Dev Playbook supports two development methodologies:
+
+- **"Vibe Coding"**: Quick, ad-hoc prompting for rapid prototyping and simple features
+- **"Spec-Driven Development"**: Creating detailed specifications before implementation for complex features and production code
 
 This flexibility allows teams to adopt the methodology at their own pace, from individual developers to full team implementation.
 

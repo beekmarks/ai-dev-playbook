@@ -17,6 +17,7 @@ For new applications, the process is simple as you are starting with a clean sla
 2. **Develop in /src:** Begin developing your application code inside the src/ directory. You can rename or restructure this as needed (e.g., to /lib, /app), but all of your application-specific logic should reside there.  
 3. **Follow the Workflow:** For every new feature or task, follow the workflow outlined in docs/ai-dev-playbook-workflow.md. The framework assets in .ai-dev/ are already in place to support you.
 4. **Choose Your Integration Style:** Decide whether to use the traditional workflow with agent templates, the GitHub Copilot native integration, or both approaches in parallel.
+5. **Choose Your Development Approach:** Decide whether to use "Vibe Coding" for quick prototyping or "Spec-Driven Development" for complex features requiring detailed specifications before implementation. See [spec-driven-development.md](spec-driven-development.md) for details.
 
 The logical separation is maintained by default. The framework guides the creation of your code but remains distinct from it.
 

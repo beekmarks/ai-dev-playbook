@@ -42,6 +42,7 @@ The AI Dev Playbook includes the following prompt files:
 
 | Prompt File | Purpose |
 |-------------|---------|
+| `create-specifications.prompt.md` | Create detailed specifications before implementation |
 | `plan-feature.prompt.md` | Create a detailed implementation plan |
 | `estimate-work.prompt.md` | Provide time and complexity estimates |
 | `implement-code.prompt.md` | Write clean, efficient code |

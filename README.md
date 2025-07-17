@@ -12,7 +12,8 @@ This workflow is built on a few key ideas:
 | :---- | :---- | :---- |
 | **Developer as Director** | Your role in the VS Code Chat | You are in control. You direct the AI, providing it with context and instructions, and you are the final arbiter of quality. |
 | **Human-in-the-Loop (HITL)** | Approval workflows | Structured patterns for human oversight including approval-based reviews, audit trails, and expert guidance at critical decision points. |
-| **Specialized Agents** | .ai-dev/prompts/ | A collection of prompt templates, each designed for a specific task (planning, coding, testing, etc.). You invoke these agents to perform work. |
+| **Spec-Driven Development** | Specifications before code | Create detailed specifications (requirements, design, API contracts) before implementation for better quality and maintainability. |
+| **Specialized Agents** | .ai-dev/prompts/ | A collection of prompt templates, each designed for a specific task (specifications, planning, coding, testing, etc.). You invoke these agents to perform work. |
 | **GitHub Copilot Integration** | .github/ directory | Repository custom instructions and prompt files that provide the same guidance through native GitHub Copilot features. |
 | **Workspace Context** | @workspace command | GitHub Copilot can read files directly from your workspace. You use this to provide context like requirements, existing code, or plans. |
 | **Modular Memory** | .ai-dev/memory/ | A transient "scratchpad." The output of one agent (e.g., a plan) is saved here to be used as the input for the next agent, creating a clean chain of operations. |
@@ -30,15 +31,31 @@ This workflow is built on a few key ideas:
 
 Let's walk through adding a new feature: **"Create a new API endpoint /api/items that returns a list of items."**
 
-### **Step 1: Plan the Work**
+### **Step 1: Create Specifications**
 
-First, we ask the **Planner Agent** to break down the task. We give it the requirements and tell it where to save the output.
+First, we ask the **Specification Developer Agent** to create detailed specifications for the feature. You can request either a single comprehensive specification file or multiple focused files.
+
+**Option A: Single Specification File:**
 
 **Your Chat Prompt:**
 
-"Using the agent at @workspace .ai-dev/prompts/01-planner-agent.md, create a plan to add a new API endpoint /api/items. The endpoint should fetch data from a itemService.js and return it as JSON. Save the output to @workspace .ai-dev/memory/get-items-plan.md."
+"Using the agent at @workspace .ai-dev/prompts/00-specification-agent.md, create a comprehensive specification for a new API endpoint /api/items. The endpoint should fetch data from itemService.js and return it as JSON. Include requirements, design, API contract, and testing strategy. Save the output to @workspace .ai-dev/memory/get-items-spec.md."
 
-### **Step 2: Estimate the Work**
+**Option B: Multiple Specification Files:**
+
+**Your Chat Prompt:**
+
+"Using the agent at @workspace .ai-dev/prompts/00-specification-agent.md, create separate specification files for a new API endpoint /api/items. The endpoint should fetch data from itemService.js and return it as JSON. Create requirements.md, design.md, and api-contract.md files in the .ai-dev/memory/ directory."
+
+### **Step 2: Plan the Work**
+
+Next, we ask the **Planner Agent** to break down the task based on our specifications. We give it the specifications and tell it where to save the output.
+
+**Your Chat Prompt:**
+
+"Using the agent at @workspace .ai-dev/prompts/01-planner-agent.md, create a plan to implement the API endpoint based on the specifications in @workspace .ai-dev/memory/get-items-spec.md. Save the output to @workspace .ai-dev/memory/get-items-plan.md."
+
+### **Step 3: Estimate the Work**
 
 Before implementation, we use the **Estimator Agent** to get time and complexity estimates for our plan.
 
@@ -46,7 +63,7 @@ Before implementation, we use the **Estimator Agent** to get time and complexity
 
 "Using @workspace .ai-dev/prompts/02-estimator-agent.md, provide time and complexity estimates for the plan in @workspace .ai-dev/memory/get-items-plan.md. Save the output to @workspace .ai-dev/memory/get-items-estimates.md."
 
-### **Step 3: Write the Code**
+### **Step 4: Write the Code**
 
 Now, we execute the plan step-by-step using the **Coder Agent**.
 
@@ -54,7 +71,7 @@ Now, we execute the plan step-by-step using the **Coder Agent**.
 
 "Using @workspace .ai-dev/prompts/03-coder-agent.md, implement Step 1 from the plan in @workspace .ai-dev/memory/get-items-plan.md."
 
-### **Step 4: Write the Tests**
+### **Step 5: Write the Tests**
 
 With the code written, we ask the **Tester Agent** to create the tests.
 
@@ -62,11 +79,19 @@ With the code written, we ask the **Tester Agent** to create the tests.
 
 "Using @workspace .ai-dev/prompts/04-tester-agent.md, write unit tests for the new getItems function in @workspace src/services/itemService.js. Ensure you test the happy path and that it returns an array."
 
-### **Step 5: Review and Refine**
+### **Step 6: Review and Refine**
 
 Before finishing, we can use other agents like the **Security Reviewer** or **Refactorer** to ensure quality.
 
-### **Step 6: Archive the History**
+### **Step 7: Update Specifications**
+
+If implementation details changed during development, we update our specifications to keep them in sync with the code.
+
+**Your Chat Prompt:**
+
+"Using @workspace .ai-dev/prompts/06-documenter-agent.md, update the specifications in @workspace .ai-dev/memory/get-items-spec.md to reflect any changes made during implementation."
+
+### **Step 8: Archive the History**
 
 The feature is complete\! The final step is to use the **Archiver Agent** to create a permanent record in AIDEV.md.
 

@@ -15,20 +15,47 @@ The AI Dev Playbook now offers two complementary approaches to AI-assisted devel
 
 This document primarily describes the traditional workflow. For details on the GitHub Copilot native integration, see [github-copilot-integration.md](github-copilot-integration.md).
 
+### Development Approaches: "Vibe Coding" vs "Spec-Driven Development"
+
+The AI Dev Playbook supports two development approaches:
+
+1. **"Vibe Coding"**: Quick, ad-hoc prompting for rapid prototyping and simple features
+   * **Best for**: Exploration, simple features, and quick prototypes
+   * **Limitations**: Less structured, may lack documentation, harder to maintain
+
+2. **"Spec-Driven Development"**: Creating detailed specifications before implementation
+   * **Best for**: Complex features, production code, team collaboration
+   * **Benefits**: Better documentation, more maintainable code, clearer design decisions
+   
+For more details on spec-driven development, see [spec-driven-development.md](spec-driven-development.md).
+
 ### Choosing the Right Tool: Model Selection
 
 A key part of your role as the "director" is selecting the best foundation model for the task. GitHub Copilot provides access to multiple LLMs, and they have different strengths. Choosing the right one will significantly improve the quality of the output.
 
 * **Creative & Reasoning Models (e.g., Anthropic Claude, OpenAI GPT-4):** These models excel at understanding context, planning, and generating human-like text. They are best for tasks that require deep reasoning.  
-  * **Use for:** Planner, Refactorer, Documenter, Security Reviewer.  
+  * **Use for:** Specification Developer, Planner, Refactorer, Documenter, Security Reviewer.  
 * **Coding & Logic Models (e.g., models optimized specifically for code):** These models are often faster and highly effective at direct code generation and creating boilerplate.  
   * **Use for:** Coder, Tester.
 
 Before invoking an agent, check the \# RECOMMENDED MODEL comment in the prompt file, and then **manually select the most appropriate model** in the GitHub Copilot Chat interface. This is a critical step for achieving high-quality results.
 
+### Phase 0: Specification Development
+
+For complex features or production code, start with creating detailed specifications:
+
+1. **Understand the Requirements:** Gather all available information about the feature request, user story, or bug ticket.
+
+2. **Invoke the Specification Developer Agent:** Select a **reasoning model** and ask the agent to create comprehensive specifications.
+   * **Example Prompt:** "Using @workspace .ai-dev/prompts/00-specification-agent.md, create detailed specifications for the user authentication feature described in @workspace docs/tickets/AUTH-123.md. Save the specifications to @workspace .ai-dev/memory/AUTH-123-spec.md."
+
+3. **Review and Refine the Specifications:** Carefully review the generated specifications for accuracy, completeness, and alignment with project goals. Make any necessary adjustments.
+
+4. **Use Specifications as Living Documentation:** These specifications will guide all subsequent phases and should be updated if requirements or implementation details change.
+
 ### Phase 1: Planning & Setup
 
-This is the most critical phase. A high-quality plan leads to high-quality code.
+With specifications in hand (or for simpler features), proceed to planning. A high-quality plan leads to high-quality code.
 
 1. **Understand the Task:** Before you write a single prompt, make sure you fully understand the feature request, user story, or bug ticket. The AI can't read your mind; it can only work with the information you provide.  
 2. **Invoke the Planner Agent:** Open the VS Code Chat, select an appropriate **reasoning model**, and craft your initial prompt.  

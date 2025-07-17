@@ -14,13 +14,15 @@ This initial entry documents the setup of the AI Dev Playbook starter repository
 
 1. Define the core principles of the AI Dev Playbook workflow, including specialized agents, workspace context, and a permanent development log.  
 2. Create the repository file structure (/.ai-dev, /docs, /src).  
-3. Draft the initial versions of all seven agent prompts:  
+3. Draft the initial versions of all agent prompts:  
+   * 00-specification-agent.md
    * 01-planner-agent.md  
-   * 02-coder-agent.md  
-   * 03-tester-agent.md  
-   * 04-refactor-agent.md  
-   * 05-documenter-agent.md  
-   * 06-security-reviewer-agent.md  
-   * 07-archiver-agent.md  
+   * 02-estimator-agent.md
+   * 03-coder-agent.md  
+   * 04-tester-agent.md  
+   * 05-refactor-agent.md  
+   * 06-documenter-agent.md  
+   * 07-security-reviewer-agent.md  
+   * 08-archiver-agent.md  
 4. Create this AIDEV.md file with a sample entry documenting its own creation.  
 5. Add a README.md and detailed guides in the docs/ directory to explain the project and workflow.
