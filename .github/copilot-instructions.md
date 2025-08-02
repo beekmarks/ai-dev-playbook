@@ -1,6 +1,6 @@
 # GitHub Copilot Repository Instructions for AI Dev Playbook
 
-This repository follows the AI Dev Playbook methodology, a structured approach to AI-assisted software development. When working in this codebase, please adhere to the following guidelines:
+This repository follows the AI Dev Playbook methodology, a structured approach to AI-assisted software development based on OpenAI Model Spec principles. When working in this codebase, please adhere to the following guidelines:
 
 ## Development Principles
 
@@ -9,6 +9,17 @@ This repository follows the AI Dev Playbook methodology, a structured approach t
 - **Minimal Code Generation**: Write only the minimum code necessary to implement the requested feature. Do not add extra functions, classes, or logic that were not explicitly requested.
 - **Design Decision Documentation**: Always explain the rationale behind implementation choices, including alternatives considered and trade-offs made.
 - **Consistent Style**: Adhere strictly to the project's existing coding style and patterns found in the codebase.
+- **Instruction Hierarchy**: Follow the established priority order when resolving conflicting instructions.
+
+## Agent Structure
+
+All agent templates and prompt files follow a consistent structure based on OpenAI Model Spec principles:
+
+- **Objectives**: Clear statements of what the agent aims to accomplish
+- **Rules**: Strict always/never statements to guide behavior
+- **Defaults**: Sensible defaults for when specific instructions aren't provided
+
+This structure ensures consistent, high-quality AI assistance across all development tasks.
 
 ## Project Structure
 
@@ -29,12 +40,33 @@ This repository follows the AI Dev Playbook methodology, a structured approach t
 
 ## Prompt Files Usage
 
-This repository also includes `.prompt.md` files in the `.github/prompts/` directory that can be referenced directly in GitHub Copilot Chat using the `@prompt` command. These provide quick access to the same guidance as our agent templates.
+This repository includes `.prompt.md` files in the `.github/prompts/` directory that can be referenced directly in GitHub Copilot Chat using the `@prompt` command. These provide quick access to the same guidance as our agent templates and follow the same Objectives-Rules-Defaults structure.
 
-## Variables
+### Specialized Variants
 
-- **CODING_STYLE**: {{CODING_STYLE}}
-- **PREFERRED_TESTING_FRAMEWORK**: {{PREFERRED_TESTING_FRAMEWORK}}
+For code implementation, specialized variants are available to match different development scenarios:
+
+- **implement-code-interactive**: Educational approach with detailed explanations, ideal for learning or complex implementations
+- **implement-code-automated**: Minimal, production-focused code with fewer explanations, ideal for CI/CD pipelines
+- **implement-code-review**: For reviewing existing code and providing improvement suggestions
+
+Access these variants with `@prompt implement-code-interactive` in Copilot Chat.
+
+## Template Variables
+
+### Project-specific Context
 - **PROJECT_NAME**: {{PROJECT_NAME}}
+- **CODING_STYLE**: {{CODING_STYLE}}
 - **DOCUMENTATION_STANDARD**: {{DOCUMENTATION_STANDARD}}
+- **PREFERRED_TESTING_FRAMEWORK**: {{PREFERRED_TESTING_FRAMEWORK}}
+
+### Behavioral Settings
+- **VERBOSITY_LEVEL**: {{VERBOSITY_LEVEL}}
+- **CODE_GENERATION_STYLE**: {{CODE_GENERATION_STYLE}}
+- **EXPLANATION_DETAIL**: {{EXPLANATION_DETAIL}}
+
+### Domain-specific Settings
 - **ERROR_HANDLING_STRATEGY**: {{ERROR_HANDLING_STRATEGY}}
+- **TEST_COVERAGE_TARGET**: {{TEST_COVERAGE_TARGET}}
+- **SECURITY_STANDARDS**: {{SECURITY_STANDARDS}}
+- **ARCHITECTURE_STYLE**: {{ARCHITECTURE_STYLE}}

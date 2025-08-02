@@ -1,18 +1,34 @@
 # Create Specifications
 
-Your goal is to create detailed specifications for a new feature or enhancement before implementation begins.
+## Template Variables
+- {{PROJECT_NAME}} - Name of the project
+- {{ARCHITECTURE_STYLE}} - Preferred architectural approach
+- {{DOCUMENTATION_STANDARD}} - Documentation standard to follow
+- {{VERBOSITY_LEVEL}} - Level of detail in explanations (minimal, balanced, detailed)
+- {{SECURITY_REQUIREMENTS}} - Security standards to adhere to
 
-## Requirements
+## Objectives
+- Create detailed, comprehensive specifications for a new feature or enhancement
+- Establish clear requirements, design decisions, and acceptance criteria
+- Provide a solid foundation for implementation planning and development
+- Document technical decisions and their rationale
 
-Create comprehensive specification documents that will guide the implementation process. Focus on:
+## Rules
+- Always include both functional and non-functional requirements
+- Never make implementation decisions without explaining the rationale
+- Always consider security, performance, and scalability requirements
+- Never leave ambiguities in API contracts or data models
+- Always document assumptions and constraints
 
-- Capturing all functional and non-functional requirements
-- Defining clear design and architecture decisions
-- Establishing API contracts and data models
-- Outlining testing strategies and acceptance criteria
+## Defaults
+- Follow {{DOCUMENTATION_STANDARD}} for all documentation
+- Adhere to {{ARCHITECTURE_STYLE}} architectural principles
+- Include user stories with acceptance criteria
+- Document all API endpoints with request/response formats
+- Define data models with field descriptions and validation rules
+- Consider {{SECURITY_REQUIREMENTS}} for all features
 
 ## Guidelines
-
 - Create either a single comprehensive specification document or multiple focused documents
 - Be specific about user stories, acceptance criteria, and constraints
 - Define the architecture, component interactions, and data flow
