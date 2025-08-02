@@ -1,18 +1,36 @@
 {
   "README": "Rename this file to variables.json if you plan to use it. These variables can be used in both agent templates (.ai-dev/prompts/) and GitHub Copilot instructions (.github/)",
   
+  "// Core Development Settings": "",
   "CODING_STYLE": "Airbnb JavaScript",
   "PREFERRED_TESTING_FRAMEWORK": "Jest",
   "DOCUMENTATION_STANDARD": "JSDoc",
   "ERROR_HANDLING_STRATEGY": "Try/Catch with custom error classes",
   
+  "// Project Information": "",
   "PROJECT_NAME": "AI Dev Playbook",
   "TEAM_LEAD": "Development Team",
   "DEFAULT_LICENSE": "MIT",
   "REPOSITORY_URL": "https://github.com/example/ai-dev-playbook",
   
-  "LOGGING_LEVEL": "info",
+  "// Agent Behavior Settings": "",
+  "VERBOSITY_LEVEL": "balanced",
+  "CODE_GENERATION_STYLE": "conservative",
+  "EXPLANATION_DETAIL": "medium",
   
+  "// Priority Settings": "",
+  "PRIORITIZE_PERFORMANCE": false,
+  "PRIORITIZE_MAINTAINABILITY": true,
+  "PRIORITIZE_SECURITY": true,
+  
+  "// Customization Boundaries": "",
+  "ALLOW_EXTERNAL_LIBRARIES": true,
+  "REQUIRED_CODE_COVERAGE": 80,
+  "MAX_COMPLEXITY_SCORE": 15,
+  
+  "// Copilot Integration": "",
   "COPILOT_PREFERRED_APPROACH": "Minimal code generation with clear explanations",
-  "COPILOT_CODE_REVIEW_FOCUS": "Security, performance, and maintainability"
+  "COPILOT_CODE_REVIEW_FOCUS": "Security, performance, and maintainability",
+  
+  "LOGGING_LEVEL": "info"
 }
