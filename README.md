@@ -13,12 +13,15 @@ This workflow is built on a few key ideas:
 | **Developer as Director** | Your role in the VS Code Chat | You are in control. You direct the AI, providing it with context and instructions, and you are the final arbiter of quality. |
 | **Human-in-the-Loop (HITL)** | Approval workflows | Structured patterns for human oversight including approval-based reviews, audit trails, and expert guidance at critical decision points. |
 | **Spec-Driven Development** | Specifications before code | Create detailed specifications (requirements, design, API contracts) before implementation for better quality and maintainability. |
+| **Structured Agent Templates** | Objectives-Rules-Defaults | Agent templates follow the OpenAI Model Spec principles with explicit objectives, strict rules (always/never statements), and sensible defaults to guide AI behavior. |
 | **Specialized Agents** | .ai-dev/prompts/ | A collection of prompt templates, each designed for a specific task (specifications, planning, coding, testing, etc.). You invoke these agents to perform work. |
 | **GitHub Copilot Integration** | .github/ directory | Repository custom instructions and prompt files that provide the same guidance through native GitHub Copilot features. |
+| **Template Variables** | {{VARIABLE_NAME}} syntax | Customize agent behavior without modifying core templates using project-specific variables defined in config files. |
 | **Workspace Context** | @workspace command | GitHub Copilot can read files directly from your workspace. You use this to provide context like requirements, existing code, or plans. |
 | **Modular Memory** | .ai-dev/memory/ | A transient "scratchpad." The output of one agent (e.g., a plan) is saved here to be used as the input for the next agent, creating a clean chain of operations. |
 | **Permanent Log (AIDEV.md)** | **The Project's Memory** | **Why this exists:** While Git history tells you *what* changed line-by-line, AIDEV.md tells you *why*. It's a human-readable ledger of all work completed, capturing the high-level plan and intent behind each feature. This creates an invaluable resource for long-term maintenance and onboarding, as it preserves the design decisions that are often lost over time. |
 | **Minimal Code Generation** | Enforced in Agent Prompts | **The AI should write as little code as possible.** It should only generate the minimum code necessary to implement the requested feature. This prevents code bloat and keeps commits small, focused, and easy to review. |
+| **Instruction Hierarchy** | Prioritized guidance | Clear hierarchy for resolving conflicting instructions between agents, project guidelines, and core principles. |
 
 ## **Getting Started**
 

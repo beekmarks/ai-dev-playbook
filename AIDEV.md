@@ -17,7 +17,7 @@ This initial entry documents the setup of the AI Dev Playbook starter repository
 3. Draft the initial versions of all agent prompts:  
    * 00-specification-agent.md
    * 01-planner-agent.md  
-   * 02-estimator-agent.md
+   * 02-estimator-agent.md  
    * 03-coder-agent.md  
    * 04-tester-agent.md  
    * 05-refactor-agent.md  
@@ -26,3 +26,85 @@ This initial entry documents the setup of the AI Dev Playbook starter repository
    * 08-archiver-agent.md  
 4. Create this AIDEV.md file with a sample entry documenting its own creation.  
 5. Add a README.md and detailed guides in the docs/ directory to explain the project and workflow.
+
+## **Enhancement: OpenAI Model Spec Integration \- August 02, 2025**
+
+### **Description**
+
+This entry documents the comprehensive enhancement of the AI Dev Playbook through the integration of OpenAI Model Spec principles, focusing on structured agent templates with explicit Objectives-Rules-Defaults sections, specialized agent variants, and improved documentation.
+
+### **Plan**
+
+1. Review OpenAI Model Spec principles and identify applications to the AI Dev Playbook
+2. Draft proposals for new/augmented playbook sections based on recommendations
+3. Create ai-docs/future-considerations.md to capture all proposals for future consideration
+4. Implement suggested enhancements in the codebase:
+   * Update agent templates to Objectives-Rules-Defaults structure
+   * Create new documentation files
+   * Update template variables with enhanced settings
+   * Create specialized agent variants
+
+### **Implementation Details**
+
+#### **Agent Template Updates**
+
+All agent templates were restructured to follow the OpenAI Model Spec principles with:
+
+* **OBJECTIVES** section: Clear statements of what the agent aims to accomplish
+* **RULES** section: Strict always/never statements to guide behavior
+* **DEFAULTS** section: Sensible defaults for when specific instructions aren't provided
+
+Example from the Tester Agent:
+```markdown
+# **OBJECTIVES**
+- Write comprehensive tests for a given piece of code to ensure it is correct, robust, and reliable
+- Achieve high test coverage for critical functionality
+- Identify potential edge cases and failure points
+- Ensure tests are maintainable and follow project conventions
+
+# **RULES**
+- Never modify the source code being tested
+- Always test happy paths, edge cases, and error handling
+- Never skip testing critical functionality
+- Always follow the project's testing conventions
+- Never write tests that depend on external services unless explicitly instructed
+```
+
+#### **New Documentation**
+
+Created several new documentation files to support the enhanced playbook:
+
+* **ai-docs/ai-dev-playbook-spec.md**: Formal specification defining core principles
+* **ai-docs/instruction-hierarchy.md**: Priority levels for resolving conflicting instructions
+* **ai-docs/collaborative-development.md**: Guidelines for human-AI collaboration
+* **ai-docs/agent-selection-guide.md**: Decision tree for choosing appropriate agents
+* **ai-docs/refusal-guidelines.md**: When and how AI agents should refuse requests
+* **ai-docs/uncertainty-guidelines.md**: Handling uncertainty in AI recommendations
+* **ai-docs/ai-readable-documentation.md**: Best practices for AI-readable docs
+
+#### **Template Variables Enhancement**
+
+Expanded the template variables system to include behavioral settings:
+
+* **Verbosity level**: Controls detail in explanations (minimal, balanced, detailed)
+* **Code generation style**: Amount of code to generate (minimal, conservative, comprehensive)
+* **Explanation detail**: Depth of design decision explanations (low, medium, high)
+
+#### **Specialized Agent Variants**
+
+Created specialized variants of the Coder Agent in ai-dev/prompts/variants/:
+
+* **Interactive Coder Agent**: Provides detailed explanations and educational context
+* **Automated Coder Agent**: Focuses on minimal, production-ready code for CI/CD pipelines
+* **Review Coder Agent**: Provides constructive code review feedback
+
+### **Design Decisions**
+
+1. **Technology Agnosticism**: Maintained the playbook's independence from specific tools or platforms
+2. **Instruction Hierarchy**: Created a clear priority system to resolve conflicting instructions
+3. **Structured Templates**: Adopted Objectives-Rules-Defaults structure for clarity and consistency
+4. **Template Variables**: Enhanced customization options without modifying core templates
+
+### **Future Considerations**
+
+Documented additional enhancement ideas in ai-docs/future-considerations.md for potential future implementation.
