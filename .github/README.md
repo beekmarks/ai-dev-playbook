@@ -29,6 +29,7 @@ This will load the instructions from `prompts/plan-feature.prompt.md` into your 
 
 | Prompt File | Purpose | Traditional Equivalent |
 |-------------|---------|------------------------|
+| `create-specifications.prompt.md` | Create detailed specifications before implementation | `00-specification-agent.md` |
 | `plan-feature.prompt.md` | Create a detailed implementation plan | `01-planner-agent.md` |
 | `estimate-work.prompt.md` | Provide time and complexity estimates | `02-estimator-agent.md` |
 | `implement-code.prompt.md` | Write clean, efficient code | `03-coder-agent.md` |

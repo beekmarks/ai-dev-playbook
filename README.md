@@ -4,6 +4,10 @@ Welcome\! This repository is a template for building software using a structured
 
 The goal of this "AI Dev Playbook" is not to replace developer thinking, but to augment it. By providing a standardized set of tools (prompts) and a clear process, we can leverage AI to handle routine tasks, allowing developers to focus on architecture and complex problem-solving. This leads to faster development, higher quality code, and a fully documented project history.
 
+
+https://github.com/user-attachments/assets/901ab539-dcb3-494f-a911-bd66bcc355c9
+
+
 ## **Core Concepts**
 
 This workflow is built on a few key ideas:
@@ -16,16 +20,136 @@ This workflow is built on a few key ideas:
 | **Specialized Agents** | .ai-dev/prompts/ | A collection of prompt templates, each designed for a specific task (specifications, planning, coding, testing, etc.). You invoke these agents to perform work. |
 | **GitHub Copilot Integration** | .github/ directory | Repository custom instructions and prompt files that provide the same guidance through native GitHub Copilot features. |
 | **Workspace Context** | @workspace command | GitHub Copilot can read files directly from your workspace. You use this to provide context like requirements, existing code, or plans. |
-| **Modular Memory** | .ai-dev/memory/ | A transient "scratchpad." The output of one agent (e.g., a plan) is saved here to be used as the input for the next agent, creating a clean chain of operations. |
+| **Modular Memory** | .ai-dev/memory/ | A transient "scratchpad." The output of one agent (e.g., a plan) is saved here to be used as the input for the next agent, creating a clean chain of operations. Note the dot prefix: this is a hidden directory separate from ai-dev/prompts/ to ensure generated files are not committed. |
 | **Permanent Log (AIDEV.md)** | **The Project's Memory** | **Why this exists:** While Git history tells you *what* changed line-by-line, AIDEV.md tells you *why*. It's a human-readable ledger of all work completed, capturing the high-level plan and intent behind each feature. This creates an invaluable resource for long-term maintenance and onboarding, as it preserves the design decisions that are often lost over time. |
 | **Minimal Code Generation** | Enforced in Agent Prompts | **The AI should write as little code as possible.** It should only generate the minimum code necessary to implement the requested feature. This prevents code bloat and keeps commits small, focused, and easy to review. |
 
 ## **Getting Started**
 
-1. Clone this repository.  
-2. Read this README.md file carefully.  
-3. For instructions on adopting this for a new or existing project, see [ai-docs/adoption-guide.md](ai-docs/adoption-guide.md).  
-4. For a more detailed guide on the day-to-day process, review [ai-docs/ai-dev-playbook-workflow.md](ai-docs/ai-dev-playbook-workflow.md).
+### **Quick Integration (Recommended)**
+
+The fastest way to add AI Dev Playbook to any repository:
+
+```
+@workspace Using the AI Dev Playbook Integration Assistant at integration-assistant.prompt.md, please analyze this repository and implement a complete AI Dev Playbook setup.
+```
+
+This AI-powered integration assistant will:
+- ✅ **Analyze your repository** structure and technology stack
+- ✅ **Choose the right architecture** (single project vs monorepo patterns)
+- ✅ **Create customized prompts** with your actual project context
+- ✅ **Set up complete workflow** with all 9 development steps
+- ✅ **Generate operational documentation** for your team
+
+### **Manual Setup**
+
+For step-by-step setup or to understand the methodology:
+
+1. **New Project**: Follow [docs/greenfield-project-guide.md](docs/greenfield-project-guide.md) for comprehensive new project setup
+2. **From Design Documents**: Use [docs/documents-first-guide.md](docs/documents-first-guide.md) when starting with existing design.md, requirements.md, tasks.md files
+3. **Single Project**: Clone this repository as a template  
+4. **Monorepo**: See [docs/monorepo-integration-guide.md](docs/monorepo-integration-guide.md) for architecture decisions
+5. **Existing Project**: Review [ai-docs/adoption-guide.md](ai-docs/adoption-guide.md) for integration guidance
+6. **Daily Workflow**: Study [ai-docs/ai-dev-playbook-workflow.md](ai-docs/ai-dev-playbook-workflow.md) for process details
+
+### **Repository Types Supported**
+
+- ✅ **Single Projects**: Standard AI Dev Playbook approach
+- ✅ **Nx Monorepos**: Application-focused or repository-focused patterns
+
+## **Step-by-Step Integration Guide**
+
+### **Prerequisites**
+- GitHub Copilot enabled in VS Code
+- AI assistant access (GitHub Copilot, Claude, etc.)
+- Your target repository open in VS Code
+
+### **Method 1: AI-Powered Integration (Recommended)**
+
+**Step 1**: Download the AI Dev Playbook repository
+```bash
+# In a directory adjacent to your project (not inside it)
+git clone https://github.com/your-org/ai-dev-playbook.git
+
+# Your directory structure should look like:
+# parent-directory/
+# ├── your-project/          (your existing repository)
+# └── ai-dev-playbook/       (this repository)
+```
+
+**Step 2**: Open your project repository in VS Code
+```bash
+cd your-project
+code .
+```
+
+**Step 3**: Use the Integration Assistant
+In GitHub Copilot Chat, run this exact command:
+```
+@workspace Using the AI Dev Playbook Integration Assistant at ../ai-dev-playbook/integration-assistant.prompt.md, please analyze this repository and implement a complete AI Dev Playbook setup.
+```
+
+**Step 4**: Verify the integration
+The assistant will create all necessary files and explain what was set up. Verify:
+- ✅ AI Dev Playbook files are created in the right locations
+- ✅ Prompts are customized with your project context
+- ✅ Documentation explains how to use it in your repository
+
+### **Method 2: Manual Integration**
+
+**Step 1**: Download the AI Dev Playbook repository (same as above)
+
+**Step 2**: Copy the appropriate files based on your project type
+
+**For Single Projects:**
+```bash
+# From your project directory
+cp -r ../ai-dev-playbook/.ai-dev/ .
+cp -r ../ai-dev-playbook/.github/ .
+cp ../ai-dev-playbook/AIDEV.md .
+```
+
+**For Monorepos:**
+See [docs/monorepo-integration-guide.md](docs/monorepo-integration-guide.md) for detailed patterns and architecture decisions.
+
+**Step 3**: Customize the configuration
+- Edit `.ai-dev/config/variables.json` with your project details
+- Update `.github/copilot-instructions.md` with your project context
+- Customize agent prompts as needed for your technology stack
+
+**Step 4**: Create operational documentation
+- Quick start guide for your team
+- Example workflow with your project's specific paths
+- Team-specific guidelines and conventions
+
+### **Method 3: New Project Template**
+
+**For New Projects:**
+```bash
+# Use this repository as a template for new projects
+git clone https://github.com/your-org/ai-dev-playbook.git my-new-project
+cd my-new-project
+rm -rf .git
+git init
+# Start developing in src/ directory
+```
+
+### **Troubleshooting Integration**
+
+**Integration Assistant Not Working?**
+- Ensure the ai-dev-playbook directory is adjacent to your project
+- Check that the path `../ai-dev-playbook/integration-assistant.prompt.md` is correct
+- Verify GitHub Copilot has access to read files in both directories
+
+**Files Not Copied Correctly?**
+- Use the Integration Assistant instead of manual copying
+- Check file permissions and directory structure
+- Ensure you're running commands from the correct directory
+
+**Prompts Not Customized?**
+- The Integration Assistant automatically customizes prompts with real project context
+- Manual setup requires editing `.ai-dev/config/variables.json` and prompt files
+- Remove placeholder values like `{{PROJECT_NAME}}` with actual values
 
 ## **The Workflow: A Real-World Example**
 
@@ -104,6 +228,38 @@ The feature is complete\! The final step is to use the **Archiver Agent** to cre
 * **Prompts are Curated:** The agent prompts in .ai-dev/prompts are the team's standard. Do not commit changes to them directly. If you discover a generally useful improvement, open a Pull Request to discuss it.  
 * **AIDEV.md is the Project's Ledger:** This file is the project's long-term memory. The final step of every task is to append its story (plan, etc.) to this ledger. This ensures the "why" behind your code is preserved for future developers. You must include the updated AIDEV.md in your feature's Pull Request and be prepared to resolve merge conflicts.  
 * **⚠️ SECURITY WARNING:** **NEVER** paste secrets, credentials, or sensitive customer data into a prompt. The AI is a third-party service. Use placeholders and reference environment variables, just as you would in your code.
+
+## **Integration Assistant**
+
+### **Quick Reference**
+```bash
+# 1. Download AI Dev Playbook adjacent to your project
+git clone https://github.com/your-org/ai-dev-playbook.git
+
+# 2. Open your project in VS Code and run:
+@workspace Using the AI Dev Playbook Integration Assistant at ../ai-dev-playbook/integration-assistant.prompt.md, please analyze this repository and implement a complete AI Dev Playbook setup.
+```
+
+The **Integration Assistant** (`integration-assistant.prompt.md`) is an AI-powered tool that automates the setup of AI Dev Playbook in any repository. It intelligently analyzes your project and creates a complete, production-ready integration.
+
+### **How It Works**
+1. **Analyzes** your repository structure and technology stack
+2. **Decides** the right architecture pattern (single project vs monorepo)
+3. **Creates** customized prompts with your actual project context
+4. **Generates** operational documentation specific to your project
+5. **Validates** complete workflow coverage and quality
+
+### **Usage**
+```
+@workspace Using the AI Dev Playbook Integration Assistant at integration-assistant.prompt.md, please analyze this repository and implement a complete AI Dev Playbook setup.
+```
+
+### **Supported Repository Types**
+- **Single Projects**: Traditional AI Dev Playbook setup
+- **Monorepos**: Application-focused or repository-focused patterns
+- **Technology Stacks**: TypeScript, Python, React, Node.js, AWS, and more
+
+For detailed monorepo guidance, see [docs/monorepo-integration-guide.md](docs/monorepo-integration-guide.md).
 
 ## **Two Ways to Use the AI Dev Playbook**
 

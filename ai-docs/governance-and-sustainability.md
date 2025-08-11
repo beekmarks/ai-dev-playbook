@@ -117,6 +117,7 @@ Establish clear workflows for reviewing and approving AI-generated code:
   - This keeps the active file manageable while preserving the complete project history
   
 - **Memory Directory Hygiene**: The `.ai-dev/memory/` directory is for transient, in-flight work:
+  - Note the dot prefix (`.ai-dev/`) to distinguish it from the primary prompt directory (`ai-dev/`)
   - Configure `.gitignore` to exclude `.ai-dev/memory/*`
   - Include an exception for `.example` files
   - Establish a policy stating this directory is not for permanent storage

@@ -2,6 +2,43 @@
 
 This guide explains how to adopt the AI Dev Playbook workflow for both new (Greenfield) and existing (Brownfield) projects. The core principle in both scenarios is maintaining a logical separation between your application code and the AI Dev Playbook framework.
 
+## Quick Integration (Integration Assistant)
+
+Use the Integration Assistant for first-time setup to minimize errors and ensure the correct pattern is applied.
+
+### Commands
+Greenfield (started from template / same repo):
+```
+@workspace Using the AI Dev Playbook Integration Assistant at integration-assistant.prompt.md, please analyze this repository and implement a complete AI Dev Playbook setup.
+```
+Existing project (playbook cloned adjacent):
+```
+@workspace Using the AI Dev Playbook Integration Assistant at ../ai-dev-playbook/integration-assistant.prompt.md, please analyze this repository and implement a complete AI Dev Playbook setup.
+```
+Monorepo (let assistant choose pattern):
+```
+@workspace Using the AI Dev Playbook Integration Assistant at ../ai-dev-playbook/integration-assistant.prompt.md, analyze this repository as a monorepo and implement the appropriate AI Dev Playbook integration pattern with rationale.
+```
+Single app inside monorepo (scoped):
+```
+@workspace Using the AI Dev Playbook Integration Assistant at ../../ai-dev-playbook/integration-assistant.prompt.md, analyze ONLY this application directory and implement an application-scoped AI Dev Playbook instance.
+```
+
+### What It Automates
+- Repository / monorepo analysis and pattern decision
+- Scaffolding .ai-dev/, .github/, AIDEV.md (or augmenting existing assets)
+- Variable file creation / merging
+- Prompt customization with detected stack context
+- Operational usage guidance snippet
+- Validation checklist output (prompts accessible, variables resolved, ledger initialized)
+
+### Manual Fallback
+If the assistant is unavailable:
+1. Copy .ai-dev/, .github/, AIDEV.md into target scope (root or app dir)
+2. Rename example.variables.json to variables.json and populate
+3. Open VS Code and proceed with standard workflow docs
+4. Add initial AIDEV.md entry marking adoption
+
 ## **The Separation Principle**
 
 The AI Dev Playbook assets (.ai-dev/, .github/prompts/, AIDEV.md, docs/) are **development-time tools**, not production code. They are meta-artifacts that help you write, test, and document your code, but they are never deployed.
@@ -13,6 +50,9 @@ The AI Dev Playbook assets (.ai-dev/, .github/prompts/, AIDEV.md, docs/) are **d
 
 For new applications, the process is simple as you are starting with a clean slate.
 
+**📖 For detailed greenfield project setup, see [docs/greenfield-project-guide.md](../docs/greenfield-project-guide.md)**
+
+**Quick Start:**
 1. **Use as a Template:** Clone or generate your new repository from the ai-dev-playbook-starter template. This provides you with the complete, correct structure from day one.  
 2. **Develop in /src:** Begin developing your application code inside the src/ directory. You can rename or restructure this as needed (e.g., to /lib, /app), but all of your application-specific logic should reside there.  
 3. **Follow the Workflow:** For every new feature or task, follow the workflow outlined in docs/ai-dev-playbook-workflow.md. The framework assets in .ai-dev/ are already in place to support you.
@@ -161,4 +201,4 @@ In a monorepo, a single root-level framework is not ideal, as it would mix the h
 │       ├── src/  
 │       └── AIDEV.md        \<-- Ledger for shared-ui  
 │  
-└── nx.json  
+└── nx.json

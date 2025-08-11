@@ -61,7 +61,7 @@ With specifications in hand (or for simpler features), proceed to planning. A hi
 2. **Invoke the Planner Agent:** Open the VS Code Chat, select an appropriate **reasoning model**, and craft your initial prompt.  
    * **Be Specific:** Don't just say "build a login page." Describe the requirements: "Create a plan for a login page that requires an email and password, has a 'Forgot Password' link, and validates the form on the client side."  
    * **Provide Context:** Use the @workspace command to point the AI to relevant files. This could include the ticket description, related code, or architectural diagrams.  
-   * **Direct the Output:** Always tell the agent where to save the plan, creating a new file in the .ai-dev/memory/ directory.
+   * **Direct the Output:** Always tell the agent where to save the plan, creating a new file in the .ai-dev/memory/ directory (note the dot prefix - this hidden directory is separate from the ai-dev/prompts/ directory).
 
 **Example Prompt:**"Using @workspace .ai-dev/prompts/01-planner-agent.md, create a detailed plan for the feature described in @workspace docs/tickets/TICKET-123.md. Consider the existing code in @workspace src/auth/utils.js. Save the plan to @workspace .ai-dev/memory/TICKET-123-plan.md."
 
@@ -109,7 +109,7 @@ This final phase ensures your work becomes a permanent, useful part of the proje
 1. **Invoke the Archiver:** This is your last AI command for the task. Point the Archiver agent to all the relevant files you created in the /memory directory.  
    **Example Prompt:**"Using @workspace .ai-dev/prompts/08-archiver-agent.md, create a new entry in @workspace AIDEV.md titled 'Feature \#123: User Login Endpoint'. Compile the following files into it: @workspace .ai-dev/memory/TICKET-123-plan.md and @workspace .ai-dev/memory/TICKET-123-security-review.md."  
 2. **Review the AIDEV.md Entry:** Briefly check the AIDEV.md file to ensure the new entry was appended correctly and looks clean.  
-3. **Clean Up:** Delete the files for your task from the .ai-dev/memory/ directory. Their purpose is served, and their story is now in AIDEV.md.  
+3. **Clean Up:** Delete the files for your task from the .ai-dev/memory/ directory. Their purpose is served, and their story is now in AIDEV.md. These files should never be committed to version control.  
 4. **Submit Your Pull Request:** Commit all your changes, including the updated AIDEV.md. When you create your PR, you can even reference the AIDEV.md entry in your description to give reviewers instant context.
 
 ### Note for Monorepo Users

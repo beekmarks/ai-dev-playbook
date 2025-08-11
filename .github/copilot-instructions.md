@@ -13,7 +13,7 @@ This repository follows the AI Dev Playbook methodology, a structured approach t
 ## Project Structure
 
 - **Agent Prompts**: Specialized prompt templates are stored in `.ai-dev/prompts/` directory. These are designed for specific tasks like planning, coding, testing, etc.
-- **Memory Directory**: Transient outputs are stored in `.ai-dev/memory/` as a "scratchpad" for the development workflow.
+- **Memory Directory**: Transient outputs are stored in `.ai-dev/memory/` as a "scratchpad" for the development workflow. Note the dot prefix - this directory is separate from the primary prompt directory to ensure generated files are not committed.
 - **Project Ledger**: The `AIDEV.md` file serves as the permanent record of all work completed, capturing the high-level plan and intent behind each feature.
 - **Template Variables**: Project-specific variables are defined in `.ai-dev/config/variables.json` and can be referenced in prompts using `{{VARIABLE_NAME}}` syntax.
 
