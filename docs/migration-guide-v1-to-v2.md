@@ -621,3 +621,41 @@ The migration from AI Dev Playbook v1.0 to v2.0 represents a fundamental evoluti
 5. Share feedback and success stories with the community
 
 Welcome to the future of AI-assisted development with AI Dev Playbook v2.0! 🚀
+
+## Prerequisites for Migration
+
+### Software Requirements
+- **Docker Desktop**: Required for secure sandbox execution environments
+- **Git**: Version control system for structured commit history
+- **AI Development Environment**: VS Code with GitHub Copilot, Claude interface, or similar
+- **API Keys**: Access to foundational AI models (OpenAI, Anthropic, etc.)
+- **Text Editor**: For reviewing and customizing configuration files
+
+📖 **Critical**: Review the [Secure Sandbox Execution Guide](secure-sandbox-execution.md) for complete setup instructions and security architecture details.
+
+## Step 3: Verify Installation
+
+### Test Core Functionality
+```bash
+# Verify script permissions
+ls -la ai-dev/scripts/
+
+# Test secure sandbox environment
+./ai-dev/scripts/test-sandbox.sh create
+./ai-dev/scripts/test-sandbox.sh status
+
+# Test Delegator Agent orchestration
+./ai-dev/scripts/delegator-orchestrator.sh status
+
+# Test code review automation
+./ai-dev/scripts/code-review-automation.sh status
+```
+
+### Verify Security Setup
+```bash
+# Verify Docker installation
+docker --version
+docker info
+
+# Test sandbox isolation
+./ai-dev/scripts/test-sandbox.sh health-check

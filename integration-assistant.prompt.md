@@ -103,6 +103,17 @@ Create only **operational documentation** (permanent value):
 
 ## Phase 5: Team Onboarding
 
+### Key Features to Highlight
+
+- **10 Specialized AI Agents**: From specification to deployment, each agent has a specific role
+- **Delegator Agent**: Meta-agent for orchestrating complex, goal-oriented development workflows
+- **AI-Powered Code Review**: Automated multi-dimensional code analysis with CI/CD integration
+- **Secure Sandbox Execution**: Enterprise-grade security with Docker isolation (see [Secure Sandbox Execution Guide](docs/secure-sandbox-execution.md))
+- **Multi-Modal Framework**: Supports Micro (Cursor-style), Meso (Aider-style), and Macro (Devin-style) workflows
+- **Structured Git Workflow**: Atomic commits with detailed explanations
+- **Comprehensive Documentation**: AIDEV.md serves as the project's memory and explanation log
+- **Enterprise-Grade Governance**: Advanced HITL patterns, secure sandbox execution, and audit trails
+
 ### Clear Guidance
 Provide specific instructions for this repository:
 - **Where to work**: Exact commands for navigating to development locations

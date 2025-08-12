@@ -30,16 +30,15 @@ To ensure the AI Dev Playbook works effectively across distributed teams, adopt 
 - **Security Review**: The security-reviewer-agent should include checks for hardcoded secrets and insecure dependencies
 - **Regular Audits**: Periodically audit AIDEV.md files to ensure no sensitive data has been accidentally committed
 
-### Mandatory Secure Execution Environments
+### Secure Sandboxed Execution
 
-**CRITICAL REQUIREMENT**: Any AI agent that executes code, runs shell commands, or interacts with live systems MUST operate within a secure, isolated sandbox environment. This is non-negotiable for enterprise adoption and safe agentic development.
+### Mandatory Isolation Requirements
+- **All AI-generated code execution** must occur in secure, isolated environments
+- **No direct host system access** for any code-running agents
+- **Resource limits enforced** to prevent system impact or resource exhaustion
+- **Network restrictions** to prevent unauthorized external communications
 
-#### Implementation Requirements:
-- **Container Isolation**: Use Docker or similar containerization for code execution
-- **Network Restrictions**: Limit network access to only necessary resources
-- **File System Isolation**: Restrict file system access to designated working directories
-- **Resource Limits**: Implement CPU, memory, and disk usage constraints
-- **Audit Logging**: Log all executed commands and file system changes
+📖 **Implementation Guide**: See the [Secure Sandbox Execution Guide](../docs/secure-sandbox-execution.md) for complete architecture details, setup instructions, and security implementation.
 
 #### Recommended Solutions:
 - **Docker-based sandboxes** for local development environments

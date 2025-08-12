@@ -21,58 +21,16 @@ This workflow is built on a few key ideas:
 | **Permanent Log (AIDEV.md)** | **The Project's Memory & Explanation Log** | **Why this exists:** While Git history tells you *what* changed line-by-line, AIDEV.md tells you *why*. It's a human-readable ledger of all work completed, capturing the high-level plan and intent behind each feature. **Evolution**: Now serves as an automated **Explanation Log** that can be synthesized from structured Git commit history, dramatically reducing manual overhead while improving audit quality. |
 | **Minimal Code Generation** | Enforced in Agent Prompts | **The AI should write as little code as possible.** It should only generate the minimum code necessary to implement the requested feature. This prevents code bloat and keeps commits small, focused, and easy to review. |
 
-## **Multi-Modal Interaction Framework**
+## 🚀 Advanced Capabilities
 
-The AI Dev Playbook supports three distinct interaction modes, each optimized for different scales of work:
+### **Delegator Agent (Meta-Agent Orchestration)**
+The Delegator Agent serves as a meta-agent that orchestrates the entire swarm of specialized agents, enabling autonomous goal-oriented development with human strategic oversight.
 
-### **🔬 Micro-Workflow (Cursor-Style)**
-- **Use Case**: Quick, in-flow IDE tasks (fixing typos, small refactors, boilerplate generation)
-- **Tools**: Leverages `.github/prompts/` and `copilot-instructions.md` for governance
-- **Goal**: Augment immediate developer actions without disrupting focus
+### **AI-Powered Code Review**
+Integrated AI-powered code review system that performs multi-dimensional analysis including quality, security, performance, and documentation assessment with automated CI/CD integration.
 
-### **⚙️ Meso-Workflow (Enhanced Traditional)**
-- **Use Case**: Discrete, well-defined features (new API endpoints, component implementations)
-- **Process**: Structured Spec → Plan → Code → Test cycle with automated Git commits
-- **Goal**: Balanced structure and agility for day-to-day feature development
-
-### **🎯 Macro-Workflow (Devin-Style)**
-- **Use Case**: Large, goal-oriented projects (resolving complex tickets, system migrations)
-- **Process**: **Delegator Agent** orchestrates specialized agent swarm → strategic plan validation → autonomous execution → AI-powered code review → comprehensive quality assurance
-- **Goal**: Leverage autonomous agent orchestration for complex tasks while maintaining human strategic control
-- **Key Features**: Agent swarm coordination, intelligent code review, automated quality gates, comprehensive governance
-
-## **Advanced Capabilities (Phase 3)**
-
-The AI Dev Playbook now includes revolutionary **Agent Swarm Architecture** and **AI-Powered Code Review** capabilities:
-
-### **🤖 Delegator Agent Orchestration**
-- **Meta-Agent Coordination**: The Delegator Agent orchestrates 10 specialized agents across three clusters
-- **Goal-Oriented Planning**: Autonomous decomposition of complex objectives into actionable plans
-- **Strategic Oversight**: Human-in-the-loop governance with approval checkpoints and risk management
-- **Usage**: `./ai-dev/scripts/delegator-orchestrator.sh start "Your high-level goal"`
-
-### **🔍 AI-Powered Code Review**
-- **Comprehensive Analysis**: Multi-dimensional code review covering quality, security, performance, and maintainability
-- **Intelligent Automation**: Context-aware reviews with actionable recommendations and quality metrics
-- **Git Integration**: Seamless workflow integration with commit, staging, and PR review capabilities
-- **Usage**: `./ai-dev/scripts/code-review-automation.sh review <target> <type>`
-
-### **Agent Swarm Architecture**
-```
-Planning Cluster:     Execution Cluster:     Quality Cluster:
-├─ Specification     ├─ Coder               ├─ Security Reviewer
-├─ Planner           ├─ Refactorer          ├─ Documenter  
-└─ Estimator         └─ Tester              └─ AIDEV Archiver
-                            ↑
-                    Delegator Agent
-                   (Meta-Orchestrator)
-```
-
-### **Enterprise-Grade Features**
-- **🔒 Secure Sandbox Execution**: All code execution in isolated environments
-- **📊 Quality Gates**: Automated quality enforcement and validation
-- **📝 Comprehensive Audit Trails**: Complete documentation of all development activities
-- **⚡ Performance Optimization**: Intelligent performance analysis and recommendations
+### **Secure Sandbox Execution**
+Enterprise-grade security architecture that separates AI agent execution (with model access) from code execution (in isolated Docker environments). This ensures safe AI-assisted development while maintaining full AI capabilities. See the [Secure Sandbox Execution Guide](docs/secure-sandbox-execution.md) for complete implementation details.
 
 ## **Getting Started**
 
@@ -110,9 +68,12 @@ For step-by-step setup or to understand the methodology:
 ## **Step-by-Step Integration Guide**
 
 ### **Prerequisites**
+- Docker Desktop (required for secure sandbox execution)
 - GitHub Copilot enabled in VS Code
 - AI assistant access (GitHub Copilot, Claude, etc.)
 - Your target repository open in VS Code
+
+📖 **Important**: Review the [Secure Sandbox Execution Guide](docs/secure-sandbox-execution.md) for complete setup instructions and security requirements.
 
 ### **Method 1: AI-Powered Integration (Recommended)**
 
