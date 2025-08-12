@@ -14,7 +14,7 @@ This workflow is built on a few key ideas:
 | **Developer as Director** | Your role in the VS Code Chat | You are in control. You direct the AI, providing it with context and instructions, and you are the final arbiter of quality. In the agentic era, this evolves into **Strategic Direction** - setting clear objectives, constraints, and success criteria through advanced **Defensive Prompting** techniques. |
 | **Human-in-the-Loop (HITL)** | Enhanced approval workflows | Structured patterns for human oversight including Strategic Validation, Human-on-the-Loop supervision, and comprehensive audit trails. Essential for managing autonomous agents safely. |
 | **Spec-Driven Development** | Specifications before code | Create detailed specifications (requirements, design, API contracts) before implementation for better quality and maintainability. |
-| **Specialized Agents** | .ai-dev/prompts/ | A collection of prompt templates, each designed for a specific task (specifications, planning, coding, testing, etc.). You invoke these agents to perform work. |
+| **Specialized Agent Swarm** | .ai-dev/prompts/ | A collection of 10 specialized prompt templates orchestrated by the **Delegator Agent** for autonomous goal-oriented development. Includes planning cluster, execution cluster, and quality cluster agents. |
 | **GitHub Copilot Integration** | .github/ directory | Repository custom instructions and prompt files that provide the same guidance through native GitHub Copilot features. |
 | **Workspace Context** | @workspace command | GitHub Copilot can read files directly from your workspace. You use this to provide context like requirements, existing code, or plans. |
 | **Modular Memory** | .ai-dev/memory/ | A transient "scratchpad." The output of one agent (e.g., a plan) is saved here to be used as the input for the next agent, creating a clean chain of operations. Note the dot prefix: this is a hidden directory separate from ai-dev/prompts/ to ensure generated files are not committed. |
@@ -37,8 +37,42 @@ The AI Dev Playbook supports three distinct interaction modes, each optimized fo
 
 ### **🎯 Macro-Workflow (Devin-Style)**
 - **Use Case**: Large, goal-oriented projects (resolving complex tickets, system migrations)
-- **Process**: Strategic plan validation → autonomous execution → comprehensive review
-- **Goal**: Leverage autonomous agents for complex tasks while maintaining human control
+- **Process**: **Delegator Agent** orchestrates specialized agent swarm → strategic plan validation → autonomous execution → AI-powered code review → comprehensive quality assurance
+- **Goal**: Leverage autonomous agent orchestration for complex tasks while maintaining human strategic control
+- **Key Features**: Agent swarm coordination, intelligent code review, automated quality gates, comprehensive governance
+
+## **Advanced Capabilities (Phase 3)**
+
+The AI Dev Playbook now includes revolutionary **Agent Swarm Architecture** and **AI-Powered Code Review** capabilities:
+
+### **🤖 Delegator Agent Orchestration**
+- **Meta-Agent Coordination**: The Delegator Agent orchestrates 10 specialized agents across three clusters
+- **Goal-Oriented Planning**: Autonomous decomposition of complex objectives into actionable plans
+- **Strategic Oversight**: Human-in-the-loop governance with approval checkpoints and risk management
+- **Usage**: `./ai-dev/scripts/delegator-orchestrator.sh start "Your high-level goal"`
+
+### **🔍 AI-Powered Code Review**
+- **Comprehensive Analysis**: Multi-dimensional code review covering quality, security, performance, and maintainability
+- **Intelligent Automation**: Context-aware reviews with actionable recommendations and quality metrics
+- **Git Integration**: Seamless workflow integration with commit, staging, and PR review capabilities
+- **Usage**: `./ai-dev/scripts/code-review-automation.sh review <target> <type>`
+
+### **Agent Swarm Architecture**
+```
+Planning Cluster:     Execution Cluster:     Quality Cluster:
+├─ Specification     ├─ Coder               ├─ Security Reviewer
+├─ Planner           ├─ Refactorer          ├─ Documenter  
+└─ Estimator         └─ Tester              └─ AIDEV Archiver
+                            ↑
+                    Delegator Agent
+                   (Meta-Orchestrator)
+```
+
+### **Enterprise-Grade Features**
+- **🔒 Secure Sandbox Execution**: All code execution in isolated environments
+- **📊 Quality Gates**: Automated quality enforcement and validation
+- **📝 Comprehensive Audit Trails**: Complete documentation of all development activities
+- **⚡ Performance Optimization**: Intelligent performance analysis and recommendations
 
 ## **Getting Started**
 
@@ -54,7 +88,7 @@ This AI-powered integration assistant will:
 - ✅ **Analyze your repository** structure and technology stack
 - ✅ **Choose the right architecture** (single project vs monorepo patterns)
 - ✅ **Create customized prompts** with your actual project context
-- ✅ **Set up complete workflow** with all 9 development steps
+- ✅ **Set up complete workflow** with all 10 specialized agents and orchestration capabilities
 - ✅ **Generate operational documentation** for your team
 
 ### **Manual Setup**

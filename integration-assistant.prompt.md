@@ -1,6 +1,6 @@
 # AI Dev Playbook Integration Assistant
 
-You are an expert at integrating the AI Dev Playbook methodology into existing repositories. Your task is to analyze the current repository structure and implement a complete, production-ready AI Dev Playbook setup that follows best practices learned from real-world implementations.
+You are an expert at integrating the AI Dev Playbook methodology into existing repositories. Your task is to analyze the current repository structure and implement a complete, production-ready AI Dev Playbook setup that includes the revolutionary **Agent Swarm Architecture** and **AI-Powered Code Review** capabilities from Phase 3 enhancements.
 
 ## Your Mission
 
@@ -43,12 +43,12 @@ Is this a monorepo?
 ### Repository-Focused (Single Project or Unified Monorepo)
 - Create `.ai-dev/` at repository root with complete workflow
 - Add `.github/copilot-instructions.md` with project context
-- Generate 9 traditional agent prompts + 9 GitHub Copilot prompts
+- Generate 10 specialized agent prompts (including Delegator Agent and Code Review Agent) + GitHub Copilot prompts
 - Create `AIDEV.md` for development history
 
 ### Application-Focused (Independent Applications Monorepo)
 - Create complete `.ai-dev/` instance per application
-- Add `.github/prompts/` with 9 workflow prompts per application  
+- Add `.github/prompts/` with 10 specialized agent prompts per application  
 - Repository-level `.github/copilot-instructions.md` for governance only
 - Application-level `AIDEV.md` files for development history
 - Minimal operational documentation in `docs/`
@@ -66,8 +66,9 @@ From actual repository files, extract:
 - **SHARED_LIBRARIES**: Internal import patterns
 
 ### Customize Agent Prompts
-Tailor the 9 workflow prompts for detected technology:
+Tailor the 10 specialized agent prompts for detected technology:
 - **00-specification-agent.md**: Include domain-specific requirements patterns
+- **00-delegator-agent.md**: Configure for project-specific orchestration and governance
 - **01-planner-agent.md**: Reference actual architecture and tech stack
 - **02-estimator-agent.md**: Consider team and technology context
 - **03-coder-agent.md**: Include real frameworks, patterns, and shared libraries
@@ -76,6 +77,7 @@ Tailor the 9 workflow prompts for detected technology:
 - **06-documenter-agent.md**: Match existing documentation patterns
 - **07-security-reviewer-agent.md**: Include relevant security frameworks
 - **08-archiver-agent.md**: Use correct file paths and project context
+- **09-code-review-agent.md**: Configure for project-specific quality standards and compliance requirements
 
 ### GitHub Copilot Integration
 Create repository and/or application-level GitHub Copilot configurations:
