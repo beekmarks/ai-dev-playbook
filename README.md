@@ -11,15 +11,34 @@ This workflow is built on a few key ideas:
 
 | Concept | Implementation | Description |
 | :---- | :---- | :---- |
-| **Developer as Director** | Your role in the VS Code Chat | You are in control. You direct the AI, providing it with context and instructions, and you are the final arbiter of quality. |
-| **Human-in-the-Loop (HITL)** | Approval workflows | Structured patterns for human oversight including approval-based reviews, audit trails, and expert guidance at critical decision points. |
+| **Developer as Director** | Your role in the VS Code Chat | You are in control. You direct the AI, providing it with context and instructions, and you are the final arbiter of quality. In the agentic era, this evolves into **Strategic Direction** - setting clear objectives, constraints, and success criteria through advanced **Defensive Prompting** techniques. |
+| **Human-in-the-Loop (HITL)** | Enhanced approval workflows | Structured patterns for human oversight including Strategic Validation, Human-on-the-Loop supervision, and comprehensive audit trails. Essential for managing autonomous agents safely. |
 | **Spec-Driven Development** | Specifications before code | Create detailed specifications (requirements, design, API contracts) before implementation for better quality and maintainability. |
 | **Specialized Agents** | .ai-dev/prompts/ | A collection of prompt templates, each designed for a specific task (specifications, planning, coding, testing, etc.). You invoke these agents to perform work. |
 | **GitHub Copilot Integration** | .github/ directory | Repository custom instructions and prompt files that provide the same guidance through native GitHub Copilot features. |
 | **Workspace Context** | @workspace command | GitHub Copilot can read files directly from your workspace. You use this to provide context like requirements, existing code, or plans. |
 | **Modular Memory** | .ai-dev/memory/ | A transient "scratchpad." The output of one agent (e.g., a plan) is saved here to be used as the input for the next agent, creating a clean chain of operations. Note the dot prefix: this is a hidden directory separate from ai-dev/prompts/ to ensure generated files are not committed. |
-| **Permanent Log (AIDEV.md)** | **The Project's Memory** | **Why this exists:** While Git history tells you *what* changed line-by-line, AIDEV.md tells you *why*. It's a human-readable ledger of all work completed, capturing the high-level plan and intent behind each feature. This creates an invaluable resource for long-term maintenance and onboarding, as it preserves the design decisions that are often lost over time. |
+| **Permanent Log (AIDEV.md)** | **The Project's Memory & Explanation Log** | **Why this exists:** While Git history tells you *what* changed line-by-line, AIDEV.md tells you *why*. It's a human-readable ledger of all work completed, capturing the high-level plan and intent behind each feature. **Evolution**: Now serves as an automated **Explanation Log** that can be synthesized from structured Git commit history, dramatically reducing manual overhead while improving audit quality. |
 | **Minimal Code Generation** | Enforced in Agent Prompts | **The AI should write as little code as possible.** It should only generate the minimum code necessary to implement the requested feature. This prevents code bloat and keeps commits small, focused, and easy to review. |
+
+## **Multi-Modal Interaction Framework**
+
+The AI Dev Playbook supports three distinct interaction modes, each optimized for different scales of work:
+
+### **🔬 Micro-Workflow (Cursor-Style)**
+- **Use Case**: Quick, in-flow IDE tasks (fixing typos, small refactors, boilerplate generation)
+- **Tools**: Leverages `.github/prompts/` and `copilot-instructions.md` for governance
+- **Goal**: Augment immediate developer actions without disrupting focus
+
+### **⚙️ Meso-Workflow (Enhanced Traditional)**
+- **Use Case**: Discrete, well-defined features (new API endpoints, component implementations)
+- **Process**: Structured Spec → Plan → Code → Test cycle with automated Git commits
+- **Goal**: Balanced structure and agility for day-to-day feature development
+
+### **🎯 Macro-Workflow (Devin-Style)**
+- **Use Case**: Large, goal-oriented projects (resolving complex tickets, system migrations)
+- **Process**: Strategic plan validation → autonomous execution → comprehensive review
+- **Goal**: Leverage autonomous agents for complex tasks while maintaining human control
 
 ## **Getting Started**
 
