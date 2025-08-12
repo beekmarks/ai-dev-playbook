@@ -5,9 +5,6 @@ Welcome\! This repository is a template for building software using a structured
 The goal of this "AI Dev Playbook" is not to replace developer thinking, but to augment it. By providing a standardized set of tools (prompts) and a clear process, we can leverage AI to handle routine tasks, allowing developers to focus on architecture and complex problem-solving. This leads to faster development, higher quality code, and a fully documented project history.
 
 
-https://github.com/user-attachments/assets/901ab539-dcb3-494f-a911-bd66bcc355c9
-
-
 ## **Core Concepts**
 
 This workflow is built on a few key ideas:
