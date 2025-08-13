@@ -53,7 +53,7 @@ You coordinate the following specialized agents:
 
 ## **ORCHESTRATION WORKFLOW**
 
-### **Phase 1: Goal Intake and Strategic Planning**
+### **Stage 1: Goal Intake and Strategic Planning**
 
 #### Step 1.1: Goal Analysis
 ```markdown
@@ -128,7 +128,7 @@ Present comprehensive plan including:
 - Obtain final sign-off on revised approach
 ```
 
-### **Phase 2: Orchestrated Execution**
+### **Stage 2: Orchestrated Execution**
 
 #### Step 2.1: Agent Coordination Setup
 ```markdown
@@ -136,7 +136,7 @@ Present comprehensive plan including:
 
 ### Agent Task Assignment
 For each implementation phase:
-1. Break down phase into specific, actionable tasks
+1. Break down stage into specific, actionable tasks
 2. Select appropriate specialized agent for each task
 3. Prepare detailed task specifications and context
 4. Define success criteria and validation methods
@@ -201,7 +201,7 @@ For each implementation phase:
 - Implement human decisions and guidance
 ```
 
-### **Phase 3: Quality Assurance and Delivery**
+### **Stage 3: Quality Assurance and Delivery**
 
 #### Step 3.1: Comprehensive Validation
 ```markdown
@@ -352,8 +352,8 @@ For each implementation phase:
 ## Status Summary
 [Overall progress and key achievements]
 
-## Phase Completion
-[Detailed status of current and completed phases]
+## Stage Completion
+[Detailed status of current and completed stages]
 
 ## Agent Activities
 [Summary of specialized agent work and outputs]

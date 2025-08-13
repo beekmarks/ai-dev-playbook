@@ -40,7 +40,7 @@ A key part of your role as the "director" is selecting the best foundation model
 
 Before invoking an agent, check the \# RECOMMENDED MODEL comment in the prompt file, and then **manually select the most appropriate model** in the GitHub Copilot Chat interface. This is a critical step for achieving high-quality results.
 
-### Phase 0: Specification Development
+### Step 0: Specification Development
 
 For complex features or production code, start with creating detailed specifications:
 
@@ -53,7 +53,7 @@ For complex features or production code, start with creating detailed specificat
 
 4. **Use Specifications as Living Documentation:** These specifications will guide all subsequent phases and should be updated if requirements or implementation details change.
 
-### Phase 1: Planning & Setup
+### Step 1: Planning & Setup
 
 With specifications in hand (or for simpler features), proceed to planning. A high-quality plan leads to high-quality code.
 
@@ -67,7 +67,7 @@ With specifications in hand (or for simpler features), proceed to planning. A hi
 
 3. **Review and Refine the Plan:** The AI's first plan is a draft, not a final command. Read it carefully. Does it make sense? Did it miss anything? If the plan is flawed, ask the AI to revise it."That's a good start, but you forgot to include a step for adding rate limiting to the new endpoint. Please update the plan in @workspace .ai-dev/memory/TICKET-123-plan.md to include this."
 
-### Phase 2: Estimation
+### Step 2: Estimation
 
 Before diving into implementation, get time and complexity estimates to help with sprint planning and resource allocation.
 
@@ -82,9 +82,9 @@ Before diving into implementation, get time and complexity estimates to help wit
    * Adjust the scope of the feature for the current sprint
    * Allocate additional resources to high-complexity areas
 
-### Phase 3: Execution (Code & Test)
+### Step 3: Execution (Code & Test)
 
-This phase is an iterative loop. You will likely cycle between the Coder and Tester agents multiple times.
+This step is an iterative loop. You will likely cycle between the Coder and Tester agents multiple times.
 
 1. **Code in Small Increments:** Select a **coding-optimized model**. Address one or two steps from your plan at a time. This keeps the context for the AI small and focused, leading to better results.  
 2. **Enforce Minimal Code:** The Coder agent is explicitly instructed to write the minimum code necessary. When you review its output, ensure it has followed this rule. If it adds extra helper functions or logic that wasn't in the plan, ask it to revise and remove the unnecessary code. This keeps your commits clean and focused.  
@@ -93,7 +93,7 @@ This phase is an iterative loop. You will likely cycle between the Coder and Tes
    **Example Prompt:**"Excellent. Now, using @workspace .ai-dev/prompts/04-tester-agent.md, write unit tests for the code you just generated in src/services/itemService.js."  
 4. **Run the Tests:** The AI will generate test code, but it cannot run it for you. Execute the newly created tests locally to confirm they pass and that they fail when you expect them to (e.g., by temporarily breaking the source code).
 
-### Phase 4: Quality & Refinement
+### Step 4: Quality & Refinement
 
 Once the core functionality is built and tested, use the specialized agents to improve its quality.
 
@@ -102,7 +102,7 @@ Once the core functionality is built and tested, use the specialized agents to i
    **Example Prompt:**"Please perform a security review of the new endpoint handler in src/routes/api.js using @workspace .ai-dev/prompts/07-security-reviewer-agent.md."  
 3. **Add Documentation:** Use the Documenter agent with a **reasoning model** to generate clear, human-readable documentation.
 
-### Phase 5: Archival & Completion
+### Step 5: Archival & Completion
 
 This final phase ensures your work becomes a permanent, useful part of the project's history.
 

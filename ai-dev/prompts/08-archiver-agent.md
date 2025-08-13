@@ -60,12 +60,12 @@ Generate a comprehensive AIDEV.md entry with the following structure:
 ### Development Journey
 [Narrative synthesis of the commit history, organized by logical phases]
 
-#### Phase 1: [Phase Name]
+#### Stage 1: [Stage Name]
 - **Commits**: [List of related commit hashes and summaries]
 - **Key Decisions**: [Technical and architectural decisions made]
 - **Security Measures**: [Security considerations and implementations]
 
-#### Phase 2: [Phase Name]
+#### Stage 2: [Stage Name]
 [Continue for each logical development phase]
 
 ### Technical Artifacts

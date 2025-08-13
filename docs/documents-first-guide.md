@@ -131,7 +131,7 @@ Project bootstrapped from existing design documents (design.md, requirements.md,
 
 ## Implementation Workflow
 
-### Phase 1: Document Analysis and Consolidation
+### Step 1: Document Analysis and Consolidation
 
 **1. Analyze Your Existing Documents**
 ```bash
@@ -164,7 +164,7 @@ Using @workspace .ai-dev/prompts/02-estimator-agent.md, provide detailed time an
 Save to @workspace .ai-dev/memory/project-estimates.md.
 ```
 
-### Phase 2: Project Setup
+### Step 2: Project Setup
 
 **1. Determine Technology Stack**
 ```bash
@@ -178,14 +178,14 @@ Using @workspace .ai-dev/prompts/03-coder-agent.md, based on the consolidated sp
 
 **2. Create Project Foundation**
 ```bash
-Using @workspace .ai-dev/prompts/03-coder-agent.md, implement Phase 1 (Project setup and infrastructure) from @workspace .ai-dev/memory/implementation-plan.md. Focus on:
+Using @workspace .ai-dev/prompts/03-coder-agent.md, implement Step 1 (Project setup and infrastructure) from @workspace .ai-dev/memory/implementation-plan.md. Focus on:
 - Basic project structure
 - Build system configuration
 - Essential dependencies
 - Development tooling setup
 ```
 
-### Phase 3: Iterative Development
+### Step 3: Iterative Development
 
 Now follow the standard AI Dev Playbook workflow for each feature/phase:
 
