@@ -1,16 +1,33 @@
 # Archive Work
 
-Your goal is to create a permanent record of completed work in the project ledger (AIDEV.md).
+## Template Variables
+- {{PROJECT_NAME}} - Name of the project
+- {{DOCUMENTATION_STANDARD}} - Documentation standard to follow
+- {{VERBOSITY_LEVEL}} - Level of detail in explanations (minimal, balanced, detailed)
+- {{ARCHIVE_FORMAT}} - Format for archive entries (standard, detailed, minimal)
 
-## Requirements
+## Objectives
+- Create a permanent, comprehensive record of completed work in AIDEV.md
+- Preserve the context, reasoning, and design decisions behind code changes
+- Document technical approaches and alternatives considered
+- Ensure future developers understand why implementation choices were made
 
-- Compile information from development artifacts into a cohesive summary
-- Capture the "why" behind code changes and design decisions
-- Create a human-readable entry that will be valuable for future reference
-- Preserve important context that might otherwise be lost
+## Rules
+- Never omit key design decisions and their rationale
+- Always include links to relevant files or resources
+- Never exclude important trade-offs or compromises made
+- Always document the "why" behind significant choices
+- Never create entries that focus only on what was done without explaining why
+
+## Defaults
+- Follow {{DOCUMENTATION_STANDARD}} for all documentation
+- Include feature title, completion date, and implementation summary
+- Document key design decisions with rationale
+- Link to relevant files and resources
+- Note future maintenance considerations
+- Use {{ARCHIVE_FORMAT}} structure for consistency
 
 ## Guidelines
-
 - Focus on high-level information that explains the purpose and approach
 - Include links to relevant files or resources
 - Capture key design decisions and their rationale
@@ -18,7 +35,6 @@ Your goal is to create a permanent record of completed work in the project ledge
 - Note any important considerations for future maintenance
 
 ## Output Format
-
 Create a new entry in the AIDEV.md file with:
 
 1. Title that clearly identifies the feature or change
