@@ -38,6 +38,7 @@ This will load the instructions from `prompts/plan-feature.prompt.md` into your 
 | `document-code.prompt.md` | Create clear documentation | `06-documenter-agent.md` |
 | `security-review.prompt.md` | Identify security vulnerabilities | `07-security-reviewer-agent.md` |
 | `archive-work.prompt.md` | Record completed work in AIDEV.md | `08-archiver-agent.md` |
+| `compact-context.prompt.md` | Distill and summarize accumulated context | `09-compactor-agent.md` |
 
 ## Template Variables
 

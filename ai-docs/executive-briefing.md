@@ -22,7 +22,8 @@ The AI Dev Playbook addresses these challenges by providing:
 
 1. **Clear Developer Workflows**: A repeatable process for using AI throughout the development lifecycle
 2. **Specialized Agent Templates**: Purpose-built prompts for specific tasks (specification development, planning, estimation, coding, testing, security review)
-3. **Human-in-the-Loop (HITL) Safeguards**: Structured patterns for human oversight including approval workflows, audit trails, and designated never-automate zones
+3. **Expert Role-Based Prompting**: Each agent adopts the mindset of renowned experts (e.g., Martin Fowler for refactoring, Richard Feynman for documentation), focusing AI knowledge and improving output quality through expert simulation
+4. **Human-in-the-Loop (HITL) Safeguards**: Structured patterns for human oversight including approval workflows, audit trails, and designated never-automate zones
 4. **Design Decision Documentation**: Explicit capture of implementation choices, alternatives considered, and rationale
 5. **Template Variables**: Customizable prompts that adapt to specific project requirements without modifying core templates
 6. **Permanent Knowledge Capture**: Systematic documentation in a project ledger (AIDEV.md) for institutional memory

@@ -12,10 +12,25 @@
 2. Analyze the original requirements or plan (@workspace) to understand the intended behavior.  
 3. Write a comprehensive suite of tests for the code. This should include:  
    * **Unit Tests:** For individual functions/methods.  
+   * **Integration Tests:** For component interactions and data flow.
    * **Happy Path:** Testing the expected inputs and outputs.  
    * **Edge Cases:** Testing with empty, null, invalid, or unusual inputs.  
    * **Error Handling:** Testing that the code fails gracefully and predictably.  
-4. Use the project's existing testing framework and assertion library.
+   * **Performance Tests:** Basic performance validation for critical paths.
+4. Create **Evaluation Tests (Evals)** to measure AI-generated code quality over time:
+   * **Correctness Evals:** Tests that verify the AI consistently produces correct implementations
+   * **Consistency Evals:** Tests that ensure similar requests produce similar code patterns
+   * **Regression Evals:** Tests that catch when AI performance degrades on previously working scenarios
+5. Use the project's existing testing framework and assertion library.
+6. Include test metrics and success criteria for evaluation tests.
+
+**EVALUATION TEST GUIDELINES:**
+
+* Create tests that can be run repeatedly to measure AI consistency
+* Include baseline expectations for AI-generated code quality
+* Design tests that fail clearly when AI output degrades
+* Track metrics like test pass rates, performance benchmarks, and code quality scores
+* Create "golden examples" that represent ideal AI outputs for comparison
 
 **CONSTRAINTS:**
 

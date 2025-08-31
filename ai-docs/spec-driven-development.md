@@ -6,10 +6,12 @@ Spec-Driven Development (SDD) is an approach that prioritizes creating detailed 
 
 ## **Core Principles**
 
-1. **Specifications First, Code Second**: Create detailed requirements, design documents, and API contracts before implementation.
-2. **Living Documentation**: Keep specifications and code in sync throughout development.
-3. **Test-Driven Approach**: Generate tests alongside or before code implementation.
-4. **Structured Workflow**: Follow a consistent process from spec to implementation.
+1. **Plans as Primary Assets**: The specifications and implementation plans are your most valuable development artifacts—more valuable than the code itself, which is often rewritten. A flawed plan leads to hundreds of lines of incorrect code; flawed research can lead to thousands.
+2. **Specifications First, Code Second**: Create detailed requirements, design documents, and API contracts before implementation.
+3. **Human-Centered Reviews**: Code reviews should prioritize reviewing the plan (which is shorter and easier to read) over reviewing hundreds of lines of AI-generated code.
+4. **Living Documentation**: Keep specifications and code in sync throughout development.
+5. **Test-Driven Approach**: Generate tests alongside or before code implementation.
+6. **Structured Workflow**: Follow a consistent process from spec to implementation.
 
 ## **Benefits Over "Vibe Coding"**
 
@@ -61,6 +63,45 @@ Update specification documents when implementation details change:
 ```
 Using @workspace .ai-dev/prompts/06-documenter-agent.md, update the design document at @workspace .ai-dev/memory/design.md to reflect the changes made to the authentication flow
 ```
+
+## **Plan-Centric Code Reviews**
+
+### **Why Review Plans Instead of Code**
+
+Traditional code reviews of AI-generated code can be overwhelming and ineffective:
+- **Volume Problem**: AI can generate hundreds of lines of code in minutes
+- **Context Loss**: Reviewers often lack the context for why specific implementation choices were made  
+- **Surface-Level Review**: Reviewers focus on syntax and style rather than architectural decisions
+
+### **Plan Review Process**
+
+1. **Review the Specification**: Start with the spec document to understand the requirements and design decisions
+2. **Examine the Plan**: Review the implementation plan in `AIDEV.md` or `.ai-dev/memory/` files
+3. **Validate Architecture**: Ensure the planned approach aligns with system architecture
+4. **Check Completeness**: Verify all requirements are addressed in the plan
+5. **Light Code Review**: Do a high-level code review focused on:
+   - Plan adherence (does the code match the plan?)
+   - Integration points
+   - Security considerations
+   - Error handling patterns
+
+### **Review Checklist**
+
+**Plan Quality:**
+- [ ] Does the plan clearly address all requirements?
+- [ ] Are architectural decisions documented with rationale?
+- [ ] Are dependencies and integration points identified?
+- [ ] Does the plan include testing strategy?
+
+**Implementation Alignment:**
+- [ ] Does the code follow the approved plan?
+- [ ] Are deviations from the plan documented and justified?
+- [ ] Do tests match the planned testing strategy?
+
+**AIDEV.md Quality:**
+- [ ] Is the feature properly documented in the project ledger?
+- [ ] Are design decisions and trade-offs captured?
+- [ ] Will future developers understand the "why" behind this implementation?
 
 ## **Integration with AI Dev Playbook Workflow**
 
