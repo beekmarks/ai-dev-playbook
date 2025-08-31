@@ -82,16 +82,48 @@ Before diving into implementation, get time and complexity estimates to help wit
    * Adjust the scope of the feature for the current sprint
    * Allocate additional resources to high-complexity areas
 
-### Phase 3: Execution (Code & Test)
+### Phase 3: Iterative Execution (Code, Test, Refine)
 
-This phase is an iterative loop. You will likely cycle between the Coder and Tester agents multiple times.
+This phase is an **iterative feedback loop**. You will cycle between the Coder, Tester, and potentially Compactor agents multiple times until you achieve the desired quality and functionality.
 
-1. **Code in Small Increments:** Select a **coding-optimized model**. Address one or two steps from your plan at a time. This keeps the context for the AI small and focused, leading to better results.  
-2. **Enforce Minimal Code:** The Coder agent is explicitly instructed to write the minimum code necessary. When you review its output, ensure it has followed this rule. If it adds extra helper functions or logic that wasn't in the plan, ask it to revise and remove the unnecessary code. This keeps your commits clean and focused.  
-   **Example Prompt:**"Using @workspace .ai-dev/prompts/03-coder-agent.md, please implement Step 1 ('Create Service File') from the plan in @workspace .ai-dev/memory/TICKET-123-plan.md."  
-3. **Test Immediately:** Once a logical unit of code is complete, immediately ask the Tester agent (using a coding model) to write tests for it. This practice, known as Test-Driven Development (TDD), ensures quality is built-in, not bolted on.  
-   **Example Prompt:**"Excellent. Now, using @workspace .ai-dev/prompts/04-tester-agent.md, write unit tests for the code you just generated in src/services/itemService.js."  
-4. **Run the Tests:** The AI will generate test code, but it cannot run it for you. Execute the newly created tests locally to confirm they pass and that they fail when you expect them to (e.g., by temporarily breaking the source code).
+#### The Iteration Cycle
+
+```
+Coder Agent → Tester Agent → Run Tests → Evaluate Results
+     ↑                                           ↓
+     ←─────── Refine & Adjust ←─────────────────
+```
+
+#### Detailed Iteration Process
+
+1. **Code in Small Increments:** Select a **coding-optimized model**. Address one or two steps from your plan at a time. This keeps the context for the AI small and focused, leading to better results.
+
+2. **Enforce Minimal Code:** The Coder agent is explicitly instructed to write the minimum code necessary. When you review its output, ensure it has followed this rule. If it adds extra helper functions or logic that wasn't in the plan, ask it to revise and remove the unnecessary code.
+   
+   **Example Prompt:** "Using @workspace .ai-dev/prompts/03-coder-agent.md, please implement Step 1 ('Create Service File') from the plan in @workspace .ai-dev/memory/TICKET-123-plan.md."
+
+3. **Test Immediately:** Once a logical unit of code is complete, immediately ask the Tester agent to write comprehensive tests including evaluation tests.
+   
+   **Example Prompt:** "Using @workspace .ai-dev/prompts/04-tester-agent.md, write comprehensive tests including evaluation tests for the code in src/services/itemService.js. Include tests that measure AI consistency and correctness."
+
+4. **Run and Evaluate Tests:** Execute the tests locally and analyze the results:
+   * **Unit Tests**: Do they pass? Do they cover edge cases?
+   * **Evaluation Tests**: How does the AI-generated code perform against quality benchmarks?
+   * **Performance Tests**: Are there any performance regressions?
+
+5. **Refinement Loop:** If tests fail or quality is below expectations:
+   * **Analyze Failures**: Understand what went wrong
+   * **Refine Prompts**: Adjust your instructions to the AI based on learnings
+   * **Context Compaction**: If conversation gets long, use the Compactor agent to distill context
+   * **Iterate**: Return to step 2 with improved prompts and context
+
+6. **Document Learnings**: Keep track of what prompting strategies work best for your codebase and team.
+
+#### Managing Context During Iteration
+
+* **Use Compactor Agent**: When conversations become unwieldy, compact context to maintain focus
+* **Save Intermediate Results**: Store working versions in `.ai-dev/memory/` for rollback if needed
+* **Track Evaluation Metrics**: Monitor AI performance trends across iterations
 
 ### Phase 4: Quality & Refinement
 

@@ -116,6 +116,67 @@ Many teams will benefit from using both approaches in parallel:
 
 Both approaches complement each other and reinforce the same development principles and standards.
 
+## **Choosing Your First Tasks**
+
+When your team first adopts the AI Dev Playbook, we recommend starting with simpler, well-defined tasks to build confidence in the workflow and familiarize developers with the agent interactions. Good candidates for initial adoption include:
+
+### **Bug Fixes**
+- **Why they're ideal**: Issues with clear reproduction steps and well-defined expected outcomes
+- **Recommended agents**: Planner → Coder → Tester → Archiver
+- **Benefits**: Low risk, immediate value, clear success criteria
+- **Example**: "Fix the authentication timeout issue described in ticket #123"
+
+### **Improving Test Coverage**
+- **Why they're ideal**: Existing code provides clear specifications, outcomes are easily measurable
+- **Recommended agents**: Tester Agent (with evaluation tests for AI consistency measurement)
+- **Benefits**: Improves codebase quality while learning agent capabilities
+- **Example**: "Add comprehensive unit tests to the user service module"
+
+### **Documentation Updates**
+- **Why they're ideal**: Non-destructive changes that improve team knowledge sharing
+- **Recommended agents**: Documenter Agent (try Richard Feynman persona for complex explanations)
+- **Benefits**: Immediate value, safe to experiment with persona-based prompting
+- **Example**: "Add comprehensive API documentation to the payment endpoints"
+
+### **Simple Refactoring**
+- **Why they're ideal**: Contained scope with measurable quality improvements
+- **Recommended agents**: Refactorer Agent (try Martin Fowler persona for systematic approach)
+- **Benefits**: Demonstrates AI capabilities while improving code maintainability
+- **Example**: "Refactor the data validation logic in the user registration component"
+
+### **Code Review and Security Audit**
+- **Why they're ideal**: Leverages AI's pattern recognition without requiring perfect outputs
+- **Recommended agents**: Security Reviewer (try penetration tester persona for creative vulnerability discovery)
+- **Benefits**: Identifies potential issues while team learns to validate AI findings
+- **Example**: "Security review of the new file upload functionality"
+
+### **Gradual Complexity Progression**
+
+Start with these progression stages:
+
+1. **Week 1-2**: Single-agent tasks (Documentation, Testing, Simple Refactoring)
+2. **Week 3-4**: Two-agent workflows (Plan → Code, Code → Test)
+3. **Week 5-6**: Multi-agent workflows with specifications (Spec → Plan → Code → Test)
+4. **Week 7+**: Full workflow with context engineering and advanced persona techniques
+
+### **Success Metrics for First Tasks**
+
+Track these indicators to measure successful adoption:
+
+- **Agent Effectiveness**: How often do AI-generated solutions require minimal modification?
+- **Team Confidence**: Are developers comfortable directing AI agents?
+- **Quality Improvements**: Are outputs meeting or exceeding team standards?
+- **Process Adherence**: Is the team consistently following the workflow steps?
+- **Knowledge Capture**: Is the AIDEV.md ledger being properly maintained?
+
+### **Common First-Time Pitfalls to Avoid**
+
+- **Starting too complex**: Avoid starting with greenfield features or major architectural changes
+- **Skipping documentation**: Don't skip updating AIDEV.md even for simple tasks
+- **Ignoring context engineering**: Take time to provide proper context even for simple agents
+- **Generic prompting**: Experiment with specific personas rather than generic role descriptions
+- **Solo adoption**: Have multiple team members adopt simultaneously for knowledge sharing
+
 ## **Implementing Human-in-the-Loop (HITL) Safeguards**
 
 Regardless of which integration approach you choose, implementing structured HITL safeguards is essential for successful AI-assisted development:

@@ -15,11 +15,15 @@ This workflow is built on a few key ideas:
 | **Human-in-the-Loop (HITL)** | Approval workflows | Structured patterns for human oversight including approval-based reviews, audit trails, and expert guidance at critical decision points. |
 | **Spec-Driven Development** | Specifications before code | Create detailed specifications (requirements, design, API contracts) before implementation for better quality and maintainability. |
 | **Specialized Agents** | .ai-dev/prompts/ | A collection of prompt templates, each designed for a specific task (specifications, planning, coding, testing, etc.). You invoke these agents to perform work. |
+| **Role-Based Prompting** | Expert personas in each agent | By assigning specific roles (e.g., "Martin Fowler for refactoring," "Richard Feynman for documentation"), we focus the AI's vast knowledge and trigger deep expert associations, just like telling a human to "think like a security expert." This provides more accurate, expert-level responses. |
 | **GitHub Copilot Integration** | .github/ directory | Repository custom instructions and prompt files that provide the same guidance through native GitHub Copilot features. |
 | **Workspace Context** | @workspace command | GitHub Copilot can read files directly from your workspace. You use this to provide context like requirements, existing code, or plans. |
 | **Modular Memory** | .ai-dev/memory/ | A transient "scratchpad." The output of one agent (e.g., a plan) is saved here to be used as the input for the next agent, creating a clean chain of operations. Note the dot prefix: this is a hidden directory separate from ai-dev/prompts/ to ensure generated files are not committed. |
+| **Context Engineering** | Gather and Glean Strategy | Strategic approach to information management: systematically gather all relevant context, then filter and distill it for maximum AI effectiveness while managing context window limits. |
 | **Permanent Log (AIDEV.md)** | **The Project's Memory** | **Why this exists:** While Git history tells you *what* changed line-by-line, AIDEV.md tells you *why*. It's a human-readable ledger of all work completed, capturing the high-level plan and intent behind each feature. This creates an invaluable resource for long-term maintenance and onboarding, as it preserves the design decisions that are often lost over time. |
+| **Plans as Primary Assets** | Spec-Driven Development | The specifications and implementation plans are more valuable than the code itself. A flawed plan leads to hundreds of lines of incorrect code; flawed research can lead to thousands. Code reviews focus on plan quality rather than line-by-line code inspection. |
 | **Minimal Code Generation** | Enforced in Agent Prompts | **The AI should write as little code as possible.** It should only generate the minimum code necessary to implement the requested feature. This prevents code bloat and keeps commits small, focused, and easy to review. |
+| **Iterative Refinement** | Continuous Feedback Loops | Built-in iteration cycles with evaluation tests (evals) to measure AI consistency and quality over time, enabling continuous improvement of both prompts and outcomes. |
 
 ## **Getting Started**
 
@@ -35,7 +39,8 @@ This AI-powered integration assistant will:
 - ✅ **Analyze your repository** structure and technology stack
 - ✅ **Choose the right architecture** (single project vs monorepo patterns)
 - ✅ **Create customized prompts** with your actual project context
-- ✅ **Set up complete workflow** with all 9 development steps
+- ✅ **Set up complete workflow** with all 10 development steps (including new Context Compactor)
+- ✅ **Implement advanced context engineering** with gather-and-glean strategies
 - ✅ **Generate operational documentation** for your team
 
 ### **Manual Setup**
@@ -47,7 +52,9 @@ For step-by-step setup or to understand the methodology:
 3. **Single Project**: Clone this repository as a template  
 4. **Monorepo**: See [docs/monorepo-integration-guide.md](docs/monorepo-integration-guide.md) for architecture decisions
 5. **Existing Project**: Review [ai-docs/adoption-guide.md](ai-docs/adoption-guide.md) for integration guidance
-6. **Daily Workflow**: Study [ai-docs/ai-dev-playbook-workflow.md](ai-docs/ai-dev-playbook-workflow.md) for process details
+6. **Context Engineering**: Learn advanced techniques in [ai-docs/context-engineering-guide.md](ai-docs/context-engineering-guide.md)
+7. **Advanced AI Techniques**: Explore persona-based prompting in [ai-docs/advanced-ai-techniques.md](ai-docs/advanced-ai-techniques.md)
+8. **Daily Workflow**: Study [ai-docs/ai-dev-playbook-workflow.md](ai-docs/ai-dev-playbook-workflow.md) for process details
 
 ### **Repository Types Supported**
 

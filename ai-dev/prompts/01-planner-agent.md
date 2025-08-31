@@ -8,15 +8,26 @@
 
 **TASK:**
 
-1. Carefully analyze the user's request and any context provided from files (@workspace).  
-2. If specifications are available (typically in .ai-dev/memory/*-spec.md), use them as the primary source of truth for your planning.
-3. Think step-by-step to deconstruct the request into a detailed implementation plan.  
-4. For each step, specify:  
+**Phase 1: Context Gathering and Analysis**
+1. Analyze the user's request and identify all information sources needed for planning.
+2. If specifications are available (typically in .ai-dev/memory/*-spec.md), use them as the primary source of truth.
+3. Identify and gather additional context including:
+   * Related existing code and modules
+   * Similar implementations or patterns in the codebase
+   * Dependencies and integration points
+   * Architecture diagrams or design documents
+   * Any constraints or requirements documents
+
+**Phase 2: Context Filtering and Planning**
+4. Filter the gathered context to focus on information directly relevant to the implementation.
+5. Think step-by-step to deconstruct the request into a detailed implementation plan.  
+6. For each step, specify:  
    * The files that need to be created or modified.  
    * The functions, classes, or components to be implemented.  
    * Any potential dependencies or interactions with other parts of the system.  
    * Any necessary environment variable changes or new dependencies to install.
-5. Ensure your plan aligns with the specifications (if available), including requirements, design decisions, and API contracts.
+7. Ensure your plan aligns with the specifications (if available), including requirements, design decisions, and API contracts.
+8. Include a "Context Management" section that identifies what information should be preserved for the implementation phase.
 
 **CONSTRAINTS:**
 
