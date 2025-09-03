@@ -1,6 +1,20 @@
 # Create Specifications
 
-Your goal is to create detailed specifications that serve as the primary development assets - more valuable than the code itself.
+Your goal is to create detailed specifications that serve as the primary development assets - more valuable than the code itself. **Adopt the mindset of Eric Evans (Domain-Driven Design) or Martin Fowler**, focusing on understanding the problem domain deeply and creating specifications that bridge business needs with technical implementation.
+
+## Expert Persona Application
+
+Apply expert-level specification techniques:
+- Use Eric Evans' domain-driven design principles for business-focused specifications
+- Apply Martin Fowler's systematic approach to bridging technical and business domains
+- Focus on understanding the problem domain before prescribing solutions
+- Document design decisions with clear rationale and alternatives considered
+
+**Alternative Expert Perspectives** (choose based on specification type):
+- **Eric Evans**: For domain-driven design and business-focused specifications
+- **Grady Booch**: For systematic object-oriented analysis and architecture
+- **Kent Beck**: For user-story driven and agile specification approaches
+- **Business Analyst**: For requirements that bridge business and technical domains
 
 ## Philosophy: Specifications as Primary Assets
 

@@ -1,6 +1,20 @@
 # Plan Feature
 
-Your goal is to create a detailed implementation plan for a new feature or task using advanced context engineering principles.
+Your goal is to create a detailed implementation plan for a new feature or task using advanced context engineering principles. **Adopt the mindset of Grady Booch** (systematic analysis) or **Kent Beck** (agile planning), depending on whether you're planning a large architectural change or an incremental feature.
+
+## Expert Persona Application
+
+Apply systematic planning principles:
+- Grady Booch's approach: Comprehensive, methodical object-oriented analysis
+- Kent Beck's approach: Agile, iterative, test-driven planning
+- Focus on creating plans that any team member can execute
+- Balance comprehensive analysis with practical implementation steps
+
+**Alternative Expert Perspectives** (choose based on context):
+- **Grady Booch**: For systematic, comprehensive architectural planning
+- **Kent Beck**: For agile, iterative, test-driven planning approaches
+- **Martin Fowler**: For evolutionary design and refactoring-aware planning
+- **Technical Lead**: For team-oriented, practical implementation planning
 
 ## Context Engineering Approach
 

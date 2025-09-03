@@ -34,7 +34,7 @@ This will load the instructions from `prompts/plan-feature.prompt.md` into your 
 | `estimate-work.prompt.md` | Provide time and complexity estimates | `02-estimator-agent.md` |
 | `implement-code.prompt.md` | Write clean, efficient code | `03-coder-agent.md` |
 | `write-tests.prompt.md` | Create comprehensive tests | `04-tester-agent.md` |
-| `refactor-code.prompt.md` | Improve existing code | `05-refactorer-agent.md` |
+| `refactor-code.prompt.md` | Improve existing code | `05-refactor-agent.md` |
 | `document-code.prompt.md` | Create clear documentation | `06-documenter-agent.md` |
 | `security-review.prompt.md` | Identify security vulnerabilities | `07-security-reviewer-agent.md` |
 | `archive-work.prompt.md` | Record completed work in AIDEV.md | `08-archiver-agent.md` |

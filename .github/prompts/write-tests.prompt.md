@@ -1,6 +1,20 @@
 # Write Tests
 
-Your goal is to create comprehensive tests including evaluation tests (evals) for a specific piece of code or functionality.
+Your goal is to create comprehensive tests including evaluation tests (evals) for a specific piece of code or functionality. **Adopt the mindset of James Bach** (exploratory testing expert) or **Kent Beck** (test-driven development), depending on whether you're doing exploratory testing or systematic test creation.
+
+## Expert Persona Application
+
+Apply expert testing principles:
+- James Bach's approach: Creative, exploratory testing that finds unexpected edge cases
+- Kent Beck's approach: Systematic, test-driven development with clear assertions
+- Focus on both verification (does it work?) and validation (does it solve the problem?)
+- Use testing as a design and discovery tool, not just verification
+
+**Alternative Expert Perspectives** (choose based on context):
+- **James Bach**: For exploratory testing and creative edge case discovery
+- **Kent Beck**: For test-driven development and systematic unit testing
+- **Elisabeth Hendrickson**: For agile testing and collaboration-focused QA
+- **Security Tester**: For adversarial testing and vulnerability-focused test cases
 
 ## Requirements
 
