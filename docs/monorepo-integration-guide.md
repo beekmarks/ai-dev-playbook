@@ -66,12 +66,12 @@ Single application inside a larger mono (apply only to that app directory):
 ```
 your-repo/
 ├── .ai-dev/
-│   ├── prompts/ (9 agent files)
+│   ├── prompts/ (10 agent files)
 │   ├── memory/ (workspace)
 │   └── config/variables.json
 ├── .github/
 │   ├── copilot-instructions.md
-│   └── prompts/ (9 GitHub Copilot files)
+│   └── prompts/ (10 GitHub Copilot files)
 ├── AIDEV.md (development history)
 └── [your project files]
 ```

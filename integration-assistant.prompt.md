@@ -8,8 +8,10 @@ Analyze this repository and implement a complete AI Dev Playbook integration tha
 - ✅ **Follows the right architecture** for the project type
 - ✅ **Uses real project context** (no placeholder values)
 - ✅ **Creates production-ready files** (not setup documentation)
+- ✅ **Implements advanced AI collaboration techniques** including expert personas and context engineering
+- ✅ **Includes iterative refinement capabilities** with evaluation testing
 - ✅ **Avoids common pitfalls** from manual integration experiences
-- ✅ **Provides clear guidance** for team adoption
+- ✅ **Provides clear guidance** for team adoption and persona-based prompting
 
 ## Phase 1: Repository Analysis
 
@@ -41,17 +43,18 @@ Is this a monorepo?
 ## Phase 2: Implementation Strategy
 
 ### Repository-Focused (Single Project or Unified Monorepo)
-- Create `.ai-dev/` at repository root with complete workflow
-- Add `.github/copilot-instructions.md` with project context
-- Generate 9 traditional agent prompts + 9 GitHub Copilot prompts
-- Create `AIDEV.md` for development history
+- Create `.ai-dev/` at repository root with complete workflow (10 agents including Compactor)
+- Add `.github/copilot-instructions.md` with project context and expert persona guidance
+- Generate 10 traditional agent prompts + 10 GitHub Copilot prompts with expert personas
+- Create `AIDEV.md` for development history with plan-centric philosophy
+- Include advanced context engineering and evaluation testing capabilities
 
 ### Application-Focused (Independent Applications Monorepo)
-- Create complete `.ai-dev/` instance per application
-- Add `.github/prompts/` with 9 workflow prompts per application  
-- Repository-level `.github/copilot-instructions.md` for governance only
+- Create complete `.ai-dev/` instance per application (10 agents each)
+- Add `.github/prompts/` with 10 workflow prompts per application including expert personas
+- Repository-level `.github/copilot-instructions.md` for governance and advanced techniques
 - Application-level `AIDEV.md` files for development history
-- Minimal operational documentation in `docs/`
+- Minimal operational documentation in `docs/` with persona-based prompting guidance
 
 ## Phase 3: File Creation with Real Context
 
@@ -64,54 +67,66 @@ From actual repository files, extract:
 - **CLOUD_PROVIDER**: AWS/Azure/GCP from SDK dependencies
 - **TESTING_FRAMEWORK**: Jest/Pytest/etc from configurations
 - **SHARED_LIBRARIES**: Internal import patterns
+- **EXPERT_DOMAINS**: Relevant expert personas for the technology stack (e.g., Martin Fowler for enterprise apps, John Carmack for performance-critical code)
 
-### Customize Agent Prompts
-Tailor the 9 workflow prompts for detected technology:
-- **00-specification-agent.md**: Include domain-specific requirements patterns
-- **01-planner-agent.md**: Reference actual architecture and tech stack
-- **02-estimator-agent.md**: Consider team and technology context
-- **03-coder-agent.md**: Include real frameworks, patterns, and shared libraries
-- **04-tester-agent.md**: Use actual testing frameworks and patterns
-- **05-refactor-agent.md**: Reference existing code quality standards
-- **06-documenter-agent.md**: Match existing documentation patterns
-- **07-security-reviewer-agent.md**: Include relevant security frameworks
-- **08-archiver-agent.md**: Use correct file paths and project context
+### Customize Agent Prompts with Expert Personas
+Tailor the 10 workflow prompts for detected technology and include appropriate expert personas:
+- **00-specification-agent.md**: Eric Evans/Martin Fowler personas for domain-driven specifications
+- **01-planner-agent.md**: Grady Booch/Kent Beck personas with context engineering phases
+- **02-estimator-agent.md**: Steve McConnell persona for evidence-based estimation
+- **03-coder-agent.md**: John Carmack/Kent Beck personas based on performance vs. simplicity needs
+- **04-tester-agent.md**: James Bach/Kent Beck personas with evaluation tests (evals)
+- **05-refactor-agent.md**: Martin Fowler persona for systematic refactoring
+- **06-documenter-agent.md**: Richard Feynman persona for clear explanations
+- **07-security-reviewer-agent.md**: Penetration tester persona for vulnerability discovery
+- **08-archiver-agent.md**: Enhanced with plan-centric philosophy and context engineering notes
+- **09-compactor-agent.md**: Advanced context management and conversation distillation
 
 ### GitHub Copilot Integration
 Create repository and/or application-level GitHub Copilot configurations:
-- **copilot-instructions.md**: Real project context and development guidelines
-- **9 prompt files**: Quick workflow alternatives to traditional agents
+- **copilot-instructions.md**: Real project context, development guidelines, and expert persona guidance
+- **10 prompt files**: Quick workflow alternatives to traditional agents with expert personas
+- **Advanced techniques documentation**: References to context engineering and persona-based prompting
 - **Consistent naming**: Use detected project patterns
 
 ## Phase 4: Quality Assurance
 
 ### Validation Checklist
-- ✅ **Complete Coverage**: 9 workflow prompts in each development location
+- ✅ **Complete Coverage**: 10 workflow prompts in each development location (including Compactor agent)
+- ✅ **Expert Personas**: All agents include appropriate expert personas for the technology stack
+- ✅ **Context Engineering**: Planner and other agents include gather-and-glean strategies
+- ✅ **Evaluation Testing**: Tester agent includes evals for measuring AI consistency
+- ✅ **Plan-Centric Philosophy**: Archive agent emphasizes plans as primary assets
 - ✅ **Accurate Paths**: All file references use correct repository structure
 - ✅ **Real Context**: No placeholder values ({{PROJECT_NAME}} etc.)
 - ✅ **Technology Alignment**: Prompts match detected tech stack
 - ✅ **Conflict-Free**: No naming conflicts with existing files
 - ✅ **Architecture Clarity**: Clear separation of concerns
+- ✅ **Advanced Techniques**: Context compaction and persona selection guidance included
 
 ### Documentation Standards
 Create only **operational documentation** (permanent value):
-- **Quick Start Guide**: How to use AI Dev Playbook in this repository
-- **Example Workflow**: Real demonstration with actual application paths
+- **Quick Start Guide**: How to use AI Dev Playbook in this repository with expert persona capabilities
+- **Example Workflow**: Real demonstration with actual application paths showing advanced AI techniques
 - **No Setup Documentation**: Avoid temporary implementation guides
+- **Context Engineering Examples**: Show how to use gather-and-glean strategies effectively
+- **Expert Persona Reference**: Guide for selecting and working with appropriate domain experts
 
 ## Phase 5: Team Onboarding
 
 ### Clear Guidance
 Provide specific instructions for this repository:
 - **Where to work**: Exact commands for navigating to development locations
-- **How to start**: Real examples using actual application/project names
-- **Workflow options**: Both traditional and GitHub Copilot approaches
-- **Human-in-the-loop**: Project-specific review requirements
+- **How to start**: Real examples using actual application/project names with expert personas
+- **Workflow options**: Both traditional and GitHub Copilot approaches with context engineering
+- **Human-in-the-loop**: Project-specific review requirements and evaluation testing
+- **Advanced Techniques**: Guidance on persona selection and context management
 
 ### Next Steps
-- **Immediate actions**: What the team should do first
-- **Validation**: How to verify the setup is working
-- **Support resources**: Where to get help and additional information
+- **Immediate actions**: What the team should do first with expert persona selection
+- **Validation**: How to verify the setup is working including evaluation testing
+- **Support resources**: Where to get help and additional information about advanced AI techniques
+- **Continuous improvement**: How to refine prompts and personas based on project evolution
 
 ## Implementation Requirements
 
@@ -139,27 +154,34 @@ Provide specific instructions for this repository:
 - ❌ Mixing repository-focused and application-focused approaches
 - ❌ Creating files with generic names that don't indicate AI Dev Playbook purpose
 - ❌ Copying generic AI Dev Playbook documentation into implementation repos
+- ❌ Ignoring expert persona selection appropriate for the technology stack
+- ❌ Missing context engineering strategies for complex projects
+- ❌ Excluding evaluation testing capabilities from the implementation
 
 ### Quality Standards
 - All template variables must be replaced with actual values
 - All file paths must be accurate for this specific repository
 - Architecture must be clean with clear separation of concerns
-- Documentation must focus on ongoing operational use
-- Integration must be immediately usable by the development team
+- Documentation must focus on ongoing operational use with advanced AI techniques
+- Integration must be immediately usable by the development team with expert personas
+- Evaluation testing capabilities must be included for quality measurement
+- Context engineering patterns must be integrated for scalable AI collaboration
 
 ## Usage Example
 
 ```
-@workspace Using the AI Dev Playbook Integration Assistant, please analyze this repository and implement a complete AI Dev Playbook setup. Focus on creating a production-ready integration that the team can immediately use for development.
+@workspace Using the AI Dev Playbook Integration Assistant, please analyze this repository and implement a complete AI Dev Playbook setup. Focus on creating a production-ready integration with expert personas and advanced AI collaboration techniques that the team can immediately use for development.
 ```
 
 ## Success Criteria
 
 Your integration is successful when:
-1. **Team can immediately start using AI Dev Playbook** without additional setup
-2. **Architecture is clear and appropriate** for the project type
-3. **All prompts are customized** with real project context
-4. **Documentation is minimal and operational** (no setup overhead)
+1. **Team can immediately start using AI Dev Playbook** with expert personas without additional setup
+2. **Architecture is clear and appropriate** for the project type with 10 agents including Compactor
+3. **All prompts are customized** with real project context and appropriate expert personas
+4. **Documentation is minimal and operational** with advanced AI collaboration techniques (no setup overhead)
+5. **Context engineering is integrated** for effective information management at scale
+6. **Evaluation testing is included** for measuring AI consistency and quality over time
 5. **Quality is production-ready** (no placeholders or temporary content)
 
 Begin your analysis and implementation now. Start by examining the repository structure with `@workspace` to understand what you're working with.

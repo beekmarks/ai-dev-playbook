@@ -24,5 +24,6 @@ This initial entry documents the setup of the AI Dev Playbook starter repository
    * 06-documenter-agent.md  
    * 07-security-reviewer-agent.md  
    * 08-archiver-agent.md  
+   * 09-compactor-agent.md  
 4. Create this AIDEV.md file with a sample entry documenting its own creation.  
 5. Add a README.md and detailed guides in the docs/ directory to explain the project and workflow.

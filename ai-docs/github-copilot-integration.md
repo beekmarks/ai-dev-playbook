@@ -51,6 +51,7 @@ The AI Dev Playbook includes the following prompt files:
 | `security-review.prompt.md` | Identify security vulnerabilities |
 | `document-code.prompt.md` | Create clear documentation |
 | `archive-work.prompt.md` | Record completed work in AIDEV.md |
+| `compact-context.prompt.md` | Distill large context into focused summaries |
 
 ## When to Use Each Approach
 
