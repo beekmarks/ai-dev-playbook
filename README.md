@@ -15,6 +15,8 @@ This workflow is built on a few key ideas:
 | **Developer as Director** | Your role in the VS Code Chat | You are in control. You direct the AI, providing it with context and instructions, and you are the final arbiter of quality. |
 | **Human-in-the-Loop (HITL)** | Approval workflows | Structured patterns for human oversight including approval-based reviews, audit trails, and expert guidance at critical decision points. |
 | **Spec-Driven Development** | Specifications before code | Create detailed specifications (requirements, design, API contracts) before implementation for better quality and maintainability. |
+| **External Tool Integration** | Kiro, Spec Kit support | The AI Dev Playbook seamlessly integrates with existing specification tools like Amazon's Kiro and GitHub's Spec Kit, allowing teams to leverage their existing planning workflows. |
+| **Specification Sources** | Multiple input formats | Accept specifications from various sources: manual creation, Kiro design documents, Spec Kit artifacts, or existing documentation, providing flexibility for different team workflows. |
 | **Specialized Agents** | .ai-dev/prompts/ | A collection of prompt templates, each designed for a specific task (specifications, planning, coding, testing, etc.). You invoke these agents to perform work. |
 | **Role-Based Prompting** | Expert personas in each agent | By assigning specific roles (e.g., "Martin Fowler for refactoring," "Richard Feynman for documentation"), we focus the AI's vast knowledge and trigger deep expert associations, just like telling a human to "think like a security expert." This provides more accurate, expert-level responses. |
 | **GitHub Copilot Integration** | .github/ directory | Repository custom instructions and prompt files that provide the same guidance through native GitHub Copilot features. |
@@ -44,12 +46,25 @@ This AI-powered integration assistant will:
 - ✅ **Implement advanced context engineering** with gather-and-glean strategies
 - ✅ **Generate operational documentation** for your team
 
+### **Starting with Existing Specifications**
+
+If you already have specifications from tools like Kiro or Spec Kit:
+
+```
+@workspace Using the AI Dev Playbook Integration Assistant at integration-assistant.prompt.md, please analyze this repository containing [Kiro/Spec Kit] artifacts and implement a complete AI Dev Playbook setup.
+```
+
+The Integration Assistant automatically detects and integrates:
+- **Kiro Artifacts**: `design.md`, `requirements.md`, `tasks.md` files
+- **Spec Kit Artifacts**: `specs/[###-feature-name]/` directories with comprehensive planning documents
+- **Generic Documentation**: Any existing `.md` files containing specifications or requirements
+
 ### **Manual Setup**
 
 For step-by-step setup or to understand the methodology:
 
 1. **New Project**: Follow [docs/greenfield-project-guide.md](docs/greenfield-project-guide.md) for comprehensive new project setup
-2. **From Design Documents**: Use [docs/documents-first-guide.md](docs/documents-first-guide.md) when starting with existing design.md, requirements.md, tasks.md files
+2. **From Design Documents**: Use [docs/documents-first-guide.md](docs/documents-first-guide.md) when starting with existing design.md, requirements.md, tasks.md files, Kiro artifacts, or Spec Kit specifications
 3. **Single Project**: Clone this repository as a template  
 4. **Monorepo**: See [docs/monorepo-integration-guide.md](docs/monorepo-integration-guide.md) for architecture decisions
 5. **Existing Project**: Review [ai-docs/adoption-guide.md](ai-docs/adoption-guide.md) for integration guidance
