@@ -83,6 +83,53 @@ Integrating the AI Dev Playbook into a mature codebase requires a simple "drop-i
 
 5. **Start with New Work:** From this point forward, your team follows the AI Dev Playbook workflow for all new development. The framework is now a part of your development process, and the AIDEV.md ledger will grow over time, increasing the project's maintainability.
 
+## **Use Case 3: Teams Already Using External Specification Tools**
+
+If your team already uses tools like Amazon's Kiro or GitHub's Spec Kit for specification generation, the AI Dev Playbook can seamlessly integrate with your existing workflow.
+
+### **For Teams Using Kiro**
+
+**Integration Strategy:**
+1. **Continue Using Kiro:** Keep using Kiro for initial design document generation (`design.md`, `requirements.md`, `tasks.md`)
+2. **Add AI Dev Playbook:** Copy the AI Dev Playbook assets (`.ai-dev/`, `.github/`, `AIDEV.md`) to your repository
+3. **Import Artifacts:** Move Kiro-generated documents to `.ai-dev/memory/` for AI Dev Playbook processing
+4. **Follow Consolidation Workflow:** Use the Specification Agent to consolidate Kiro documents into unified technical specifications
+
+**Example Workflow:**
+```bash
+# After generating Kiro artifacts
+mv design.md .ai-dev/memory/
+mv requirements.md .ai-dev/memory/
+mv tasks.md .ai-dev/memory/
+
+# Use AI Dev Playbook to consolidate and implement
+Using @workspace .ai-dev/prompts/00-specification-agent.md, analyze and consolidate the Kiro documents in @workspace .ai-dev/memory/ into a unified technical specification.
+```
+
+### **For Teams Using Spec Kit**
+
+**Integration Strategy:**
+1. **Continue Using Spec Kit:** Keep using Spec Kit for constitution-based planning (`/specify`, `/plan`, `/tasks` commands)
+2. **Add AI Dev Playbook:** Copy the AI Dev Playbook assets to your repository
+3. **Direct Integration:** Since Spec Kit provides detailed implementation plans, you can often skip initial planning phases
+4. **Execute with AI Dev Playbook:** Use AI Dev Playbook agents for implementation, testing, and quality assurance
+
+**Example Workflow:**
+```bash
+# After generating Spec Kit artifacts
+cp specs/[###-feature-name]/*.md .ai-dev/memory/
+
+# Execute tasks directly with AI Dev Playbook
+Using @workspace .ai-dev/prompts/03-coder-agent.md, implement Task T001 from @workspace .ai-dev/memory/tasks.md.
+```
+
+### **Benefits of Integration**
+
+- **Leverage Existing Investment:** Continue using familiar specification tools while gaining AI Dev Playbook's implementation benefits
+- **Best of Both Worlds:** Combine rigorous specification generation with structured implementation methodology
+- **Seamless Transition:** Gradual adoption path that doesn't disrupt existing workflows
+- **Enhanced Quality:** Add expert personas, context engineering, and evaluation testing to your existing process
+
 ## **Choosing Your Integration Approach**
 
 The AI Dev Playbook now offers two complementary approaches to AI-assisted development. Here's guidance on when to use each:
@@ -263,3 +310,24 @@ In a monorepo, a single root-level framework is not ideal, as it would mix the h
 │       └── AIDEV.md        \<-- Ledger for shared-ui  
 │  
 └── nx.json
+
+## Adoption Path Comparison
+
+| **Aspect** | **Greenfield Project** | **Brownfield Integration** | **External Tool Integration** |
+|------------|------------------------|----------------------------|-------------------------------|
+| **Setup Time** | Medium (full setup) | Low (drop-in files) | Very Low (minimal additions) |
+| **Code Impact** | None (new project) | None (no changes) | None (workflow enhancement) |
+| **Learning Curve** | Full methodology | Workflow adoption | Process adaptation |
+| **Immediate Value** | Architecture guidance | Process documentation | Implementation quality |
+| **Best For** | New teams/projects | Established teams | Teams with existing spec tools |
+| **Risk Level** | Low | Very Low | Minimal |
+
+## Summary
+
+The AI Dev Playbook offers flexible adoption paths to meet your team where they are:
+
+- **Choose Greenfield** for new projects that want comprehensive AI-assisted development from day one
+- **Choose Brownfield** for existing projects that want to add structured AI workflows without disruption
+- **Choose External Tool Integration** for teams already using Kiro or Spec Kit who want enhanced implementation capabilities
+
+All paths lead to the same destination: high-quality, maintainable software developed with AI as a collaborative partner rather than a replacement for human expertise.

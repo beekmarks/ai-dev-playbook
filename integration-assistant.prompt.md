@@ -21,6 +21,7 @@ Use `@workspace` to analyze:
 - **Applications**: What applications/packages exist and where?
 - **Technology Stack**: Languages, frameworks, cloud providers, testing tools
 - **Existing Files**: Any current AI development tools or conflicting files?
+- **External Tool Artifacts**: Detect pre-existing specifications from external tools
 
 ### Technology Detection Patterns
 Look for these indicators:
@@ -29,6 +30,17 @@ Look for these indicators:
 - **Cloud**: AWS SDK, Azure SDK, GCP SDK in dependencies
 - **Testing**: Jest, Pytest, Vitest, Cypress configurations
 - **Build Tools**: Nx (nx.json), Webpack, Vite, Rollup configurations
+
+### External Tool Artifact Detection
+Scan for existing specification artifacts:
+- **Kiro Artifacts**: `design.md`, `requirements.md`, `tasks.md` files
+- **Spec Kit Artifacts**: `specs/[###-feature-name]/` directories containing:
+  - `spec.md`: Core feature specifications
+  - `plan.md`: Implementation plans
+  - `tasks.md`: Task breakdowns
+  - `research.md`, `data-model.md`, `contracts/`: Supporting documents
+- **Generic Documentation**: Any `.md` files with requirements, specifications, or design content
+- **Legacy Planning**: Existing documentation that could serve as specification sources
 
 ### Architecture Decision Logic
 ```
@@ -69,6 +81,27 @@ From actual repository files, extract:
 - **SHARED_LIBRARIES**: Internal import patterns
 - **EXPERT_DOMAINS**: Relevant expert personas for the technology stack (e.g., Martin Fowler for enterprise apps, John Carmack for performance-critical code)
 
+### External Tool Artifact Integration
+When external tool artifacts are detected, integrate them appropriately:
+
+**Kiro Integration**:
+- Move `design.md`, `requirements.md`, `tasks.md` to `.ai-dev/memory/` for processing
+- Keep copies in `docs/` directory for permanent reference
+- Create consolidation workflow that analyzes and merges documents
+- Initialize AIDEV.md with reference to Kiro-generated foundation
+
+**Spec Kit Integration**:
+- Preserve `specs/[###-feature-name]/` directory structure for reference
+- Copy `spec.md`, `plan.md`, `tasks.md` to `.ai-dev/memory/` for immediate use
+- Move supporting documents (`research.md`, `data-model.md`, `contracts/`) to memory
+- Enable direct task execution workflow since planning is pre-completed
+- Initialize AIDEV.md acknowledging Spec Kit foundation and constitution-based planning
+
+**Hybrid Workflows**:
+- Support projects using multiple specification sources
+- Prioritize most recent/comprehensive specifications
+- Document the integration approach in team guidance
+
 ### Customize Agent Prompts with Expert Personas
 Tailor the 10 workflow prompts for detected technology and include appropriate expert personas:
 - **00-specification-agent.md**: Eric Evans/Martin Fowler personas for domain-driven specifications
@@ -97,6 +130,8 @@ Create repository and/or application-level GitHub Copilot configurations:
 - ✅ **Context Engineering**: Planner and other agents include gather-and-glean strategies
 - ✅ **Evaluation Testing**: Tester agent includes evals for measuring AI consistency
 - ✅ **Plan-Centric Philosophy**: Archive agent emphasizes plans as primary assets
+- ✅ **External Tool Integration**: Kiro/Spec Kit artifacts properly integrated into workflow
+- ✅ **Artifact Preservation**: Original specifications preserved while enabling AI Dev Playbook workflow
 - ✅ **Accurate Paths**: All file references use correct repository structure
 - ✅ **Real Context**: No placeholder values ({{PROJECT_NAME}} etc.)
 - ✅ **Technology Alignment**: Prompts match detected tech stack

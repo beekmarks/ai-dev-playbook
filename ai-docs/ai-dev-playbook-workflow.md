@@ -42,7 +42,9 @@ Before invoking an agent, check the \# RECOMMENDED MODEL comment in the prompt f
 
 ### Phase 0: Specification Development
 
-For complex features or production code, start with creating detailed specifications:
+For complex features or production code, start with creating detailed specifications. However, you may already have specifications from external tools:
+
+#### Option A: Create New Specifications
 
 1. **Understand the Requirements:** Gather all available information about the feature request, user story, or bug ticket.
 
@@ -50,6 +52,17 @@ For complex features or production code, start with creating detailed specificat
    * **Example Prompt:** "Using @workspace .ai-dev/prompts/00-specification-agent.md, create detailed specifications for the user authentication feature described in @workspace docs/tickets/AUTH-123.md. Save the specifications to @workspace .ai-dev/memory/AUTH-123-spec.md."
 
 3. **Review and Refine the Specifications:** Carefully review the generated specifications for accuracy, completeness, and alignment with project goals. Make any necessary adjustments.
+
+#### Option B: Work with External Tool Specifications
+
+If you already have specifications from external tools, adapt them for the AI Dev Playbook workflow:
+
+**From Kiro Artifacts:**
+   * **Example Prompt:** "Using @workspace .ai-dev/prompts/00-specification-agent.md, analyze and consolidate the design documents in @workspace .ai-dev/memory/ (design.md, requirements.md, tasks.md from Kiro) into a unified technical specification. Save to @workspace .ai-dev/memory/consolidated-spec.md."
+
+**From Spec Kit Artifacts:**
+   * Since Spec Kit provides constitution-based planning, you can often proceed directly to task execution
+   * **Example Prompt:** "Using @workspace .ai-dev/prompts/01-planner-agent.md, review and validate the implementation plan in @workspace .ai-dev/memory/plan.md (from Spec Kit). Ensure it aligns with our project requirements and update if needed."
 
 4. **Use Specifications as Living Documentation:** These specifications will guide all subsequent phases and should be updated if requirements or implementation details change.
 

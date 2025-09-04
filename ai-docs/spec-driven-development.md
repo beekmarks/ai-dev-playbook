@@ -4,6 +4,11 @@
 
 Spec-Driven Development (SDD) is an approach that prioritizes creating detailed specifications and design documents *before* writing code. When combined with AI assistance, this methodology produces higher quality, more maintainable software than ad-hoc "vibe coding" approaches.
 
+The AI Dev Playbook supports multiple approaches to specification creation:
+- **Internal Workflow**: Using the AI Dev Playbook's Specification Agent for custom spec generation
+- **External Tool Integration**: Leveraging tools like Amazon Kiro or GitHub Spec Kit for specification generation
+- **Hybrid Approach**: Combining external tools with AI Dev Playbook refinement and implementation
+
 ## **Core Principles**
 
 1. **Plans as Primary Assets**: The specifications and implementation plans are your most valuable development artifacts—more valuable than the code itself, which is often rewritten. A flawed plan leads to hundreds of lines of incorrect code; flawed research can lead to thousands.
@@ -24,28 +29,160 @@ Spec-Driven Development (SDD) is an approach that prioritizes creating detailed 
 | **Team Collaboration** | Difficult to coordinate | Clear shared understanding |
 | **Scaling** | Breaks down with complexity | Scales to enterprise applications |
 
+## **Choosing Your Specification Approach**
+
+### **When to Use Internal Specification Generation**
+
+**Best for:**
+- New teams learning the AI Dev Playbook methodology
+- Unique or innovative features requiring custom specification frameworks
+- Projects with specific documentation requirements not covered by external tools
+- Teams wanting maximum control over specification format and content
+
+**Advantages:**
+- Fully integrated with AI Dev Playbook workflow
+- Customizable to project needs
+- Expert persona integration for specialized reviews
+- No external tool dependencies
+
+### **When to Use Amazon Kiro**
+
+**Best for:**
+- Enterprise teams with established design document standards
+- Projects requiring comprehensive architectural documentation
+- Teams familiar with traditional software design methodologies
+- Large-scale systems requiring detailed component interaction mapping
+
+**Advantages:**
+- Mature enterprise tooling
+- Comprehensive design document generation
+- Established patterns for complex system design
+- Strong architectural focus
+
+### **When to Use GitHub Spec Kit**
+
+**Best for:**
+- Teams already using GitHub-based workflows
+- Projects with constitutional or rule-based requirements
+- Agile teams wanting rapid specification generation
+- Teams preferring command-line tool integration
+
+**Advantages:**
+- Native GitHub integration
+- Constitution-based planning approach
+- Rapid task generation
+- Command-line workflow compatibility
+
+### **When to Use Hybrid Approach**
+
+**Best for:**
+- Teams transitioning between toolsets
+- Complex projects requiring multiple specification perspectives
+- Organizations with diverse project requirements
+- Teams wanting to leverage best-of-breed tools
+
+**Advantages:**
+- Combines strengths of multiple approaches
+- Flexible adaptation to project needs
+- Risk mitigation through tool diversity
+- Enhanced specification quality through multiple perspectives
+
 ## **Implementing Spec-Driven Development**
 
-### 1. Create Specification Documents
+The AI Dev Playbook supports three approaches to specification creation. Choose the one that best fits your team's needs and existing toolchain.
 
-Start by creating structured specification documents. You can choose either approach:
+### **Approach 1: Internal Specification Generation**
+
+Use the AI Dev Playbook's built-in Specification Agent for custom spec generation:
+
+**1. Create Initial Specification**
+```
+Using @workspace .ai-dev/prompts/00-specification-agent.md, create a comprehensive feature specification for [feature description]
+```
+
+**2. Choose Document Structure**
 
 **Option A: Multiple Focused Files**
-
 - `requirements.md`: User stories, acceptance criteria, and constraints
 - `design.md`: Architecture, data models, and component interactions
 - `api-contract.md`: API endpoints, request/response formats
 
 **Option B: Single Comprehensive File**
-
 - `feature-spec.md`: A comprehensive document containing all specifications including requirements, design, API contracts, data models, and testing strategy
+
+### **Approach 2: External Tool Integration**
+
+#### **Using Amazon Kiro**
+
+Kiro generates comprehensive design documents that can be directly integrated into the AI Dev Playbook workflow:
+
+**1. Generate Kiro Artifacts**
+```bash
+# Use Kiro to generate specification documents
+kiro generate [project-details]
+# Outputs: design.md, requirements.md, tasks.md
+```
+
+**2. Import into AI Dev Playbook**
+```bash
+# Move Kiro artifacts to AI Dev Playbook memory
+mv design.md .ai-dev/memory/
+mv requirements.md .ai-dev/memory/
+mv tasks.md .ai-dev/memory/
+```
+
+**3. Consolidate and Refine**
+```
+Using @workspace .ai-dev/prompts/00-specification-agent.md, analyze and consolidate the Kiro documents in @workspace .ai-dev/memory/ into a unified technical specification.
+```
+
+#### **Using GitHub Spec Kit**
+
+Spec Kit provides constitution-based planning that integrates seamlessly with AI Dev Playbook implementation:
+
+**1. Generate Spec Kit Artifacts**
+```bash
+# Use Spec Kit commands for specification generation
+/specify [feature description]
+/plan
+/tasks
+# Outputs: specification files in specs/[###-feature-name]/
+```
+
+**2. Import into AI Dev Playbook**
+```bash
+# Copy Spec Kit artifacts to AI Dev Playbook memory
+cp specs/[###-feature-name]/*.md .ai-dev/memory/
+```
+
+**3. Execute with AI Dev Playbook**
+```
+Using @workspace .ai-dev/prompts/03-coder-agent.md, implement Task T001 from @workspace .ai-dev/memory/tasks.md.
+```
+
+### **Approach 3: Hybrid Integration**
+
+Combine external tool strengths with AI Dev Playbook refinement:
+
+**1. Start with External Tool**
+- Use Kiro for comprehensive design documentation
+- Use Spec Kit for constitution-based feature planning
+
+**2. Enhance with AI Dev Playbook**
+- Use Specification Agent to fill gaps or refine details
+- Apply expert personas for specialized review (security, performance, etc.)
+- Use context engineering for project-specific adaptations
+
+**3. Implement with Full Workflow**
+- Proceed with standard AI Dev Playbook implementation phases
+- Maintain specifications as living documents throughout development
 
 ### 2. Generate Tasks from Specifications
 
-Use the Planner Agent to break down specifications into discrete tasks:
+Use the Planner Agent to break down specifications into discrete tasks (works with specifications from any source):
 
 ```
-Using @workspace .ai-dev/prompts/01-planner-agent.md, create a task list based on the specifications in @workspace .ai-dev/memory/feature-spec.md
+Using @workspace .ai-dev/prompts/01-planner-agent.md, create a task list based on the specifications in @workspace .ai-dev/memory/
 ```
 
 ### 3. Implement with Continuous Reference to Specs
