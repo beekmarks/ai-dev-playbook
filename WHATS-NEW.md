@@ -23,7 +23,7 @@ We've implemented a systematic "Gather and Glean" strategy for managing AI conte
 
 **Impact**: Better AI responses through strategic information management, especially for complex features.
 
-### 2. Expert Persona-Based Prompting
+### 3. Expert Persona-Based Prompting
 We've upgraded our agents to simulate specific renowned experts rather than generic roles:
 
 - **Refactor Agent**: Now adopts Martin Fowler's systematic refactoring approach
