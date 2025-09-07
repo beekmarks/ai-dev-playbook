@@ -39,6 +39,10 @@ This will load the instructions from `prompts/plan-feature.prompt.md` into your 
 | `security-review.prompt.md` | Identify security vulnerabilities | `07-security-reviewer-agent.md` |
 | `archive-work.prompt.md` | Record completed work in AIDEV.md | `08-archiver-agent.md` |
 | `compact-context.prompt.md` | Distill and summarize accumulated context | `09-compactor-agent.md` |
+| `incident-triage.prompt.md` | Analyze production errors systematically | `10-incident-triage-agent.md` |
+| `incident-fix.prompt.md` | Plan balanced incident response strategies | `11-incident-fix-agent.md` |
+| `incident-triage.prompt.md` | Analyze production errors and identify root causes | `10-incident-triage-agent.md` |
+| `incident-fix.prompt.md` | Propose solutions for triaged incidents | `11-incident-fix-agent.md` |
 
 ## Template Variables
 

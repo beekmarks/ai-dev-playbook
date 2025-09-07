@@ -1,8 +1,18 @@
-I'm excited to share some significant updates we've made to our AI Dev Playbook based on insights from leading AI productivity research. These enhancements will help us get even better results from our AI-assisted development workflow.
+I'm excited to share some significant updates we've made to our AI Dev Playbook based on insights from leading AI productivity research and community feedback. These enhancements will help us get even better results from our AI-assisted development workflow.
 
-## 🎯 What's New: Four Major Enhancements
+## 🎯 What's New: Five Major Enhancements
 
-### 1. Official Support for External Specification Tools
+### 1. Incident Management Workflow
+We've expanded the AI Dev Playbook beyond development into production support:
+
+- **Incident Triage Agent**: Systematic analysis of production errors with root cause identification
+- **Incident Fix Agent**: Balanced approach between immediate hotfixes and sustainable solutions  
+- **Integration with Spec-Driven Development**: Seamless connection from incident response back to proper specifications
+- **Documentation and Learning**: Complete incident archival that builds team knowledge
+
+**Impact**: Teams can now use AI Dev Playbook methodology for the entire software lifecycle, from development through production support.
+
+### 2. Official Support for External Specification Tools
 We've added comprehensive integration with enterprise specification tools:
 
 - **Amazon Kiro Integration**: Seamless workflow for importing Kiro-generated design documents, requirements, and tasks
@@ -13,7 +23,7 @@ We've added comprehensive integration with enterprise specification tools:
 
 **Impact**: Teams can leverage existing investments in specification tools while gaining AI Dev Playbook's structured implementation benefits.
 
-### 2. Advanced Context Engineering Framework
+### 3. Advanced Context Engineering Framework
 We've implemented a systematic "Gather and Glean" strategy for managing AI context:
 
 - **New Context Engineering Guide**: Step-by-step guidance on gathering relevant information and filtering it for maximum AI effectiveness
@@ -23,7 +33,7 @@ We've implemented a systematic "Gather and Glean" strategy for managing AI conte
 
 **Impact**: Better AI responses through strategic information management, especially for complex features.
 
-### 3. Expert Persona-Based Prompting
+### 4. Expert Persona-Based Prompting
 We've upgraded our agents to simulate specific renowned experts rather than generic roles:
 
 - **Refactor Agent**: Now adopts Martin Fowler's systematic refactoring approach
@@ -33,7 +43,7 @@ We've upgraded our agents to simulate specific renowned experts rather than gene
 
 **Impact**: More sophisticated, expert-level outputs by triggering deeper AI knowledge patterns.
 
-### 4. Advanced AI Collaboration Techniques
+### 5. Advanced AI Collaboration Techniques
 New comprehensive guide covering creative problem-solving through AI:
 
 - **Multi-Expert Perspectives**: Using competing expert viewpoints to stress-test solutions
@@ -66,20 +76,22 @@ For teams adopting these new techniques, we recommend starting with:
 - Adding test coverage to existing code
 - Documentation updates using expert personas
 - Simple refactoring with Martin Fowler approach
+- Production incident analysis and resolution
 
 ## 🔧 What's Available Now
 
 All enhancements are available in both formats:
 
 **Traditional Workflow** (`@workspace .ai-dev/prompts/`):
-- 10 enhanced agent templates with expert personas
+- 12 enhanced agent templates with expert personas (including Incident Management)
 - Advanced context engineering capabilities
 - New Compactor Agent for context management
 - External tool artifact processing in Specification Agent
+- Incident Triage and Fix agents for production support
 
 **GitHub Copilot Native** (`@prompt` commands):
 - Enhanced prompt files with expert personas
-- Quick access to context compaction
+- Quick access to context compaction and incident response
 - Repository-wide custom instructions
 - Automatic awareness of external tool artifacts in `.ai-dev/memory/`
 

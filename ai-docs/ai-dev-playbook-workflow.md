@@ -218,3 +218,91 @@ To make agent prompts more adaptable to your specific project needs, you can use
 * **Avoid Sensitive Data**: Never store secrets or sensitive information in variables files.
 
 Template variables are especially useful for teams managing multiple projects with the AI Dev Playbook, as they allow for consistent customization across all agent interactions.
+
+## **Incident Management Workflow**
+
+The AI Dev Playbook now includes specialized agents for handling production incidents, extending the methodology beyond development into operational support.
+
+### When to Use Incident Management Agents
+
+Use these agents when:
+- Production errors occur that need rapid diagnosis
+- Complex bugs require systematic root cause analysis  
+- You need to balance immediate fixes with long-term code quality
+- Incident response needs to connect back to spec-driven development
+
+### Phase 1: Incident Triage
+
+When a production issue occurs, start with systematic diagnosis:
+
+1. **Gather Error Information**: Collect stack traces, error messages, logs, and reproduction steps
+2. **Invoke the Incident Triage Agent**: Use a **reasoning model** for thorough analysis
+
+   **Example Prompt:**
+   ```
+   Using @workspace .ai-dev/prompts/10-incident-triage-agent.md, analyze the following production error: 
+   [paste error message, stack trace, and any relevant context]
+   ```
+
+3. **Review the Triage Report**: The agent will provide:
+   - Root cause analysis
+   - Affected code locations
+   - Contributing runtime factors
+   - Next steps for investigation
+
+4. **Save Triage Results**: Store the triage report in `.ai-dev/memory/` for the fix agent
+
+### Phase 2: Incident Fix Planning
+
+With the root cause identified, determine the best path forward:
+
+1. **Invoke the Incident Fix Agent**: Use a **reasoning model** for balanced decision-making
+
+   **Example Prompt:**
+   ```
+   Using @workspace .ai-dev/prompts/11-incident-fix-agent.md, propose solutions for the incident triaged in @workspace .ai-dev/memory/incident-triage-report.md
+   ```
+
+2. **Evaluate Fix Options**: The agent will provide:
+   - **Hotfix**: Immediate mitigation strategy with trade-offs clearly explained
+   - **Sustainable Fix**: Long-term solution with spec-driven development approach
+   - **Implementation Timeline**: Recommended sequence for both fixes
+
+3. **Choose Your Path**: Based on business impact and technical constraints:
+   - **Critical Production Issues**: Deploy hotfix first, then plan sustainable fix
+   - **Non-Critical Issues**: Consider going directly to sustainable fix
+   - **Complex Issues**: May require both approaches in sequence
+
+### Phase 3: Implementation
+
+**For Hotfixes:**
+- Use the Coder Agent to implement the minimal fix quickly
+- Deploy immediately to stop the bleeding
+- Document technical debt created for future resolution
+
+**For Sustainable Fixes:**
+- Follow the provided prompt to engage the Specification Agent
+- Use the full AI Dev Playbook workflow (Spec → Plan → Code → Test → Secure → Document → Archive)
+- Remove hotfix code after sustainable solution is verified
+
+### Phase 4: Incident Documentation
+
+1. **Archive the Incident**: Use the Archiver Agent to document the complete incident response
+
+   **Example Prompt:**
+   ```
+   Using @workspace .ai-dev/prompts/08-archiver-agent.md, create an entry in @workspace AIDEV.md titled 'Incident: [Brief Description]' documenting the triage and fix from @workspace .ai-dev/memory/
+   ```
+
+2. **Update Runbooks**: If the incident reveals operational gaps, update monitoring, alerting, or documentation
+3. **Team Learning**: Share findings with the team to prevent similar issues
+
+### Best Practices for Incident Management
+
+- **Always triage first**: Don't jump straight to coding solutions
+- **Document decisions**: Explain why you chose hotfix vs. sustainable fix
+- **Connect to specifications**: Use incidents as opportunities to improve system design
+- **Learn from patterns**: Track incident types to identify systemic issues
+- **Maintain code quality**: Even urgent fixes should follow basic coding standards
+
+The incident management workflow ensures that production issues are handled systematically while maintaining the AI Dev Playbook's emphasis on quality and documentation.

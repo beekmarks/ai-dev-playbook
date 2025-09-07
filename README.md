@@ -17,7 +17,7 @@ This workflow is built on a few key ideas:
 | **Spec-Driven Development** | Specifications before code | Create detailed specifications (requirements, design, API contracts) before implementation for better quality and maintainability. |
 | **External Tool Integration** | Kiro, Spec Kit support | The AI Dev Playbook seamlessly integrates with existing specification tools like Amazon's Kiro and GitHub's Spec Kit, allowing teams to leverage their existing planning workflows. |
 | **Specification Sources** | Multiple input formats | Accept specifications from various sources: manual creation, Kiro design documents, Spec Kit artifacts, or existing documentation, providing flexibility for different team workflows. |
-| **Specialized Agents** | .ai-dev/prompts/ | A collection of prompt templates, each designed for a specific task (specifications, planning, coding, testing, etc.). You invoke these agents to perform work. |
+| **Specialized Agents** | .ai-dev/prompts/ | A collection of prompt templates, each designed for a specific task (specifications, planning, coding, testing, incident management, etc.). You invoke these agents to perform work. |
 | **Role-Based Prompting** | Expert personas in each agent | By assigning specific roles (e.g., "Martin Fowler for refactoring," "Richard Feynman for documentation"), we focus the AI's vast knowledge and trigger deep expert associations, just like telling a human to "think like a security expert." This provides more accurate, expert-level responses. |
 | **GitHub Copilot Integration** | .github/ directory | Repository custom instructions and prompt files that provide the same guidance through native GitHub Copilot features. |
 | **Workspace Context** | @workspace command | GitHub Copilot can read files directly from your workspace. You use this to provide context like requirements, existing code, or plans. |
@@ -42,7 +42,7 @@ This AI-powered integration assistant will:
 - ✅ **Analyze your repository** structure and technology stack
 - ✅ **Choose the right architecture** (single project vs monorepo patterns)
 - ✅ **Create customized prompts** with your actual project context
-- ✅ **Set up complete workflow** with all 10 development steps (including new Context Compactor)
+- ✅ **Set up complete workflow** with all 12 development steps (including Context Compactor and Incident Management)
 - ✅ **Implement advanced context engineering** with gather-and-glean strategies
 - ✅ **Generate operational documentation** for your team
 

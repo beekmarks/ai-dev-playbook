@@ -240,6 +240,33 @@ Traditional code reviews of AI-generated code can be overwhelming and ineffectiv
 - [ ] Are design decisions and trade-offs captured?
 - [ ] Will future developers understand the "why" behind this implementation?
 
+## **Spec-Driven Incident Response**
+
+The spec-driven approach extends beyond development into production incident management, ensuring that even urgent fixes maintain quality standards:
+
+### **Incident Analysis**
+- Use systematic triage to understand root causes before implementing fixes
+- Document incident specifications that capture both the immediate problem and underlying design gaps
+
+### **Sustainable Fixes**
+- Apply spec-driven development to sustainable incident fixes
+- Use incident analysis to identify system design improvements
+- Create specifications for architectural changes that prevent similar issues
+
+### **Example Workflow**
+```
+# 1. Systematic Analysis
+Using @workspace .ai-dev/prompts/10-incident-triage-agent.md, analyze this production error and identify root causes.
+
+# 2. Balanced Response Planning  
+Using @workspace .ai-dev/prompts/11-incident-fix-agent.md, propose both hotfix and sustainable solutions.
+
+# 3. Spec-Driven Sustainable Fix
+Using @workspace .ai-dev/prompts/00-specification-agent.md, create specifications for the long-term solution to address the underlying design issues identified in the incident analysis.
+```
+
+This approach ensures that incidents become opportunities for system improvement rather than just quick patches.
+
 ## **Integration with AI Dev Playbook Workflow**
 
 The spec-driven approach enhances the existing AI Dev Playbook workflow:

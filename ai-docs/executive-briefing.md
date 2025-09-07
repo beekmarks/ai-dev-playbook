@@ -21,7 +21,7 @@ Organizations are rapidly adopting AI coding assistants like GitHub Copilot, but
 The AI Dev Playbook addresses these challenges by providing:
 
 1. **Clear Developer Workflows**: A repeatable process for using AI throughout the development lifecycle
-2. **Specialized Agent Templates**: Purpose-built prompts for specific tasks (specification development, planning, estimation, coding, testing, security review)
+2. **Specialized Agent Templates**: Purpose-built prompts for specific tasks (specification development, planning, estimation, coding, testing, security review, incident management)
 3. **Expert Role-Based Prompting**: Each agent adopts the mindset of renowned experts (e.g., Martin Fowler for refactoring, Richard Feynman for documentation), focusing AI knowledge and improving output quality through expert simulation
 4. **Human-in-the-Loop (HITL) Safeguards**: Structured patterns for human oversight including approval workflows, audit trails, and designated never-automate zones
 4. **Design Decision Documentation**: Explicit capture of implementation choices, alternatives considered, and rationale
@@ -59,7 +59,7 @@ The AI Dev Playbook offers two complementary integration options:
 
 Teams can choose either approach or combine them based on their specific needs:
 
-- **For Complex Features**: Use the full workflow with specialized agents for planning, estimation, coding, testing, and documentation
+- **For Complex Features**: Use the full workflow with specialized agents for planning, estimation, coding, testing, documentation, and incident response
 - **For Quick Tasks**: Use GitHub Copilot with custom instructions and prompt files for more conversational assistance
 
 Additionally, the AI Dev Playbook supports two development methodologies:
@@ -96,6 +96,18 @@ Key principles that set this approach apart:
 3. **Design Decision Documentation**: Preserve the "why" behind implementation choices
 4. **Permanent Knowledge Capture**: Build institutional memory through systematic documentation
 5. **Adaptable Implementation**: Choose the integration approach that fits your team's workflow
+6. **Complete Lifecycle Coverage**: From development planning through production incident response
+
+## Additional Value: Production Support
+
+Beyond development acceleration, the AI Dev Playbook extends into production operations with systematic incident management:
+
+- **Incident Triage**: AI-assisted analysis of production errors with systematic root cause identification
+- **Balanced Response**: Clear framework for choosing between immediate hotfixes and sustainable solutions
+- **Knowledge Building**: Every incident becomes a learning opportunity that improves future responses
+- **Quality Maintenance**: Even urgent fixes follow structured approaches that maintain code standards
+
+This comprehensive approach ensures that AI assistance delivers value throughout the entire software lifecycle.
 
 By implementing this structured approach, your organization can realize the full potential of AI coding assistants while mitigating associated risks and building a foundation for sustainable AI-assisted development practices.
 

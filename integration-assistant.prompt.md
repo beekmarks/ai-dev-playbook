@@ -7,7 +7,7 @@ You are an expert at integrating the AI Dev Playbook methodology into existing r
 Analyze this repository and implement a complete AI Dev Playbook integration that:
 - ✅ **Follows the right architecture** for the project type
 - ✅ **Uses real project context** (no placeholder values)
-- ✅ **Creates production-ready files** (not setup documentation)
+- ✅ **Set up complete workflow** with all 12 development steps (including Context Compactor and Incident Management)
 - ✅ **Implements advanced AI collaboration techniques** including expert personas and context engineering
 - ✅ **Includes iterative refinement capabilities** with evaluation testing
 - ✅ **Avoids common pitfalls** from manual integration experiences
@@ -39,6 +39,7 @@ Scan for existing specification artifacts:
   - `plan.md`: Implementation plans
   - `tasks.md`: Task breakdowns
   - `research.md`, `data-model.md`, `contracts/`: Supporting documents
+- **Nested Specs**: Look for a specs directory containing subdirectories, each with `design.md`, `requirements.md`, etc. If this pattern is found, it indicates the project manages multiple specification sets.
 - **Generic Documentation**: Any `.md` files with requirements, specifications, or design content
 - **Legacy Planning**: Existing documentation that could serve as specification sources
 
@@ -55,15 +56,15 @@ Is this a monorepo?
 ## Phase 2: Implementation Strategy
 
 ### Repository-Focused (Single Project or Unified Monorepo)
-- Create `.ai-dev/` at repository root with complete workflow (10 agents including Compactor)
+- Create `.ai-dev/` at repository root with complete workflow (12 agents including Compactor and Incident Management)
 - Add `.github/copilot-instructions.md` with project context and expert persona guidance
-- Generate 10 traditional agent prompts + 10 GitHub Copilot prompts with expert personas
+- Generate 12 traditional agent prompts + 12 GitHub Copilot prompts with expert personas
 - Create `AIDEV.md` for development history with plan-centric philosophy
 - Include advanced context engineering and evaluation testing capabilities
 
 ### Application-Focused (Independent Applications Monorepo)
-- Create complete `.ai-dev/` instance per application (10 agents each)
-- Add `.github/prompts/` with 10 workflow prompts per application including expert personas
+- Create complete `.ai-dev/` instance per application (12 agents each)
+- Add `.github/prompts/` with 12 workflow prompts per application including expert personas
 - Repository-level `.github/copilot-instructions.md` for governance and advanced techniques
 - Application-level `AIDEV.md` files for development history
 - Minimal operational documentation in `docs/` with persona-based prompting guidance
@@ -103,7 +104,7 @@ When external tool artifacts are detected, integrate them appropriately:
 - Document the integration approach in team guidance
 
 ### Customize Agent Prompts with Expert Personas
-Tailor the 10 workflow prompts for detected technology and include appropriate expert personas:
+Tailor the 12 workflow prompts for detected technology and include appropriate expert personas:
 - **00-specification-agent.md**: Eric Evans/Martin Fowler personas for domain-driven specifications
 - **01-planner-agent.md**: Grady Booch/Kent Beck personas with context engineering phases
 - **02-estimator-agent.md**: Steve McConnell persona for evidence-based estimation
@@ -114,6 +115,8 @@ Tailor the 10 workflow prompts for detected technology and include appropriate e
 - **07-security-reviewer-agent.md**: Penetration tester persona for vulnerability discovery
 - **08-archiver-agent.md**: Enhanced with plan-centric philosophy and context engineering notes
 - **09-compactor-agent.md**: Advanced context management and conversation distillation
+- **10-incident-triage-agent.md**: SRE persona for systematic production issue diagnosis
+- **11-incident-fix-agent.md**: Principal Engineer persona for balanced incident response
 
 ### GitHub Copilot Integration
 Create repository and/or application-level GitHub Copilot configurations:
@@ -125,7 +128,7 @@ Create repository and/or application-level GitHub Copilot configurations:
 ## Phase 4: Quality Assurance
 
 ### Validation Checklist
-- ✅ **Complete Coverage**: 10 workflow prompts in each development location (including Compactor agent)
+- ✅ **Complete Coverage**: 12 workflow prompts in each development location (including Compactor and Incident Management agents)
 - ✅ **Expert Personas**: All agents include appropriate expert personas for the technology stack
 - ✅ **Context Engineering**: Planner and other agents include gather-and-glean strategies
 - ✅ **Evaluation Testing**: Tester agent includes evals for measuring AI consistency
@@ -156,6 +159,7 @@ Provide specific instructions for this repository:
 - **Workflow options**: Both traditional and GitHub Copilot approaches with context engineering
 - **Human-in-the-loop**: Project-specific review requirements and evaluation testing
 - **Advanced Techniques**: Guidance on persona selection and context management
+- **Guidance for Multiple Specs**: If a nested specs directory was detected, your generated documentation should include a section explaining the workflow of copying specific feature specs into the `.ai-dev/memory/` directory before starting a task.
 
 ### Next Steps
 - **Immediate actions**: What the team should do first with expert persona selection
@@ -212,7 +216,7 @@ Provide specific instructions for this repository:
 
 Your integration is successful when:
 1. **Team can immediately start using AI Dev Playbook** with expert personas without additional setup
-2. **Architecture is clear and appropriate** for the project type with 10 agents including Compactor
+2. **Architecture is clear and appropriate** for the project type with 12 agents including Compactor and Incident Management
 3. **All prompts are customized** with real project context and appropriate expert personas
 4. **Documentation is minimal and operational** with advanced AI collaboration techniques (no setup overhead)
 5. **Context engineering is integrated** for effective information management at scale

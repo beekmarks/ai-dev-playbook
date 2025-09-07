@@ -119,6 +119,33 @@ your-monorepo/
 
 **Workflow**: Developers work within specific application directories
 
+### Managing Multiple Specification Sets
+
+For complex applications, you may have multiple sets of specification documents (e.g., for different features or epics). The recommended best practice is to create a permanent, version-controlled specs directory within each application to house these sets.
+
+**Example Structure:**
+
+```
+your-monorepo/
+└── apps/
+    └── my-app/
+        ├── .ai-dev/
+        │   └── memory/   // AI's temporary workspace
+        ├── specs/          // Permanent spec storage
+        │   ├── feature-auth/
+        │   │   ├── design.md
+        │   │   ├── requirements.md
+        │   │   └── tasks.md
+        │   └── feature-billing/
+        │       ├── design.md
+        │       ├── requirements.md
+        │       └── tasks.md
+        ├── src/
+        └── AIDEV.md
+```
+
+Before beginning work on a feature, copy the relevant files from the specs directory into the `.ai-dev/memory/` directory. This provides the AI with a clean, focused context for the task at hand.
+
 ## Technology-Specific Considerations
 
 ### Nx Monorepos

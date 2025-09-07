@@ -197,6 +197,12 @@ When your team first adopts the AI Dev Playbook, we recommend starting with simp
 - **Benefits**: Identifies potential issues while team learns to validate AI findings
 - **Example**: "Security review of the new file upload functionality"
 
+### **Incident Analysis and Resolution**
+- **Why they're ideal**: Production issues provide concrete context and clear success criteria
+- **Recommended agents**: Incident Triage → Incident Fix → Coder → Tester → Archiver
+- **Benefits**: Immediate value for production support while learning systematic incident response
+- **Example**: "Analyze and resolve the database connection timeout errors occurring in production"
+
 ### **Gradual Complexity Progression**
 
 Start with these progression stages:
