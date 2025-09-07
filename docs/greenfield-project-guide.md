@@ -449,6 +449,10 @@ Using @workspace .ai-dev/prompts/06-documenter-agent.md, create documentation fo
 
 # 7. Archive
 Using @workspace .ai-dev/prompts/08-archiver-agent.md, create an entry in @workspace AIDEV.md titled 'Feature: [Name]'.
+
+# Incident Management (When Issues Arise)
+Using @workspace .ai-dev/prompts/10-incident-triage-agent.md, analyze production errors.
+Using @workspace .ai-dev/prompts/11-incident-fix-agent.md, plan incident response.
 ```
 
 **GitHub Copilot Workflow:**
@@ -460,6 +464,10 @@ Using @workspace .ai-dev/prompts/08-archiver-agent.md, create an entry in @works
 @prompt review-security
 @prompt document-feature
 @prompt archive-work
+
+# Incident Management
+@prompt incident-triage
+@prompt incident-fix
 ```
 
 ### Key Files to Customize

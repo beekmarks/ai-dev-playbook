@@ -235,6 +235,22 @@ Using @workspace .ai-dev/prompts/03-coder-agent.md, implement Task T001 from @wo
 
 This approach allows you to leverage the rigorous, constitution-based planning of Spec Kit while using the flexible, agent-based execution model of the AI Dev Playbook.
 
+## Workflow for Multiple Specification Sets
+
+In a mature project, you will accumulate many sets of design documents. The `.ai-dev/memory/` directory is not intended for permanent storage. Instead, establish a dedicated, version-controlled directory (e.g., `specs/` or `docs/specs/`) within your project to store these artifacts permanently.
+
+**When you begin a new task:**
+
+1. **Identify the Specification Set**: Locate the directory containing the `design.md`, `requirements.md`, and `tasks.md` for the feature you are about to work on.
+
+2. **Copy to Memory**: Copy these specific files into the `.ai-dev/memory/` directory. This acts as a staging area for the AI.
+
+3. **Direct the AI**: Point the AI agents to the files now residing in `@workspace .ai-dev/memory/`.
+
+4. **Archive and Clean**: Once the task is complete and archived in `AIDEV.md`, you can safely clear the contents of the `.ai-dev/memory/` directory.
+
+This approach keeps your permanent documentation organized while ensuring the AI has a focused, uncluttered context for each individual task.
+
 ## Implementation Workflow
 
 ### For Kiro-Generated Documents (Use Case 1)

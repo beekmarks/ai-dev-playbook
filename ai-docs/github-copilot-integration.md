@@ -56,6 +56,8 @@ The AI Dev Playbook includes the following prompt files:
 | `document-code.prompt.md` | Create clear documentation |
 | `archive-work.prompt.md` | Record completed work in AIDEV.md |
 | `compact-context.prompt.md` | Distill large context into focused summaries |
+| `incident-triage.prompt.md` | Analyze production errors systematically |
+| `incident-fix.prompt.md` | Plan balanced incident response strategies |
 
 ## When to Use Each Approach
 
