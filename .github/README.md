@@ -1,6 +1,6 @@
 # GitHub Copilot Integration for AI Dev Playbook
 
-This directory contains files that enable GitHub Copilot to provide AI assistance that follows the AI Dev Playbook methodology. These files complement the traditional workflow using agent templates in the `.ai-dev/prompts/` directory.
+This directory contains files that enable GitHub Copilot to provide AI assistance that follows the AI Dev Playbook methodology. These files complement the traditional workflow using agent templates in the `ai-dev/prompts/` directory.
 
 ## Contents
 

@@ -54,7 +54,7 @@ This approach addresses the root cause to prevent this and similar issues from r
 **Next Step: Generate a Formal Specification**
 To implement this correctly, use the following prompt with the Specification agent:
 
-> "Using @workspace .ai-dev/prompts/00-specification-agent.md, create a technical specification to address the incident described in the following report: [Paste Triage Report Here]. The goal is to refactor the user loading mechanism in `processOrder` to be more resilient and ensure a valid user object is always present. The specification should define new validation rules and error handling for when a user cannot be loaded."
+> "Using @workspace ai-dev/prompts/00-specification-agent.md, create a technical specification to address the incident described in the following report: [Paste Triage Report Here]. The goal is to refactor the user loading mechanism in `processOrder` to be more resilient and ensure a valid user object is always present. The specification should define new validation rules and error handling for when a user cannot be loaded."
 
 ### 4. Implementation Timeline Recommendation
 * **Immediate (0-2 hours):** Deploy hotfix to stop the bleeding

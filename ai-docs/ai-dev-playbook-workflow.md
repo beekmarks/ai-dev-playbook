@@ -10,7 +10,7 @@ The goal is to move beyond mechanical prompting and into a fluid, conversational
 
 The AI Dev Playbook now offers two complementary approaches to AI-assisted development:
 
-1. **Traditional Workflow**: Using `@workspace` commands with agent templates in `.ai-dev/prompts/`
+1. **Traditional Workflow**: Using `@workspace` commands with agent templates in `ai-dev/prompts/`
 2. **GitHub Copilot Native Integration**: Using repository custom instructions and prompt files
 
 This document primarily describes the traditional workflow. For details on the GitHub Copilot native integration, see [github-copilot-integration.md](github-copilot-integration.md).
@@ -49,7 +49,7 @@ For complex features or production code, start with creating detailed specificat
 1. **Understand the Requirements:** Gather all available information about the feature request, user story, or bug ticket.
 
 2. **Invoke the Specification Developer Agent:** Select a **reasoning model** and ask the agent to create comprehensive specifications.
-   * **Example Prompt:** "Using @workspace .ai-dev/prompts/00-specification-agent.md, create detailed specifications for the user authentication feature described in @workspace docs/tickets/AUTH-123.md. Save the specifications to @workspace .ai-dev/memory/AUTH-123-spec.md."
+   * **Example Prompt:** "Using @workspace ai-dev/prompts/00-specification-agent.md, create detailed specifications for the user authentication feature described in @workspace docs/tickets/AUTH-123.md. Save the specifications to @workspace .ai-dev/memory/AUTH-123-spec.md."
 
 3. **Review and Refine the Specifications:** Carefully review the generated specifications for accuracy, completeness, and alignment with project goals. Make any necessary adjustments.
 
@@ -58,11 +58,11 @@ For complex features or production code, start with creating detailed specificat
 If you already have specifications from external tools, adapt them for the AI Dev Playbook workflow:
 
 **From Kiro Artifacts:**
-   * **Example Prompt:** "Using @workspace .ai-dev/prompts/00-specification-agent.md, analyze and consolidate the design documents in @workspace .ai-dev/memory/ (design.md, requirements.md, tasks.md from Kiro) into a unified technical specification. Save to @workspace .ai-dev/memory/consolidated-spec.md."
+   * **Example Prompt:** "Using @workspace ai-dev/prompts/00-specification-agent.md, analyze and consolidate the design documents in @workspace .ai-dev/memory/ (design.md, requirements.md, tasks.md from Kiro) into a unified technical specification. Save to @workspace .ai-dev/memory/consolidated-spec.md."
 
 **From Spec Kit Artifacts:**
    * Since Spec Kit provides constitution-based planning, you can often proceed directly to task execution
-   * **Example Prompt:** "Using @workspace .ai-dev/prompts/01-planner-agent.md, review and validate the implementation plan in @workspace .ai-dev/memory/plan.md (from Spec Kit). Ensure it aligns with our project requirements and update if needed."
+   * **Example Prompt:** "Using @workspace ai-dev/prompts/01-planner-agent.md, review and validate the implementation plan in @workspace .ai-dev/memory/plan.md (from Spec Kit). Ensure it aligns with our project requirements and update if needed."
 
 4. **Use Specifications as Living Documentation:** These specifications will guide all subsequent phases and should be updated if requirements or implementation details change.
 
@@ -76,7 +76,7 @@ With specifications in hand (or for simpler features), proceed to planning. A hi
    * **Provide Context:** Use the @workspace command to point the AI to relevant files. This could include the ticket description, related code, or architectural diagrams.  
    * **Direct the Output:** Always tell the agent where to save the plan, creating a new file in the .ai-dev/memory/ directory (note the dot prefix - this hidden directory is separate from the ai-dev/prompts/ directory).
 
-**Example Prompt:**"Using @workspace .ai-dev/prompts/01-planner-agent.md, create a detailed plan for the feature described in @workspace docs/tickets/TICKET-123.md. Consider the existing code in @workspace src/auth/utils.js. Save the plan to @workspace .ai-dev/memory/TICKET-123-plan.md."
+**Example Prompt:**"Using @workspace ai-dev/prompts/01-planner-agent.md, create a detailed plan for the feature described in @workspace docs/tickets/TICKET-123.md. Consider the existing code in @workspace src/auth/utils.js. Save the plan to @workspace .ai-dev/memory/TICKET-123-plan.md."
 
 3. **Review and Refine the Plan:** The AI's first plan is a draft, not a final command. Read it carefully. Does it make sense? Did it miss anything? If the plan is flawed, ask the AI to revise it."That's a good start, but you forgot to include a step for adding rate limiting to the new endpoint. Please update the plan in @workspace .ai-dev/memory/TICKET-123-plan.md to include this."
 
@@ -88,7 +88,7 @@ Before diving into implementation, get time and complexity estimates to help wit
    * **Be Specific:** Provide any context about team experience or constraints that might affect estimates.
    * **Direct the Output:** Save the estimates to a file in the .ai-dev/memory/ directory.
 
-**Example Prompt:** "Using @workspace .ai-dev/prompts/02-estimator-agent.md, provide time and complexity estimates for the plan in @workspace .ai-dev/memory/TICKET-123-plan.md. Our team has moderate experience with the technologies involved. Save the estimates to @workspace .ai-dev/memory/TICKET-123-estimates.md."
+**Example Prompt:** "Using @workspace ai-dev/prompts/02-estimator-agent.md, provide time and complexity estimates for the plan in @workspace .ai-dev/memory/TICKET-123-plan.md. Our team has moderate experience with the technologies involved. Save the estimates to @workspace .ai-dev/memory/TICKET-123-estimates.md."
 
 2. **Review the Estimates:** Examine the time and complexity estimates. Do they align with your expectations? If the estimates reveal that certain steps are more complex or time-consuming than anticipated, you might want to:
    * Break down complex steps into smaller, more manageable tasks
@@ -113,11 +113,11 @@ Coder Agent → Tester Agent → Run Tests → Evaluate Results
 
 2. **Enforce Minimal Code:** The Coder agent is explicitly instructed to write the minimum code necessary. When you review its output, ensure it has followed this rule. If it adds extra helper functions or logic that wasn't in the plan, ask it to revise and remove the unnecessary code.
    
-   **Example Prompt:** "Using @workspace .ai-dev/prompts/03-coder-agent.md, please implement Step 1 ('Create Service File') from the plan in @workspace .ai-dev/memory/TICKET-123-plan.md."
+   **Example Prompt:** "Using @workspace ai-dev/prompts/03-coder-agent.md, please implement Step 1 ('Create Service File') from the plan in @workspace .ai-dev/memory/TICKET-123-plan.md."
 
 3. **Test Immediately:** Once a logical unit of code is complete, immediately ask the Tester agent to write comprehensive tests including evaluation tests.
    
-   **Example Prompt:** "Using @workspace .ai-dev/prompts/04-tester-agent.md, write comprehensive tests including evaluation tests for the code in src/services/itemService.js. Include tests that measure AI consistency and correctness."
+   **Example Prompt:** "Using @workspace ai-dev/prompts/04-tester-agent.md, write comprehensive tests including evaluation tests for the code in src/services/itemService.js. Include tests that measure AI consistency and correctness."
 
 4. **Run and Evaluate Tests:** Execute the tests locally and analyze the results:
    * **Unit Tests**: Do they pass? Do they cover edge cases?
@@ -144,7 +144,7 @@ Once the core functionality is built and tested, use the specialized agents to i
 
 1. **Refactor for Clarity:** Using a **reasoning model**, ask the Refactorer agent to clean up any complex or duplicative code.  
 2. **Perform a Security Review:** This is a crucial final check. Use a powerful **reasoning model** to ensure the Security Reviewer agent can analyze the code for subtle vulnerabilities.  
-   **Example Prompt:**"Please perform a security review of the new endpoint handler in src/routes/api.js using @workspace .ai-dev/prompts/07-security-reviewer-agent.md."  
+   **Example Prompt:**"Please perform a security review of the new endpoint handler in src/routes/api.js using @workspace ai-dev/prompts/07-security-reviewer-agent.md."  
 3. **Add Documentation:** Use the Documenter agent with a **reasoning model** to generate clear, human-readable documentation.
 
 ### Phase 5: Archival & Completion
@@ -152,7 +152,7 @@ Once the core functionality is built and tested, use the specialized agents to i
 This final phase ensures your work becomes a permanent, useful part of the project's history.
 
 1. **Invoke the Archiver:** This is your last AI command for the task. Point the Archiver agent to all the relevant files you created in the /memory directory.  
-   **Example Prompt:**"Using @workspace .ai-dev/prompts/08-archiver-agent.md, create a new entry in @workspace AIDEV.md titled 'Feature \#123: User Login Endpoint'. Compile the following files into it: @workspace .ai-dev/memory/TICKET-123-plan.md and @workspace .ai-dev/memory/TICKET-123-security-review.md."  
+   **Example Prompt:**"Using @workspace ai-dev/prompts/08-archiver-agent.md, create a new entry in @workspace AIDEV.md titled 'Feature \#123: User Login Endpoint'. Compile the following files into it: @workspace .ai-dev/memory/TICKET-123-plan.md and @workspace .ai-dev/memory/TICKET-123-security-review.md."  
 2. **Review the AIDEV.md Entry:** Briefly check the AIDEV.md file to ensure the new entry was appended correctly and looks clean.  
 3. **Clean Up:** Delete the files for your task from the .ai-dev/memory/ directory. Their purpose is served, and their story is now in AIDEV.md. These files should never be committed to version control.  
 4. **Submit Your Pull Request:** Commit all your changes, including the updated AIDEV.md. When you create your PR, you can even reference the AIDEV.md entry in your description to give reviewers instant context.
@@ -165,11 +165,11 @@ When following this workflow in a monorepo, remember that all @workspace file pa
 
 **Correct Monorepo Prompt:**
 
-"Using @workspace apps/my-api/.ai-dev/prompts/02-coder-agent.md, implement the plan from @workspace apps/my-api/.ai-dev/memory/plan.md."
+"Using @workspace apps/my-api/ai-dev/prompts/02-coder-agent.md, implement the plan from @workspace apps/my-api/.ai-dev/memory/plan.md."
 
 **Incorrect Monorepo Prompt (ambiguous):**
 
-"Using @workspace .ai-dev/prompts/02-coder-agent.md..."
+"Using @workspace ai-dev/prompts/02-coder-agent.md..."
 
 ### Using Template Variables
 
@@ -207,7 +207,7 @@ To make agent prompts more adaptable to your specific project needs, you can use
    When invoking an agent, include the variables file in your prompt:
 
    ```
-   Using @workspace .ai-dev/prompts/02-coder-agent.md with variables from @workspace .ai-dev/config/variables.json, implement...
+   Using @workspace ai-dev/prompts/02-coder-agent.md with variables from @workspace .ai-dev/config/variables.json, implement...
    ```
 
 #### Best Practices for Template Variables
@@ -240,7 +240,7 @@ When a production issue occurs, start with systematic diagnosis:
 
    **Example Prompt:**
    ```
-   Using @workspace .ai-dev/prompts/10-incident-triage-agent.md, analyze the following production error: 
+   Using @workspace ai-dev/prompts/10-incident-triage-agent.md, analyze the following production error: 
    [paste error message, stack trace, and any relevant context]
    ```
 
@@ -260,7 +260,7 @@ With the root cause identified, determine the best path forward:
 
    **Example Prompt:**
    ```
-   Using @workspace .ai-dev/prompts/11-incident-fix-agent.md, propose solutions for the incident triaged in @workspace .ai-dev/memory/incident-triage-report.md
+   Using @workspace ai-dev/prompts/11-incident-fix-agent.md, propose solutions for the incident triaged in @workspace .ai-dev/memory/incident-triage-report.md
    ```
 
 2. **Evaluate Fix Options**: The agent will provide:
@@ -291,7 +291,7 @@ With the root cause identified, determine the best path forward:
 
    **Example Prompt:**
    ```
-   Using @workspace .ai-dev/prompts/08-archiver-agent.md, create an entry in @workspace AIDEV.md titled 'Incident: [Brief Description]' documenting the triage and fix from @workspace .ai-dev/memory/
+   Using @workspace ai-dev/prompts/08-archiver-agent.md, create an entry in @workspace AIDEV.md titled 'Incident: [Brief Description]' documenting the triage and fix from @workspace .ai-dev/memory/
    ```
 
 2. **Update Runbooks**: If the incident reveals operational gaps, update monitoring, alerting, or documentation

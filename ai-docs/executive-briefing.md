@@ -54,7 +54,7 @@ The AI Dev Playbook addresses these challenges by providing:
 
 The AI Dev Playbook offers two complementary integration options:
 
-1. **Traditional Workflow**: Structured process using specialized agent templates (`.ai-dev/prompts/`) for complex features
+1. **Traditional Workflow**: Structured process using specialized agent templates (`ai-dev/prompts/`) for complex features
 2. **GitHub Copilot Native Integration**: Lightweight approach using repository custom instructions (`.github/copilot-instructions.md`) and prompt files (`.github/prompts/*.prompt.md`) for quick tasks
 
 Teams can choose either approach or combine them based on their specific needs:

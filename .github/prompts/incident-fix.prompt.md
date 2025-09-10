@@ -36,7 +36,7 @@ Review an incident triage report and propose both immediate hotfix and sustainab
 
 **Next Steps:**
 Use this prompt with the Specification Agent:
-> "Using @workspace .ai-dev/prompts/00-specification-agent.md, create a technical specification to address [describe the incident and desired outcome]..."
+> "Using @workspace ai-dev/prompts/00-specification-agent.md, create a technical specification to address [describe the incident and desired outcome]..."
 
 ### Implementation Timeline
 - **Immediate:** Deploy hotfix

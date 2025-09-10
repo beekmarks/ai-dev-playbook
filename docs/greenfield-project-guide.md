@@ -156,7 +156,7 @@ your-project/
 **Test the workflow** by running a simple validation:
 ```bash
 # Traditional workflow test
-Using @workspace .ai-dev/prompts/00-specification-agent.md, create a technical specification for a simple "Hello World" feature that demonstrates your project's basic functionality. Save to @workspace .ai-dev/memory/hello-world-spec.md.
+Using @workspace ai-dev/prompts/00-specification-agent.md, create a technical specification for a simple "Hello World" feature that demonstrates your project's basic functionality. Save to @workspace .ai-dev/memory/hello-world-spec.md.
 
 # GitHub Copilot workflow test (from project root)
 @prompt create-spec
@@ -180,37 +180,37 @@ Select a simple but representative feature that demonstrates your project's core
 
 **1. Create Technical Specification**
 ```bash
-Using @workspace .ai-dev/prompts/00-specification-agent.md, create a comprehensive technical specification for [your chosen feature]. Include interfaces, data structures, error handling, and integration points. Save to @workspace .ai-dev/memory/[feature-name]-spec.md.
+Using @workspace ai-dev/prompts/00-specification-agent.md, create a comprehensive technical specification for [your chosen feature]. Include interfaces, data structures, error handling, and integration points. Save to @workspace .ai-dev/memory/[feature-name]-spec.md.
 ```
 
 **2. Plan Implementation**
 ```bash
-Using @workspace .ai-dev/prompts/01-planner-agent.md, create a detailed implementation plan based on the specification in @workspace .ai-dev/memory/[feature-name]-spec.md. Break down into implementable steps with clear acceptance criteria. Save to @workspace .ai-dev/memory/[feature-name]-plan.md.
+Using @workspace ai-dev/prompts/01-planner-agent.md, create a detailed implementation plan based on the specification in @workspace .ai-dev/memory/[feature-name]-spec.md. Break down into implementable steps with clear acceptance criteria. Save to @workspace .ai-dev/memory/[feature-name]-plan.md.
 ```
 
 **3. Implement the Feature**
 ```bash
-Using @workspace .ai-dev/prompts/03-coder-agent.md, implement Step 1 from the plan in @workspace .ai-dev/memory/[feature-name]-plan.md. Focus on clean, maintainable code that follows the specification.
+Using @workspace ai-dev/prompts/03-coder-agent.md, implement Step 1 from the plan in @workspace .ai-dev/memory/[feature-name]-plan.md. Focus on clean, maintainable code that follows the specification.
 ```
 
 **4. Write Comprehensive Tests**
 ```bash
-Using @workspace .ai-dev/prompts/04-tester-agent.md, write comprehensive unit tests for the implemented feature. Include happy path, error cases, and edge conditions as defined in the specification.
+Using @workspace ai-dev/prompts/04-tester-agent.md, write comprehensive unit tests for the implemented feature. Include happy path, error cases, and edge conditions as defined in the specification.
 ```
 
 **5. Security Review**
 ```bash
-Using @workspace .ai-dev/prompts/07-security-reviewer-agent.md, review the implementation for security concerns. Ensure proper input validation, error handling, and no sensitive data exposure.
+Using @workspace ai-dev/prompts/07-security-reviewer-agent.md, review the implementation for security concerns. Ensure proper input validation, error handling, and no sensitive data exposure.
 ```
 
 **6. Create Documentation**
 ```bash
-Using @workspace .ai-dev/prompts/06-documenter-agent.md, create user and developer documentation for the implemented feature. Include usage examples and API documentation.
+Using @workspace ai-dev/prompts/06-documenter-agent.md, create user and developer documentation for the implemented feature. Include usage examples and API documentation.
 ```
 
 **7. Archive the Work**
 ```bash
-Using @workspace .ai-dev/prompts/08-archiver-agent.md, create a comprehensive entry in @workspace AIDEV.md titled 'Feature: [Your Feature Name]'. Include the specification, plan, implementation summary, and lessons learned.
+Using @workspace ai-dev/prompts/08-archiver-agent.md, create a comprehensive entry in @workspace AIDEV.md titled 'Feature: [Your Feature Name]'. Include the specification, plan, implementation summary, and lessons learned.
 ```
 
 ### Step 3: Establish Development Patterns
@@ -271,7 +271,7 @@ Let's walk through a complete example of implementing a "Configuration Validatio
 
 **1. Create Technical Specification**
 ```bash
-Using @workspace .ai-dev/prompts/00-specification-agent.md, create a comprehensive technical specification for a configuration validation system. The system should:
+Using @workspace ai-dev/prompts/00-specification-agent.md, create a comprehensive technical specification for a configuration validation system. The system should:
 - Read configuration files (JSON/YAML)
 - Validate required fields and data types
 - Provide clear error messages with suggestions
@@ -289,7 +289,7 @@ Save to @workspace .ai-dev/memory/config-validation-spec.md.
 
 **2. Create Implementation Plan**
 ```bash
-Using @workspace .ai-dev/prompts/01-planner-agent.md, create a detailed implementation plan based on the specification in @workspace .ai-dev/memory/config-validation-spec.md. Break down the work into these phases:
+Using @workspace ai-dev/prompts/01-planner-agent.md, create a detailed implementation plan based on the specification in @workspace .ai-dev/memory/config-validation-spec.md. Break down the work into these phases:
 1. Core validation engine
 2. Configuration parser
 3. Error reporting system
@@ -306,7 +306,7 @@ Save to @workspace .ai-dev/memory/config-validation-plan.md.
 
 **3. Implement Core Functionality**
 ```bash
-Using @workspace .ai-dev/prompts/03-coder-agent.md, implement Step 1 from the plan in @workspace .ai-dev/memory/config-validation-plan.md. Focus on the core validation engine with:
+Using @workspace ai-dev/prompts/03-coder-agent.md, implement Step 1 from the plan in @workspace .ai-dev/memory/config-validation-plan.md. Focus on the core validation engine with:
 - Clean, maintainable code structure
 - Proper error handling
 - Type safety (if applicable to your language)
@@ -321,7 +321,7 @@ Using @workspace .ai-dev/prompts/03-coder-agent.md, implement Step 1 from the pl
 
 **4. Write Comprehensive Tests**
 ```bash
-Using @workspace .ai-dev/prompts/04-tester-agent.md, write comprehensive unit tests for the validation engine. Include:
+Using @workspace ai-dev/prompts/04-tester-agent.md, write comprehensive unit tests for the validation engine. Include:
 - Valid configuration scenarios
 - Invalid configuration scenarios  
 - Edge cases (empty files, malformed data)
@@ -337,7 +337,7 @@ Using @workspace .ai-dev/prompts/04-tester-agent.md, write comprehensive unit te
 
 **5. Security Review**
 ```bash
-Using @workspace .ai-dev/prompts/07-security-reviewer-agent.md, review the configuration validation implementation for security concerns:
+Using @workspace ai-dev/prompts/07-security-reviewer-agent.md, review the configuration validation implementation for security concerns:
 - Input sanitization
 - File access permissions
 - Injection attack prevention
@@ -353,7 +353,7 @@ Using @workspace .ai-dev/prompts/07-security-reviewer-agent.md, review the confi
 
 **6. Create Documentation**
 ```bash
-Using @workspace .ai-dev/prompts/06-documenter-agent.md, create comprehensive documentation for the configuration validation system:
+Using @workspace ai-dev/prompts/06-documenter-agent.md, create comprehensive documentation for the configuration validation system:
 - User guide with examples
 - API documentation
 - Configuration schema reference
@@ -369,7 +369,7 @@ Using @workspace .ai-dev/prompts/06-documenter-agent.md, create comprehensive do
 
 **7. Archive the Work**
 ```bash
-Using @workspace .ai-dev/prompts/08-archiver-agent.md, create a comprehensive entry in @workspace AIDEV.md titled 'Feature: Configuration Validation System'. Include:
+Using @workspace ai-dev/prompts/08-archiver-agent.md, create a comprehensive entry in @workspace AIDEV.md titled 'Feature: Configuration Validation System'. Include:
 - Original specification summary
 - Implementation approach and decisions
 - Testing strategy and results
@@ -430,29 +430,29 @@ This example shows how the AI Dev Playbook methodology ensures that even your fi
 **Traditional Workflow:**
 ```bash
 # 1. Specification
-Using @workspace .ai-dev/prompts/00-specification-agent.md, create a technical specification for [feature]. Save to @workspace .ai-dev/memory/[name]-spec.md.
+Using @workspace ai-dev/prompts/00-specification-agent.md, create a technical specification for [feature]. Save to @workspace .ai-dev/memory/[name]-spec.md.
 
 # 2. Planning  
-Using @workspace .ai-dev/prompts/01-planner-agent.md, create an implementation plan based on @workspace .ai-dev/memory/[name]-spec.md. Save to @workspace .ai-dev/memory/[name]-plan.md.
+Using @workspace ai-dev/prompts/01-planner-agent.md, create an implementation plan based on @workspace .ai-dev/memory/[name]-spec.md. Save to @workspace .ai-dev/memory/[name]-plan.md.
 
 # 3. Implementation
-Using @workspace .ai-dev/prompts/03-coder-agent.md, implement Step 1 from @workspace .ai-dev/memory/[name]-plan.md.
+Using @workspace ai-dev/prompts/03-coder-agent.md, implement Step 1 from @workspace .ai-dev/memory/[name]-plan.md.
 
 # 4. Testing
-Using @workspace .ai-dev/prompts/04-tester-agent.md, write comprehensive tests for the implemented feature.
+Using @workspace ai-dev/prompts/04-tester-agent.md, write comprehensive tests for the implemented feature.
 
 # 5. Security Review
-Using @workspace .ai-dev/prompts/07-security-reviewer-agent.md, review the implementation for security concerns.
+Using @workspace ai-dev/prompts/07-security-reviewer-agent.md, review the implementation for security concerns.
 
 # 6. Documentation  
-Using @workspace .ai-dev/prompts/06-documenter-agent.md, create documentation for the feature.
+Using @workspace ai-dev/prompts/06-documenter-agent.md, create documentation for the feature.
 
 # 7. Archive
-Using @workspace .ai-dev/prompts/08-archiver-agent.md, create an entry in @workspace AIDEV.md titled 'Feature: [Name]'.
+Using @workspace ai-dev/prompts/08-archiver-agent.md, create an entry in @workspace AIDEV.md titled 'Feature: [Name]'.
 
 # Incident Management (When Issues Arise)
-Using @workspace .ai-dev/prompts/10-incident-triage-agent.md, analyze production errors.
-Using @workspace .ai-dev/prompts/11-incident-fix-agent.md, plan incident response.
+Using @workspace ai-dev/prompts/10-incident-triage-agent.md, analyze production errors.
+Using @workspace ai-dev/prompts/11-incident-fix-agent.md, plan incident response.
 ```
 
 **GitHub Copilot Workflow:**
@@ -475,7 +475,7 @@ Using @workspace .ai-dev/prompts/11-incident-fix-agent.md, plan incident respons
 - **`.ai-dev/config/variables.json`**: Project-specific variables
 - **`.github/copilot-instructions.md`**: Coding standards and context
 - **`AIDEV.md`**: Development history and decisions
-- **Agent prompts in `.ai-dev/prompts/`**: Project-specific guidance
+- **Agent prompts in `ai-dev/prompts/`**: Project-specific guidance
 
 ## Success Indicators
 

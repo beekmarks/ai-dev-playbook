@@ -97,7 +97,7 @@ Use the AI Dev Playbook's built-in Specification Agent for custom spec generatio
 
 **1. Create Initial Specification**
 ```
-Using @workspace .ai-dev/prompts/00-specification-agent.md, create a comprehensive feature specification for [feature description]
+Using @workspace ai-dev/prompts/00-specification-agent.md, create a comprehensive feature specification for [feature description]
 ```
 
 **2. Choose Document Structure**
@@ -133,7 +133,7 @@ mv tasks.md .ai-dev/memory/
 
 **3. Consolidate and Refine**
 ```
-Using @workspace .ai-dev/prompts/00-specification-agent.md, analyze and consolidate the Kiro documents in @workspace .ai-dev/memory/ into a unified technical specification.
+Using @workspace ai-dev/prompts/00-specification-agent.md, analyze and consolidate the Kiro documents in @workspace .ai-dev/memory/ into a unified technical specification.
 ```
 
 #### **Using GitHub Spec Kit**
@@ -157,7 +157,7 @@ cp specs/[###-feature-name]/*.md .ai-dev/memory/
 
 **3. Execute with AI Dev Playbook**
 ```
-Using @workspace .ai-dev/prompts/03-coder-agent.md, implement Task T001 from @workspace .ai-dev/memory/tasks.md.
+Using @workspace ai-dev/prompts/03-coder-agent.md, implement Task T001 from @workspace .ai-dev/memory/tasks.md.
 ```
 
 ### **Approach 3: Hybrid Integration**
@@ -182,7 +182,7 @@ Combine external tool strengths with AI Dev Playbook refinement:
 Use the Planner Agent to break down specifications into discrete tasks (works with specifications from any source):
 
 ```
-Using @workspace .ai-dev/prompts/01-planner-agent.md, create a task list based on the specifications in @workspace .ai-dev/memory/
+Using @workspace ai-dev/prompts/01-planner-agent.md, create a task list based on the specifications in @workspace .ai-dev/memory/
 ```
 
 ### 3. Implement with Continuous Reference to Specs
@@ -190,7 +190,7 @@ Using @workspace .ai-dev/prompts/01-planner-agent.md, create a task list based o
 When implementing code, always reference the specification documents:
 
 ```
-Using @workspace .ai-dev/prompts/03-coder-agent.md, implement the API endpoint described in @workspace .ai-dev/memory/api-contract.md
+Using @workspace ai-dev/prompts/03-coder-agent.md, implement the API endpoint described in @workspace .ai-dev/memory/api-contract.md
 ```
 
 ### 4. Keep Documentation in Sync
@@ -198,7 +198,7 @@ Using @workspace .ai-dev/prompts/03-coder-agent.md, implement the API endpoint d
 Update specification documents when implementation details change:
 
 ```
-Using @workspace .ai-dev/prompts/06-documenter-agent.md, update the design document at @workspace .ai-dev/memory/design.md to reflect the changes made to the authentication flow
+Using @workspace ai-dev/prompts/06-documenter-agent.md, update the design document at @workspace .ai-dev/memory/design.md to reflect the changes made to the authentication flow
 ```
 
 ## **Plan-Centric Code Reviews**
@@ -256,13 +256,13 @@ The spec-driven approach extends beyond development into production incident man
 ### **Example Workflow**
 ```
 # 1. Systematic Analysis
-Using @workspace .ai-dev/prompts/10-incident-triage-agent.md, analyze this production error and identify root causes.
+Using @workspace ai-dev/prompts/10-incident-triage-agent.md, analyze this production error and identify root causes.
 
 # 2. Balanced Response Planning  
-Using @workspace .ai-dev/prompts/11-incident-fix-agent.md, propose both hotfix and sustainable solutions.
+Using @workspace ai-dev/prompts/11-incident-fix-agent.md, propose both hotfix and sustainable solutions.
 
 # 3. Spec-Driven Sustainable Fix
-Using @workspace .ai-dev/prompts/00-specification-agent.md, create specifications for the long-term solution to address the underlying design issues identified in the incident analysis.
+Using @workspace ai-dev/prompts/00-specification-agent.md, create specifications for the long-term solution to address the underlying design issues identified in the incident analysis.
 ```
 
 This approach ensures that incidents become opportunities for system improvement rather than just quick patches.
