@@ -228,7 +228,7 @@ Because Spec Kit has already generated a detailed plan (`plan.md`) and task list
 **2. Execute Tasks**: Begin executing the steps outlined in `.ai-dev/memory/tasks.md` using the Coder Agent. Since the tasks are already defined, you can start implementation immediately.
 
 ```bash
-Using @workspace .ai-dev/prompts/03-coder-agent.md, implement Task T001 from @workspace .ai-dev/memory/tasks.md.
+Using @workspace ai-dev/prompts/03-coder-agent.md, implement Task T001 from @workspace .ai-dev/memory/tasks.md.
 ```
 
 **3. Follow the Workflow**: Continue with the standard AI Dev Playbook workflow (Test → Secure → Document → Archive) for each implemented task.
@@ -259,7 +259,7 @@ This approach keeps your permanent documentation organized while ensuring the AI
 
 **1. Analyze Your Existing Documents**
 ```bash
-Using @workspace .ai-dev/prompts/00-specification-agent.md, analyze the design documents in @workspace .ai-dev/memory/ (design.md, requirements.md, tasks.md) and create a consolidated technical specification that includes:
+Using @workspace ai-dev/prompts/00-specification-agent.md, analyze the design documents in @workspace .ai-dev/memory/ (design.md, requirements.md, tasks.md) and create a consolidated technical specification that includes:
 - System requirements and constraints
 - Architecture and design decisions
 - API specifications and data models
@@ -270,7 +270,7 @@ Save to @workspace .ai-dev/memory/consolidated-spec.md.
 
 **2. Create Initial Implementation Plan**
 ```bash
-Using @workspace .ai-dev/prompts/01-planner-agent.md, create a comprehensive implementation plan based on the consolidated specification in @workspace .ai-dev/memory/consolidated-spec.md and the task breakdown in @workspace .ai-dev/memory/tasks.md. Organize work into phases:
+Using @workspace ai-dev/prompts/01-planner-agent.md, create a comprehensive implementation plan based on the consolidated specification in @workspace .ai-dev/memory/consolidated-spec.md and the task breakdown in @workspace .ai-dev/memory/tasks.md. Organize work into phases:
 1. Project setup and infrastructure
 2. Core functionality implementation
 3. Integration and testing
@@ -280,7 +280,7 @@ Save to @workspace .ai-dev/memory/implementation-plan.md.
 
 **3. Estimate Work and Complexity**
 ```bash
-Using @workspace .ai-dev/prompts/02-estimator-agent.md, provide detailed time and complexity estimates for the implementation plan in @workspace .ai-dev/memory/implementation-plan.md. Consider:
+Using @workspace ai-dev/prompts/02-estimator-agent.md, provide detailed time and complexity estimates for the implementation plan in @workspace .ai-dev/memory/implementation-plan.md. Consider:
 - Technology stack setup time
 - Development complexity by feature
 - Testing and integration effort
@@ -292,7 +292,7 @@ Save to @workspace .ai-dev/memory/project-estimates.md.
 
 **1. Determine Technology Stack**
 ```bash
-Using @workspace .ai-dev/prompts/03-coder-agent.md, based on the consolidated specification in @workspace .ai-dev/memory/consolidated-spec.md, recommend and set up the initial project structure including:
+Using @workspace ai-dev/prompts/03-coder-agent.md, based on the consolidated specification in @workspace .ai-dev/memory/consolidated-spec.md, recommend and set up the initial project structure including:
 - Technology stack selection
 - Project directory structure
 - Build and dependency management setup
@@ -302,7 +302,7 @@ Using @workspace .ai-dev/prompts/03-coder-agent.md, based on the consolidated sp
 
 **2. Create Project Foundation**
 ```bash
-Using @workspace .ai-dev/prompts/03-coder-agent.md, implement Phase 1 (Project setup and infrastructure) from @workspace .ai-dev/memory/implementation-plan.md. Focus on:
+Using @workspace ai-dev/prompts/03-coder-agent.md, implement Phase 1 (Project setup and infrastructure) from @workspace .ai-dev/memory/implementation-plan.md. Focus on:
 - Basic project structure
 - Build system configuration
 - Essential dependencies
@@ -317,12 +317,12 @@ Since Spec Kit provides constitution-aligned planning, you can often start direc
 
 **1. Review Generated Plan**
 ```bash
-Using @workspace .ai-dev/prompts/01-planner-agent.md, review and validate the implementation plan in @workspace .ai-dev/memory/plan.md. Ensure it aligns with your project requirements and constraints. If modifications are needed, update the plan accordingly.
+Using @workspace ai-dev/prompts/01-planner-agent.md, review and validate the implementation plan in @workspace .ai-dev/memory/plan.md. Ensure it aligns with your project requirements and constraints. If modifications are needed, update the plan accordingly.
 ```
 
 **2. Validate Task Breakdown**
 ```bash
-Using @workspace .ai-dev/prompts/02-estimator-agent.md, review the task list in @workspace .ai-dev/memory/tasks.md and provide time estimates for each task. Identify any dependencies or potential roadblocks.
+Using @workspace ai-dev/prompts/02-estimator-agent.md, review the task list in @workspace .ai-dev/memory/tasks.md and provide time estimates for each task. Identify any dependencies or potential roadblocks.
 ```
 
 **Phase 2: Direct Implementation**
@@ -331,12 +331,12 @@ Since Spec Kit has already done the heavy planning work, you can begin implement
 
 **1. Execute Spec Kit Tasks**
 ```bash
-Using @workspace .ai-dev/prompts/03-coder-agent.md, implement Task T001 from @workspace .ai-dev/memory/tasks.md as specified in the plan.
+Using @workspace ai-dev/prompts/03-coder-agent.md, implement Task T001 from @workspace .ai-dev/memory/tasks.md as specified in the plan.
 ```
 
 **2. Continue Sequential Implementation**
 ```bash
-Using @workspace .ai-dev/prompts/03-coder-agent.md, implement Task T002 from @workspace .ai-dev/memory/tasks.md, ensuring it builds on the previous task.
+Using @workspace ai-dev/prompts/03-coder-agent.md, implement Task T002 from @workspace .ai-dev/memory/tasks.md, ensuring it builds on the previous task.
 ```
 
 ### Common Iterative Development (Both Use Cases)
@@ -349,32 +349,32 @@ Now follow the standard AI Dev Playbook workflow for each feature/phase:
 
 1. **Create Detailed Specifications** (if needed for Kiro workflows)
 ```bash
-Using @workspace .ai-dev/prompts/00-specification-agent.md, create detailed specifications for [specific feature] based on the requirements in @workspace .ai-dev/memory/consolidated-spec.md. Save to @workspace .ai-dev/memory/[feature-name]-spec.md.
+Using @workspace ai-dev/prompts/00-specification-agent.md, create detailed specifications for [specific feature] based on the requirements in @workspace .ai-dev/memory/consolidated-spec.md. Save to @workspace .ai-dev/memory/[feature-name]-spec.md.
 ```
 
 2. **Plan Implementation** (if needed for Kiro workflows)
 ```bash
-Using @workspace .ai-dev/prompts/01-planner-agent.md, create implementation steps for [specific feature] based on @workspace .ai-dev/memory/[feature-name]-spec.md. Save to @workspace .ai-dev/memory/[feature-name]-plan.md.
+Using @workspace ai-dev/prompts/01-planner-agent.md, create implementation steps for [specific feature] based on @workspace .ai-dev/memory/[feature-name]-spec.md. Save to @workspace .ai-dev/memory/[feature-name]-plan.md.
 ```
 
 3. **Implement Features**
 ```bash
-Using @workspace .ai-dev/prompts/03-coder-agent.md, implement Step [X] from @workspace .ai-dev/memory/[feature-name]-plan.md.
+Using @workspace ai-dev/prompts/03-coder-agent.md, implement Step [X] from @workspace .ai-dev/memory/[feature-name]-plan.md.
 ```
 
 4. **Write Tests**
 ```bash
-Using @workspace .ai-dev/prompts/04-tester-agent.md, write comprehensive tests for the [feature] implementation including evaluation tests for quality measurement.
+Using @workspace ai-dev/prompts/04-tester-agent.md, write comprehensive tests for the [feature] implementation including evaluation tests for quality measurement.
 ```
 
 5. **Security Review**
 ```bash
-Using @workspace .ai-dev/prompts/07-security-reviewer-agent.md, review the [feature] implementation for security concerns.
+Using @workspace ai-dev/prompts/07-security-reviewer-agent.md, review the [feature] implementation for security concerns.
 ```
 
 6. **Archive Progress**
 ```bash
-Using @workspace .ai-dev/prompts/08-archiver-agent.md, create an entry in @workspace AIDEV.md titled 'Feature: [Feature Name]' documenting the implementation.
+Using @workspace ai-dev/prompts/08-archiver-agent.md, create an entry in @workspace AIDEV.md titled 'Feature: [Feature Name]' documenting the implementation.
 ```
 
 ## Advantages of This Approach

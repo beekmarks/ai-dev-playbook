@@ -63,6 +63,6 @@ Provide a structured markdown document with these sections:
 
 **USAGE EXAMPLES:**
 
-"Using @workspace .ai-dev/prompts/09-compactor-agent.md, please summarize our conversation about implementing user authentication. Focus on preserving the key architectural decisions and the current implementation status."
+"Using @workspace ai-dev/prompts/09-compactor-agent.md, please summarize our conversation about implementing user authentication. Focus on preserving the key architectural decisions and the current implementation status."
 
-"Using @workspace .ai-dev/prompts/09-compactor-agent.md, compact the accumulated context in @workspace .ai-dev/memory/user-auth-context.md and create a focused summary for the next development phase."
+"Using @workspace ai-dev/prompts/09-compactor-agent.md, compact the accumulated context in @workspace .ai-dev/memory/user-auth-context.md and create a focused summary for the next development phase."

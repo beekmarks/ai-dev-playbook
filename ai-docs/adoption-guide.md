@@ -72,7 +72,7 @@ Integrating the AI Dev Playbook into a mature codebase requires a simple "drop-i
    * The docs/ directory (or just docs/ai-dev-playbook-workflow.md, docs/github-copilot-integration.md, and this docs/adoption-guide.md).  
 2. **No Code Changes Required:** This action should require **zero modifications** to your existing application source code. The AI Dev Playbook assets will sit alongside your current /src, /app, /tests directories.  
 3. **(Optional) Tune the Prompts and Instructions:** Your team should take a few minutes to tune both the agent prompts and GitHub Copilot instructions to your project's specific context:
-   * For agent templates: Add project-specific context to files in `.ai-dev/prompts/`. For example, you might add a line to 03-coder-agent.md like: *"This is a Java Spring Boot application using Maven. Ensure all code follows standard Java 17 conventions and our internal style guide."*
+   * For agent templates: Add project-specific context to files in `ai-dev/prompts/`. For example, you might add a line to 03-coder-agent.md like: *"This is a Java Spring Boot application using Maven. Ensure all code follows standard Java 17 conventions and our internal style guide."*
    * For GitHub Copilot: Customize `.github/copilot-instructions.md` with your project's coding standards, architecture, and other important context. Also review and update the prompt files in `.github/prompts/` to align with your team's needs.
    * Consider using template variables in `.ai-dev/config/variables.json` to maintain consistency across both systems.  
 4. **Initialize AIDEV.md:** You do not need to retroactively document your entire project. Instead, create an initial entry in AIDEV.md to mark the start of the new process.  
@@ -103,7 +103,7 @@ mv requirements.md .ai-dev/memory/
 mv tasks.md .ai-dev/memory/
 
 # Use AI Dev Playbook to consolidate and implement
-Using @workspace .ai-dev/prompts/00-specification-agent.md, analyze and consolidate the Kiro documents in @workspace .ai-dev/memory/ into a unified technical specification.
+Using @workspace ai-dev/prompts/00-specification-agent.md, analyze and consolidate the Kiro documents in @workspace .ai-dev/memory/ into a unified technical specification.
 ```
 
 ### **For Teams Using Spec Kit**
@@ -120,7 +120,7 @@ Using @workspace .ai-dev/prompts/00-specification-agent.md, analyze and consolid
 cp specs/[###-feature-name]/*.md .ai-dev/memory/
 
 # Execute tasks directly with AI Dev Playbook
-Using @workspace .ai-dev/prompts/03-coder-agent.md, implement Task T001 from @workspace .ai-dev/memory/tasks.md.
+Using @workspace ai-dev/prompts/03-coder-agent.md, implement Task T001 from @workspace .ai-dev/memory/tasks.md.
 ```
 
 ### **Benefits of Integration**

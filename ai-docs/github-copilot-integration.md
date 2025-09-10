@@ -32,7 +32,7 @@ GitHub Copilot's prompt files feature allows you to save common prompt instructi
 ### How It Works
 
 1. The `.github/prompts/` directory contains `.prompt.md` files for each agent type
-2. These files mirror the functionality of our agent templates in `.ai-dev/prompts/`
+2. These files mirror the functionality of our agent templates in `ai-dev/prompts/`
 3. You can reference them directly in GitHub Copilot Chat using the `@prompt` command
 
 For example:
@@ -71,7 +71,7 @@ Use the traditional AI Dev Playbook workflow with `@workspace` commands when:
 
 Example:
 ```
-Using @workspace .ai-dev/prompts/01-planner-agent.md, create a plan for...
+Using @workspace ai-dev/prompts/01-planner-agent.md, create a plan for...
 ```
 
 ### Quick Tasks with Prompt Files

@@ -82,7 +82,7 @@ For teams adopting these new techniques, we recommend starting with:
 
 All enhancements are available in both formats:
 
-**Traditional Workflow** (`@workspace .ai-dev/prompts/`):
+**Traditional Workflow** (`@workspace ai-dev/prompts/`):
 - 12 enhanced agent templates with expert personas (including Incident Management)
 - Advanced context engineering capabilities
 - New Compactor Agent for context management

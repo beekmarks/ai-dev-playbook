@@ -8,7 +8,7 @@ To ensure the AI Dev Playbook works effectively across distributed teams, adopt 
 
 ### Managing Templates and Prompts
 
-- **Centralized Curation**: Agent templates (`.ai-dev/prompts/`) and GitHub Copilot prompts (`.github/prompts/`) should be centrally curated
+- **Centralized Curation**: Agent templates (`ai-dev/prompts/`) and GitHub Copilot prompts (`.github/prompts/`) should be centrally curated
 - **Change Process**: Changes to core templates should be made via Pull Request with appropriate review
 - **Local Adaptations**: Developers are encouraged to adapt prompts locally for specific tasks but should not commit those tweaks to main
 - **Template Variables**: Use template variables (`.ai-dev/config/variables.json`) to customize prompts without modifying core templates
@@ -129,7 +129,7 @@ Establish clear workflows for reviewing and approving AI-generated code:
   "AI Dev Planner": {
     "prefix": "aidp-plan",
     "body": [
-      "Using @workspace .ai-dev/prompts/01-planner-agent.md, create a plan for $1. Save the output to @workspace .ai-dev/memory/$2."
+      "Using @workspace ai-dev/prompts/01-planner-agent.md, create a plan for $1. Save the output to @workspace .ai-dev/memory/$2."
     ]
   }
   ```

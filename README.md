@@ -17,7 +17,7 @@ This workflow is built on a few key ideas:
 | **Spec-Driven Development** | Specifications before code | Create detailed specifications (requirements, design, API contracts) before implementation for better quality and maintainability. |
 | **External Tool Integration** | Kiro, Spec Kit support | The AI Dev Playbook seamlessly integrates with existing specification tools like Amazon's Kiro and GitHub's Spec Kit, allowing teams to leverage their existing planning workflows. |
 | **Specification Sources** | Multiple input formats | Accept specifications from various sources: manual creation, Kiro design documents, Spec Kit artifacts, or existing documentation, providing flexibility for different team workflows. |
-| **Specialized Agents** | .ai-dev/prompts/ | A collection of prompt templates, each designed for a specific task (specifications, planning, coding, testing, incident management, etc.). You invoke these agents to perform work. |
+| **Specialized Agents** | ai-dev/prompts/ | A collection of prompt templates, each designed for a specific task (specifications, planning, coding, testing, incident management, etc.). You invoke these agents to perform work. |
 | **Role-Based Prompting** | Expert personas in each agent | By assigning specific roles (e.g., "Martin Fowler for refactoring," "Richard Feynman for documentation"), we focus the AI's vast knowledge and trigger deep expert associations, just like telling a human to "think like a security expert." This provides more accurate, expert-level responses. |
 | **GitHub Copilot Integration** | .github/ directory | Repository custom instructions and prompt files that provide the same guidance through native GitHub Copilot features. |
 | **Workspace Context** | @workspace command | GitHub Copilot can read files directly from your workspace. You use this to provide context like requirements, existing code, or plans. |
@@ -183,13 +183,13 @@ First, we ask the **Specification Developer Agent** to create detailed specifica
 
 **Your Chat Prompt:**
 
-"Using the agent at @workspace .ai-dev/prompts/00-specification-agent.md, create a comprehensive specification for a new API endpoint /api/items. The endpoint should fetch data from itemService.js and return it as JSON. Include requirements, design, API contract, and testing strategy. Save the output to @workspace .ai-dev/memory/get-items-spec.md."
+"Using the agent at @workspace ai-dev/prompts/00-specification-agent.md, create a comprehensive specification for a new API endpoint /api/items. The endpoint should fetch data from itemService.js and return it as JSON. Include requirements, design, API contract, and testing strategy. Save the output to @workspace .ai-dev/memory/get-items-spec.md."
 
 **Option B: Multiple Specification Files:**
 
 **Your Chat Prompt:**
 
-"Using the agent at @workspace .ai-dev/prompts/00-specification-agent.md, create separate specification files for a new API endpoint /api/items. The endpoint should fetch data from itemService.js and return it as JSON. Create requirements.md, design.md, and api-contract.md files in the .ai-dev/memory/ directory."
+"Using the agent at @workspace ai-dev/prompts/00-specification-agent.md, create separate specification files for a new API endpoint /api/items. The endpoint should fetch data from itemService.js and return it as JSON. Create requirements.md, design.md, and api-contract.md files in the .ai-dev/memory/ directory."
 
 ### **Step 2: Plan the Work**
 
@@ -197,7 +197,7 @@ Next, we ask the **Planner Agent** to break down the task based on our specifica
 
 **Your Chat Prompt:**
 
-"Using the agent at @workspace .ai-dev/prompts/01-planner-agent.md, create a plan to implement the API endpoint based on the specifications in @workspace .ai-dev/memory/get-items-spec.md. Save the output to @workspace .ai-dev/memory/get-items-plan.md."
+"Using the agent at @workspace ai-dev/prompts/01-planner-agent.md, create a plan to implement the API endpoint based on the specifications in @workspace .ai-dev/memory/get-items-spec.md. Save the output to @workspace .ai-dev/memory/get-items-plan.md."
 
 ### **Step 3: Estimate the Work**
 
@@ -205,7 +205,7 @@ Before implementation, we use the **Estimator Agent** to get time and complexity
 
 **Your Chat Prompt:**
 
-"Using @workspace .ai-dev/prompts/02-estimator-agent.md, provide time and complexity estimates for the plan in @workspace .ai-dev/memory/get-items-plan.md. Save the output to @workspace .ai-dev/memory/get-items-estimates.md."
+"Using @workspace ai-dev/prompts/02-estimator-agent.md, provide time and complexity estimates for the plan in @workspace .ai-dev/memory/get-items-plan.md. Save the output to @workspace .ai-dev/memory/get-items-estimates.md."
 
 ### **Step 4: Write the Code**
 
@@ -213,7 +213,7 @@ Now, we execute the plan step-by-step using the **Coder Agent**.
 
 **Your Chat Prompt:**
 
-"Using @workspace .ai-dev/prompts/03-coder-agent.md, implement Step 1 from the plan in @workspace .ai-dev/memory/get-items-plan.md."
+"Using @workspace ai-dev/prompts/03-coder-agent.md, implement Step 1 from the plan in @workspace .ai-dev/memory/get-items-plan.md."
 
 ### **Step 5: Write the Tests**
 
@@ -221,7 +221,7 @@ With the code written, we ask the **Tester Agent** to create the tests.
 
 **Your Chat Prompt:**
 
-"Using @workspace .ai-dev/prompts/04-tester-agent.md, write unit tests for the new getItems function in @workspace src/services/itemService.js. Ensure you test the happy path and that it returns an array."
+"Using @workspace ai-dev/prompts/04-tester-agent.md, write unit tests for the new getItems function in @workspace src/services/itemService.js. Ensure you test the happy path and that it returns an array."
 
 ### **Step 6: Review and Refine**
 
@@ -233,7 +233,7 @@ If implementation details changed during development, we update our specificatio
 
 **Your Chat Prompt:**
 
-"Using @workspace .ai-dev/prompts/06-documenter-agent.md, update the specifications in @workspace .ai-dev/memory/get-items-spec.md to reflect any changes made during implementation."
+"Using @workspace ai-dev/prompts/06-documenter-agent.md, update the specifications in @workspace .ai-dev/memory/get-items-spec.md to reflect any changes made during implementation."
 
 ### **Step 8: Archive the History**
 
@@ -241,11 +241,11 @@ The feature is complete\! The final step is to use the **Archiver Agent** to cre
 
 **Your Chat Prompt:**
 
-"Using @workspace .ai-dev/prompts/08-archiver-agent.md, create a new entry in @workspace AIDEV.md titled 'Feature: Add /api/items Endpoint'. Compile the plan from @workspace .ai-dev/memory/get-items-plan.md into it."
+"Using @workspace ai-dev/prompts/08-archiver-agent.md, create a new entry in @workspace AIDEV.md titled 'Feature: Add /api/items Endpoint'. Compile the plan from @workspace .ai-dev/memory/get-items-plan.md into it."
 
 ## **Governance and Best Practices**
 
-* **Prompts are Curated:** The agent prompts in .ai-dev/prompts are the team's standard. Do not commit changes to them directly. If you discover a generally useful improvement, open a Pull Request to discuss it.  
+* **Prompts are Curated:** The agent prompts in ai-dev/prompts are the team's standard. Do not commit changes to them directly. If you discover a generally useful improvement, open a Pull Request to discuss it.  
 * **AIDEV.md is the Project's Ledger:** This file is the project's long-term memory. The final step of every task is to append its story (plan, etc.) to this ledger. This ensures the "why" behind your code is preserved for future developers. You must include the updated AIDEV.md in your feature's Pull Request and be prepared to resolve merge conflicts.  
 * **⚠️ SECURITY WARNING:** **NEVER** paste secrets, credentials, or sensitive customer data into a prompt. The AI is a third-party service. Use placeholders and reference environment variables, just as you would in your code.
 
@@ -287,10 +287,10 @@ The AI Dev Playbook now offers two complementary approaches to AI-assisted devel
 
 ### 1. Traditional Workflow with Agent Templates
 
-Use the `@workspace` command with agent templates in `.ai-dev/prompts/` for a structured, full-featured workflow:
+Use the `@workspace` command with agent templates in `ai-dev/prompts/` for a structured, full-featured workflow:
 
 ```
-Using @workspace .ai-dev/prompts/01-planner-agent.md, create a plan for...
+Using @workspace ai-dev/prompts/01-planner-agent.md, create a plan for...
 ```
 
 This approach is ideal for complex features and teams following the complete methodology.
