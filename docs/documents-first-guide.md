@@ -35,8 +35,18 @@ Monorepo root (let assistant decide pattern):
 ### Manual Fallback
 If the assistant is unavailable:
 1. Clone ai-dev-playbook adjacent to your project
-2. Copy .ai-dev/, .github/, and AIDEV.md into your repo root
-3. Rename example.variables.json to variables.json and populate
+2. **Copy Framework Files**: Copy .ai-dev/, .github/, and AIDEV.md into your repo root
+3. **Set Up Variables**: Create your project-specific configuration:
+   ```bash
+   # Create the config directory in your workspace
+   mkdir -p .ai-dev/config
+   
+   # Copy the example variables file from the framework
+   cp ai-dev/config/example.variables.json .ai-dev/config/variables.json
+   
+   # Edit with your project details
+   # Update PROJECT_NAME, CODING_STYLE, PREFERRED_TESTING_FRAMEWORK, etc.
+   ```
 4. Continue with the relevant Use Case section below
 
 ## Use Case 1: Starting from Kiro (design.md, requirements.md)

@@ -34,8 +34,19 @@ Single app inside monorepo (scoped):
 
 ### Manual Fallback
 If the assistant is unavailable:
-1. Copy .ai-dev/, .github/, AIDEV.md into target scope (root or app dir)
-2. Rename example.variables.json to variables.json and populate
+1. **Copy Framework Files**: Copy .ai-dev/, .github/, AIDEV.md into target scope (root or app dir)
+2. **Set Up Variables**: Create your project-specific configuration:
+   ```bash
+   # Create the config directory in your workspace
+   mkdir -p .ai-dev/config
+   
+   # Copy the example variables file from the framework
+   cp ai-dev/config/example.variables.json .ai-dev/config/variables.json
+   
+   # Edit the file with your project-specific values
+   # Edit .ai-dev/config/variables.json with your:
+   # - PROJECT_NAME, CODING_STYLE, PREFERRED_TESTING_FRAMEWORK, etc.
+   ```
 3. Open VS Code and proceed with standard workflow docs
 4. Add initial AIDEV.md entry marking adoption
 
@@ -74,7 +85,18 @@ Integrating the AI Dev Playbook into a mature codebase requires a simple "drop-i
 3. **(Optional) Tune the Prompts and Instructions:** Your team should take a few minutes to tune both the agent prompts and GitHub Copilot instructions to your project's specific context:
    * For agent templates: Add project-specific context to files in `ai-dev/prompts/`. For example, you might add a line to 03-coder-agent.md like: *"This is a Java Spring Boot application using Maven. Ensure all code follows standard Java 17 conventions and our internal style guide."*
    * For GitHub Copilot: Customize `.github/copilot-instructions.md` with your project's coding standards, architecture, and other important context. Also review and update the prompt files in `.github/prompts/` to align with your team's needs.
-   * Consider using template variables in `.ai-dev/config/variables.json` to maintain consistency across both systems.  
+   * **Set Up Template Variables**: Create your project-specific configuration to maintain consistency across both systems:
+     ```bash
+     # Create the config directory in your workspace  
+     mkdir -p .ai-dev/config
+     
+     # Copy the example variables file from the framework
+     cp ai-dev/config/example.variables.json .ai-dev/config/variables.json
+     
+     # Edit with your project details
+     # Update PROJECT_NAME, CODING_STYLE, PREFERRED_TESTING_FRAMEWORK, etc.
+     ```
+     Variables like `{{PROJECT_NAME}}` and `{{CODING_STYLE}}` can then be used in both agent templates and GitHub Copilot instructions for consistent project context.  
 4. **Initialize AIDEV.md:** You do not need to retroactively document your entire project. Instead, create an initial entry in AIDEV.md to mark the start of the new process.  
    \#\# Process Adopted \- July 08, 2025
 

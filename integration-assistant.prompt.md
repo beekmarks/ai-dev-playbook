@@ -82,6 +82,28 @@ From actual repository files, extract:
 - **SHARED_LIBRARIES**: Internal import patterns
 - **EXPERT_DOMAINS**: Relevant expert personas for the technology stack (e.g., Martin Fowler for enterprise apps, John Carmack for performance-critical code)
 
+### Create Variables Configuration File
+After extracting project variables, create `.ai-dev/config/variables.json` in each appropriate location:
+```bash
+# Create the config directory
+mkdir -p .ai-dev/config
+
+# Create variables.json with extracted values (not the example file structure)
+# Include all extracted variables for ongoing template customization
+```
+
+**Dual Approach**: Both substitute extracted values directly into initial prompt files AND create the variables file:
+- **Initial Setup**: Prompts work immediately with real project values
+- **Ongoing Use**: Variables file enables future customization without editing each prompt
+- **Template Support**: Users can add {{VARIABLE_NAME}} to prompts and reference the variables file
+- **Maintenance**: Easier to update project context across all prompts from one location
+
+This variables file enables:
+- Future prompt customization without editing each agent template
+- Consistent variable management across all prompts and GitHub Copilot instructions
+- Easier maintenance and updates as the project evolves
+- Template variable substitution using {{VARIABLE_NAME}} syntax
+
 ### External Tool Artifact Integration
 When external tool artifacts are detected, integrate them appropriately:
 
@@ -129,6 +151,7 @@ Create repository and/or application-level GitHub Copilot configurations:
 
 ### Validation Checklist
 - ✅ **Complete Coverage**: 12 workflow prompts in each development location (including Compactor and Incident Management agents)
+- ✅ **Variables File Created**: `.ai-dev/config/variables.json` exists with extracted project values
 - ✅ **Expert Personas**: All agents include appropriate expert personas for the technology stack
 - ✅ **Context Engineering**: Planner and other agents include gather-and-glean strategies
 - ✅ **Evaluation Testing**: Tester agent includes evals for measuring AI consistency
@@ -136,7 +159,8 @@ Create repository and/or application-level GitHub Copilot configurations:
 - ✅ **External Tool Integration**: Kiro/Spec Kit artifacts properly integrated into workflow
 - ✅ **Artifact Preservation**: Original specifications preserved while enabling AI Dev Playbook workflow
 - ✅ **Accurate Paths**: All file references use correct repository structure
-- ✅ **Real Context**: No placeholder values ({{PROJECT_NAME}} etc.)
+- ✅ **Real Context**: No placeholder values ({{PROJECT_NAME}} etc.) in initial prompts
+- ✅ **Template Support**: Variables file enables ongoing customization with {{VARIABLE_NAME}} syntax
 - ✅ **Technology Alignment**: Prompts match detected tech stack
 - ✅ **Conflict-Free**: No naming conflicts with existing files
 - ✅ **Architecture Clarity**: Clear separation of concerns

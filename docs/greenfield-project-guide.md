@@ -43,8 +43,18 @@ Monorepo (have multiple apps/packages; let the assistant choose pattern):
 - Validation checklist (prompts accessible, variables resolved, ledger initialized)
 
 ### Manual Fallback (If Assistant Not Available)
-1. Copy .ai-dev/, .github/, and AIDEV.md into repo root
-2. Rename example.variables.json to variables.json and fill values
+1. **Copy Framework Files**: Copy .ai-dev/, .github/, and AIDEV.md into repo root
+2. **Set Up Variables**: Create your project-specific configuration:
+   ```bash
+   # Create the config directory in your workspace
+   mkdir -p .ai-dev/config
+   
+   # Copy the example variables file from the framework  
+   cp ai-dev/config/example.variables.json .ai-dev/config/variables.json
+   
+   # Edit the file with your project-specific values
+   # Update PROJECT_NAME, CODING_STYLE, PREFERRED_TESTING_FRAMEWORK, etc.
+   ```
 3. Commit; open VS Code; proceed with Phase 1 below
 
 Proceed with the detailed phased bootstrap if you need deeper control or want to understand each step.

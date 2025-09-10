@@ -133,7 +133,16 @@ cp ../ai-dev-playbook/AIDEV.md .
 See [docs/monorepo-integration-guide.md](docs/monorepo-integration-guide.md) for detailed patterns and architecture decisions.
 
 **Step 3**: Customize the configuration
-- Edit `.ai-dev/config/variables.json` with your project details
+- **Set Up Variables**: Create your project-specific configuration:
+  ```bash
+  # Create the config directory in your workspace
+  mkdir -p .ai-dev/config
+  
+  # Copy the example variables file from the framework
+  cp ai-dev/config/example.variables.json .ai-dev/config/variables.json
+  
+  # Edit with your project details (see ai-dev/config/example.variables.json for available options)
+  ```
 - Update `.github/copilot-instructions.md` with your project context
 - Customize agent prompts as needed for your technology stack
 
