@@ -268,6 +268,8 @@ This approach keeps your permanent documentation organized while ensuring the AI
 **Phase 1: Document Analysis and Consolidation**
 
 **1. Analyze Your Existing Documents**
+
+**Traditional Workflow:**
 ```bash
 Using @workspace ai-dev/prompts/00-specification-agent.md, analyze the design documents in @workspace .ai-dev/memory/ (design.md, requirements.md, tasks.md) and create a consolidated technical specification that includes:
 - System requirements and constraints
@@ -278,12 +280,29 @@ Using @workspace ai-dev/prompts/00-specification-agent.md, analyze the design do
 Save to @workspace .ai-dev/memory/consolidated-spec.md.
 ```
 
+**Copilot Native:**
+```bash
+@prompt create-specifications
+
+Analyze the design documents in .ai-dev/memory/ and create a consolidated technical specification with domain expert and technical architect guidance.
+```
+
 **2. Create Initial Implementation Plan**
+
+**Traditional Workflow:**
 ```bash
 Using @workspace ai-dev/prompts/01-planner-agent.md, create a comprehensive implementation plan based on the consolidated specification in @workspace .ai-dev/memory/consolidated-spec.md and the task breakdown in @workspace .ai-dev/memory/tasks.md. Organize work into phases:
 1. Project setup and infrastructure
 2. Core functionality implementation
 3. Integration and testing
+```
+
+**Copilot Native:**
+```bash
+@prompt plan-feature
+
+Create a comprehensive implementation plan based on the consolidated specification and task breakdown. Use senior software architect expertise.
+```
 4. Documentation and deployment
 Save to @workspace .ai-dev/memory/implementation-plan.md.
 ```

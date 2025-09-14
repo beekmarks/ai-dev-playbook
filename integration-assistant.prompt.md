@@ -142,6 +142,7 @@ Tailor the 12 workflow prompts for detected technology and include appropriate e
 
 ### GitHub Copilot Integration
 Create repository and/or application-level GitHub Copilot configurations:
+- **AGENTS.md**: VS Code v1.104+ agent context file with 12-agent methodology and expert personas (at repository root)
 - **copilot-instructions.md**: Real project context, development guidelines, and expert persona guidance
 - **10 prompt files**: Quick workflow alternatives to traditional agents with expert personas
 - **Advanced techniques documentation**: References to context engineering and persona-based prompting
@@ -151,6 +152,7 @@ Create repository and/or application-level GitHub Copilot configurations:
 
 ### Validation Checklist
 - ✅ **Complete Coverage**: 12 workflow prompts in each development location (including Compactor and Incident Management agents)
+- ✅ **AGENTS.md File**: VS Code v1.104+ agent context file created at repository root with 12-agent methodology
 - ✅ **Variables File Created**: `.ai-dev/config/variables.json` exists with extracted project values
 - ✅ **Expert Personas**: All agents include appropriate expert personas for the technology stack
 - ✅ **Context Engineering**: Planner and other agents include gather-and-glean strategies

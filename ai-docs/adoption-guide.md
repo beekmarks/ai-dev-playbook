@@ -50,9 +50,13 @@ If the assistant is unavailable:
 3. Open VS Code and proceed with standard workflow docs
 4. Add initial AIDEV.md entry marking adoption
 
+## **Understanding the Framework**
+
+The AI Dev Playbook implements a 12-agent methodology with expert personas for specialized assistance. For complete agent details, see [AGENTS.md](../AGENTS.md) which provides VS Code v1.104+ chat context about each agent's purpose and expert persona.
+
 ## **The Separation Principle**
 
-The AI Dev Playbook assets (.ai-dev/, .github/prompts/, AIDEV.md, docs/) are **development-time tools**, not production code. They are meta-artifacts that help you write, test, and document your code, but they are never deployed.
+The AI Dev Playbook assets (.ai-dev/, .github/prompts/, AIDEV.md, AGENTS.md, docs/) are **development-time tools**, not production code. They are meta-artifacts that help you write, test, and document your code, but they are never deployed.
 
 * **Your Application Code (/src, /app, etc.):** This is the code that gets built, tested in CI/CD, and deployed. It is the product.  
 * **The AI Dev Playbook Framework (.ai-dev/ and .github/):** This is the set of "recipes" and processes you use to create the product. It should never be bundled in your final build.

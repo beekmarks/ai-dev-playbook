@@ -59,33 +59,83 @@ The AI Dev Playbook includes the following prompt files:
 | `incident-triage.prompt.md` | Analyze production errors systematically |
 | `incident-fix.prompt.md` | Plan balanced incident response strategies |
 
+## Side-by-Side Workflow Comparison
+
+| Agent | Traditional Workflow | Copilot Native Workflow | Expert Persona |
+|-------|---------------------|-------------------------|----------------|
+| **Specification** | `@workspace ai-dev/prompts/00-specification-agent.md` | `@prompt create-specifications` | Domain expert + Technical architect |
+| **Planner** | `@workspace ai-dev/prompts/01-planner-agent.md` | `@prompt plan-feature` | Senior software architect |
+| **Estimator** | `@workspace ai-dev/prompts/02-estimator-agent.md` | `@prompt estimate-work` | Technical lead with estimation expertise |
+| **Coder** | `@workspace ai-dev/prompts/03-coder-agent.md` | `@prompt implement-code` | Senior developer with stack expertise |
+| **Tester** | `@workspace ai-dev/prompts/04-tester-agent.md` | `@prompt write-tests` | QA expert with testing frameworks |
+| **Refactor** | `@workspace ai-dev/prompts/05-refactor-agent.md` | `@prompt refactor-code` | Martin Fowler methodology |
+| **Documenter** | `@workspace ai-dev/prompts/06-documenter-agent.md` | `@prompt document-code` | Technical writer + codebase expert |
+| **Security** | `@workspace ai-dev/prompts/07-security-reviewer-agent.md` | `@prompt security-review` | Security expert + penetration tester |
+| **Archiver** | `@workspace ai-dev/prompts/08-archiver-agent.md` | `@prompt archive-work` | Project historian |
+| **Compactor** | `@workspace ai-dev/prompts/09-compactor-agent.md` | `@prompt compact-context` | Information architect |
+| **Incident Triage** | `@workspace ai-dev/prompts/10-incident-triage-agent.md` | `@prompt incident-triage` | Site reliability engineer |
+| **Incident Fix** | `@workspace ai-dev/prompts/11-incident-fix-agent.md` | `@prompt incident-fix` | Senior engineer + incident response |
+
 ## When to Use Each Approach
 
-### Full Workflow with Agent Templates
+### Traditional Workflow (`@workspace` commands)
 
-Use the traditional AI Dev Playbook workflow with `@workspace` commands when:
-- Following the complete structured workflow
-- Working on complex features that benefit from the full methodology
-- Collaborating with team members who are familiar with the playbook
+**Best for**:
+- Complex, multi-step features requiring careful context management
 - Processing specifications from external tools like Kiro or Spec Kit
+- Team collaboration with structured handoffs between agents
+- Features requiring artifact persistence between workflow steps
+- Training team members on the complete AI Dev Playbook methodology
 
-Example:
+**Example workflow**:
+```bash
+# 1. Create specification
+Using @workspace ai-dev/prompts/00-specification-agent.md, create a technical specification for the user authentication system.
+
+# 2. Create implementation plan  
+Using @workspace ai-dev/prompts/01-planner-agent.md, create a detailed plan based on the specification in .ai-dev/memory/auth-spec.md.
+
+# 3. Implement with full context
+Using @workspace ai-dev/prompts/03-coder-agent.md, implement the authentication system following the plan in .ai-dev/memory/auth-plan.md.
 ```
-Using @workspace ai-dev/prompts/01-planner-agent.md, create a plan for...
-```
 
-### Quick Tasks with Prompt Files
+### Copilot Native Workflow (`@prompt` commands)
 
-Use the prompt files approach with `@prompt` commands when:
-- Working on smaller, focused tasks
-- Needing quick assistance that still follows project standards
-- Onboarding new team members who are more familiar with Copilot Chat
-- Making quick updates to code based on external tool specifications
+**Best for**:
+- Quick, focused tasks (code reviews, bug fixes, single function implementations)
+- Developers who prefer conversational AI interaction
+- Tasks that don't require persistent artifact management
+- Rapid prototyping and experimentation
+- Code refactoring and documentation updates
 
-Example:
-```
+**Example workflow**:
+```bash
+# Quick implementation with expert guidance
 @prompt implement-code
+# Implement the login validation function with senior developer expertise
+
+# Immediate test creation  
+@prompt write-tests
+# Create comprehensive tests with QA expert methodology
+
+# Security review
+@prompt security-review  
+# Review with penetration tester mindset for vulnerabilities
 ```
+
+## Key Advantages of Each Approach
+
+### Traditional Workflow Advantages
+- **Context Persistence**: Artifacts flow seamlessly between agents
+- **External Tool Integration**: Automatic processing of Kiro/Spec Kit specifications
+- **Structured Collaboration**: Clear handoffs for team development
+- **Complete Documentation**: Full audit trail in AIDEV.md project ledger
+
+### Copilot Native Advantages  
+- **Speed**: Immediate access to expert personas without file navigation
+- **Native Integration**: Built into VS Code Copilot experience
+- **Flexibility**: Easy to combine multiple agents in single conversation
+- **Learning Curve**: Familiar interface for existing Copilot users
 
 ## Working with External Tool Artifacts
 

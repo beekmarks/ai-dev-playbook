@@ -8,12 +8,20 @@ The goal is to move beyond mechanical prompting and into a fluid, conversational
 
 ### Two Implementation Approaches
 
-The AI Dev Playbook now offers two complementary approaches to AI-assisted development:
+The AI Dev Playbook offers two complementary workflows, both following the same expert-driven methodology:
 
-1. **Traditional Workflow**: Using `@workspace` commands with agent templates in `ai-dev/prompts/`
-2. **GitHub Copilot Native Integration**: Using repository custom instructions and prompt files
+#### Traditional Workflow (`@workspace` commands)
+**Best for**: Complex features requiring careful context management and artifact persistence.
 
-This document primarily describes the traditional workflow. For details on the GitHub Copilot native integration, see [github-copilot-integration.md](github-copilot-integration.md).
+Each step provides both approaches:
+- **Plan**: `@workspace ai-dev/prompts/01-planner-agent.md` → `@prompt plan-feature`
+- **Code**: `@workspace ai-dev/prompts/03-coder-agent.md` → `@prompt implement-code`  
+- **Test**: `@workspace ai-dev/prompts/04-tester-agent.md` → `@prompt write-tests`
+
+#### GitHub Copilot Native Integration (`@prompt` commands)  
+**Best for**: Quick, focused tasks that benefit from conversational AI interaction.
+
+This document shows both approaches throughout. For complete Copilot integration details, see [github-copilot-integration.md](github-copilot-integration.md).
 
 ### Development Approaches: "Vibe Coding" vs "Spec-Driven Development"
 
@@ -76,7 +84,17 @@ With specifications in hand (or for simpler features), proceed to planning. A hi
    * **Provide Context:** Use the @workspace command to point the AI to relevant files. This could include the ticket description, related code, or architectural diagrams.  
    * **Direct the Output:** Always tell the agent where to save the plan, creating a new file in the .ai-dev/memory/ directory (note the dot prefix - this hidden directory is separate from the ai-dev/prompts/ directory).
 
-**Example Prompt:**"Using @workspace ai-dev/prompts/01-planner-agent.md, create a detailed plan for the feature described in @workspace docs/tickets/TICKET-123.md. Consider the existing code in @workspace src/auth/utils.js. Save the plan to @workspace .ai-dev/memory/TICKET-123-plan.md."
+**Traditional Workflow:**
+```
+Using @workspace ai-dev/prompts/01-planner-agent.md, create a detailed plan for the feature described in @workspace docs/tickets/TICKET-123.md. Consider the existing code in @workspace src/auth/utils.js. Save the plan to @workspace .ai-dev/memory/TICKET-123-plan.md.
+```
+
+**Copilot Native:**
+```  
+@prompt plan-feature
+
+Create a detailed plan for the authentication feature in TICKET-123. Consider the existing auth utilities and save to .ai-dev/memory/TICKET-123-plan.md.
+```
 
 3. **Review and Refine the Plan:** The AI's first plan is a draft, not a final command. Read it carefully. Does it make sense? Did it miss anything? If the plan is flawed, ask the AI to revise it."That's a good start, but you forgot to include a step for adding rate limiting to the new endpoint. Please update the plan in @workspace .ai-dev/memory/TICKET-123-plan.md to include this."
 
@@ -88,7 +106,17 @@ Before diving into implementation, get time and complexity estimates to help wit
    * **Be Specific:** Provide any context about team experience or constraints that might affect estimates.
    * **Direct the Output:** Save the estimates to a file in the .ai-dev/memory/ directory.
 
-**Example Prompt:** "Using @workspace ai-dev/prompts/02-estimator-agent.md, provide time and complexity estimates for the plan in @workspace .ai-dev/memory/TICKET-123-plan.md. Our team has moderate experience with the technologies involved. Save the estimates to @workspace .ai-dev/memory/TICKET-123-estimates.md."
+**Traditional Workflow:**
+```
+Using @workspace ai-dev/prompts/02-estimator-agent.md, provide time and complexity estimates for the plan in @workspace .ai-dev/memory/TICKET-123-plan.md. Our team has moderate experience with the technologies involved. Save the estimates to @workspace .ai-dev/memory/TICKET-123-estimates.md.
+```
+
+**Copilot Native:**
+```
+@prompt estimate-work
+
+Analyze the plan in .ai-dev/memory/TICKET-123-plan.md and provide time/complexity estimates for a team with moderate experience.
+```
 
 2. **Review the Estimates:** Examine the time and complexity estimates. Do they align with your expectations? If the estimates reveal that certain steps are more complex or time-consuming than anticipated, you might want to:
    * Break down complex steps into smaller, more manageable tasks
@@ -113,11 +141,31 @@ Coder Agent → Tester Agent → Run Tests → Evaluate Results
 
 2. **Enforce Minimal Code:** The Coder agent is explicitly instructed to write the minimum code necessary. When you review its output, ensure it has followed this rule. If it adds extra helper functions or logic that wasn't in the plan, ask it to revise and remove the unnecessary code.
    
-   **Example Prompt:** "Using @workspace ai-dev/prompts/03-coder-agent.md, please implement Step 1 ('Create Service File') from the plan in @workspace .ai-dev/memory/TICKET-123-plan.md."
+   **Traditional Workflow:**
+   ```
+   Using @workspace ai-dev/prompts/03-coder-agent.md, please implement Step 1 ('Create Service File') from the plan in @workspace .ai-dev/memory/TICKET-123-plan.md.
+   ```
+   
+   **Copilot Native:**
+   ```
+   @prompt implement-code
+   
+   Implement Step 1 from the plan - create the service file with minimal, focused code following senior developer best practices.
+   ```
 
 3. **Test Immediately:** Once a logical unit of code is complete, immediately ask the Tester agent to write comprehensive tests including evaluation tests.
    
-   **Example Prompt:** "Using @workspace ai-dev/prompts/04-tester-agent.md, write comprehensive tests including evaluation tests for the code in src/services/itemService.js. Include tests that measure AI consistency and correctness."
+   **Traditional Workflow:**
+   ```
+   Using @workspace ai-dev/prompts/04-tester-agent.md, write comprehensive tests including evaluation tests for the code in src/services/itemService.js. Include tests that measure AI consistency and correctness.
+   ```
+   
+   **Copilot Native:**
+   ```
+   @prompt write-tests
+   
+   Create comprehensive tests for itemService.js including unit tests, edge cases, and evaluation tests to measure AI consistency.
+   ```
 
 4. **Run and Evaluate Tests:** Execute the tests locally and analyze the results:
    * **Unit Tests**: Do they pass? Do they cover edge cases?

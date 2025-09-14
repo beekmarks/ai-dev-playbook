@@ -2,7 +2,23 @@
 
 Welcome\! This repository is a template for building software using a structured, repeatable, and high-quality **AI-Assisted Development** methodology. It's designed for teams using GitHub Copilot within VS Code.
 
-The goal of this "AI Dev Playbook" is not to replace developer thinking, but to augment it. By providing a standardized set of tools (prompts) and a clear process, we can leverage AI to handle routine tasks, allowing developers to focus on architecture and complex problem-solving. This leads to faster development, higher quality code, and a fully documented project history.
+The goal o### **Step 6: Archive the History**
+
+Create a permanent record in the project ledger:
+
+**Traditional Workflow:**
+```
+Using @workspace ai-dev/prompts/08-archiver-agent.md, create a new entry in @workspace AIDEV.md titled 'Feature: Add /api/items Endpoint'. Compile the plan from @workspace .ai-dev/memory/get-items-plan.md into it.
+```
+
+**Copilot Native:**
+```
+@prompt archive-work
+
+Create an AIDEV.md entry titled 'Feature: Add /api/items Endpoint' documenting the implementation with project historian expertise.
+```
+
+Both approaches follow the same methodology and expert personas - choose based on your project needs and team preferences.Dev Playbook" is not to replace developer thinking, but to augment it. By providing a standardized set of tools (prompts) and a clear process, we can leverage AI to handle routine tasks, allowing developers to focus on architecture and complex problem-solving. This leads to faster development, higher quality code, and a fully documented project history.
 
 https://github.com/user-attachments/assets/acf70bc7-43e1-44dc-bc49-c37dd93b0e61
 
@@ -182,63 +198,87 @@ git init
 
 ## **The Workflow: A Real-World Example**
 
-Let's walk through adding a new feature: **"Create a new API endpoint /api/items that returns a list of items."**
+Let's walk through implementing a simple feature: a new API endpoint that returns data from your service. This example shows both workflow approaches using the same expert-driven methodology.
 
 ### **Step 1: Create Specifications**
 
-First, we ask the **Specification Developer Agent** to create detailed specifications for the feature. You can request either a single comprehensive specification file or multiple focused files.
+First, we create detailed specifications for the feature using either workflow approach:
 
-**Option A: Single Specification File:**
+**Traditional Workflow:**
+```
+Using the agent at @workspace ai-dev/prompts/00-specification-agent.md, create a comprehensive specification for a new API endpoint /api/items. The endpoint should fetch data from itemService.js and return it as JSON. Include requirements, design, API contract, and testing strategy. Save the output to @workspace .ai-dev/memory/get-items-spec.md.
+```
 
-**Your Chat Prompt:**
+**Copilot Native:**
+```
+@prompt create-specifications
 
-"Using the agent at @workspace ai-dev/prompts/00-specification-agent.md, create a comprehensive specification for a new API endpoint /api/items. The endpoint should fetch data from itemService.js and return it as JSON. Include requirements, design, API contract, and testing strategy. Save the output to @workspace .ai-dev/memory/get-items-spec.md."
-
-**Option B: Multiple Specification Files:**
-
-**Your Chat Prompt:**
-
-"Using the agent at @workspace ai-dev/prompts/00-specification-agent.md, create separate specification files for a new API endpoint /api/items. The endpoint should fetch data from itemService.js and return it as JSON. Create requirements.md, design.md, and api-contract.md files in the .ai-dev/memory/ directory."
+Create a comprehensive specification for a new API endpoint /api/items that fetches data from itemService.js. Include requirements, design, API contract, and testing strategy. Save to .ai-dev/memory/get-items-spec.md.
+```
 
 ### **Step 2: Plan the Work**
 
-Next, we ask the **Planner Agent** to break down the task based on our specifications. We give it the specifications and tell it where to save the output.
+Next, we break down the task based on our specifications:
 
-**Your Chat Prompt:**
+**Traditional Workflow:**
+```
+Using the agent at @workspace ai-dev/prompts/01-planner-agent.md, create a plan to implement the API endpoint based on the specifications in @workspace .ai-dev/memory/get-items-spec.md. Save the output to @workspace .ai-dev/memory/get-items-plan.md.
+```
 
-"Using the agent at @workspace ai-dev/prompts/01-planner-agent.md, create a plan to implement the API endpoint based on the specifications in @workspace .ai-dev/memory/get-items-spec.md. Save the output to @workspace .ai-dev/memory/get-items-plan.md."
+**Copilot Native:**
+```
+@prompt plan-feature
+
+Create an implementation plan based on the specifications in .ai-dev/memory/get-items-spec.md. Break down into clear, actionable steps and save to .ai-dev/memory/get-items-plan.md.
+```
 
 ### **Step 3: Estimate the Work**
 
-Before implementation, we use the **Estimator Agent** to get time and complexity estimates for our plan.
+Get time and complexity estimates for sprint planning:
 
-**Your Chat Prompt:**
+**Traditional Workflow:**
+```
+Using @workspace ai-dev/prompts/02-estimator-agent.md, provide time and complexity estimates for the plan in @workspace .ai-dev/memory/get-items-plan.md. Save the output to @workspace .ai-dev/memory/get-items-estimates.md.
+```
 
-"Using @workspace ai-dev/prompts/02-estimator-agent.md, provide time and complexity estimates for the plan in @workspace .ai-dev/memory/get-items-plan.md. Save the output to @workspace .ai-dev/memory/get-items-estimates.md."
+**Copilot Native:**
+```
+@prompt estimate-work
+
+Analyze the plan in .ai-dev/memory/get-items-plan.md and provide time/complexity estimates with technical lead expertise.
+```
 
 ### **Step 4: Write the Code**
 
-Now, we execute the plan step-by-step using the **Coder Agent**.
+Execute the plan step-by-step with senior developer expertise:
 
-**Your Chat Prompt:**
+**Traditional Workflow:**
+```
+Using @workspace ai-dev/prompts/03-coder-agent.md, implement Step 1 from the plan in @workspace .ai-dev/memory/get-items-plan.md.
+```
 
-"Using @workspace ai-dev/prompts/03-coder-agent.md, implement Step 1 from the plan in @workspace .ai-dev/memory/get-items-plan.md."
+**Copilot Native:**
+```
+@prompt implement-code
+
+Implement Step 1 from the plan with minimal, focused code following best practices.
+```
 
 ### **Step 5: Write the Tests**
 
-With the code written, we ask the **Tester Agent** to create the tests.
+Create comprehensive tests with QA expert methodology:
 
-**Your Chat Prompt:**
+**Traditional Workflow:**
+```
+Using @workspace ai-dev/prompts/04-tester-agent.md, write unit tests for the new getItems function in @workspace src/services/itemService.js. Ensure you test the happy path and that it returns an array.
+```
 
-"Using @workspace ai-dev/prompts/04-tester-agent.md, write unit tests for the new getItems function in @workspace src/services/itemService.js. Ensure you test the happy path and that it returns an array."
+**Copilot Native:**
+```
+@prompt write-tests
 
-### **Step 6: Review and Refine**
-
-Before finishing, we can use other agents like the **Security Reviewer** or **Refactorer** to ensure quality.
-
-### **Step 7: Update Specifications**
-
-If implementation details changed during development, we update our specifications to keep them in sync with the code.
+Write comprehensive unit tests for the getItems function including happy path, edge cases, and evaluation tests.
+```
 
 **Your Chat Prompt:**
 
@@ -292,29 +332,45 @@ For detailed monorepo guidance, see [docs/monorepo-integration-guide.md](docs/mo
 
 ## **Two Ways to Use the AI Dev Playbook**
 
-The AI Dev Playbook now offers two complementary approaches to AI-assisted development:
+The AI Dev Playbook offers two complementary approaches to AI-assisted development, both following the same expert-driven methodology:
 
 ### 1. Traditional Workflow with Agent Templates
 
-Use the `@workspace` command with agent templates in `ai-dev/prompts/` for a structured, full-featured workflow:
+**Best for**: Complex, multi-step features requiring careful context management and artifact passing between agents.
 
-```
-Using @workspace ai-dev/prompts/01-planner-agent.md, create a plan for...
-```
+**How it works**: Use `@workspace` commands with specialized agent templates:
 
-This approach is ideal for complex features and teams following the complete methodology.
+| Step | Command | Purpose |
+|------|---------|---------|
+| **Specify** | `@workspace ai-dev/prompts/00-specification-agent.md` | Create detailed technical specifications |
+| **Plan** | `@workspace ai-dev/prompts/01-planner-agent.md` | Break down specs into actionable plans |
+| **Estimate** | `@workspace ai-dev/prompts/02-estimator-agent.md` | Provide time and complexity estimates |
+| **Code** | `@workspace ai-dev/prompts/03-coder-agent.md` | Implement following Martin Fowler principles |
+| **Test** | `@workspace ai-dev/prompts/04-tester-agent.md` | Create comprehensive test suites |
+| **Archive** | `@workspace ai-dev/prompts/08-archiver-agent.md` | Record work in project ledger |
+
+**Advantages**: Full context management, artifact persistence, structured handoffs between expert personas.
 
 ### 2. GitHub Copilot Native Integration
 
-Use GitHub Copilot's built-in features with our custom instructions and prompt files:
+**Best for**: Quick, focused tasks that benefit from conversational AI interaction while maintaining expert guidance.
 
-- **Repository Custom Instructions**: Automatic guidance for all Copilot interactions
-- **Prompt Files**: Quick access to agent capabilities via `@prompt` command
+**How it works**: Use `@prompt` commands with the same expert personas:
 
-```
-@prompt plan-feature
-```
+| Step | Command | Purpose |
+|------|---------|---------|
+| **Specify** | `@prompt create-specifications` | Domain expert + Technical architect guidance |  
+| **Plan** | `@prompt plan-feature` | Senior software architect approach |
+| **Estimate** | `@prompt estimate-work` | Technical lead estimation expertise |
+| **Code** | `@prompt implement-code` | Senior developer with stack expertise |
+| **Test** | `@prompt write-tests` | QA expert methodology |
+| **Archive** | `@prompt archive-work` | Project historian documentation |
 
-This approach is ideal for quick tasks and teams already familiar with Copilot Chat.
+**Advantages**: Faster interaction, native Copilot features, ideal for single-agent tasks.
 
-For more details on the GitHub Copilot integration, see [ai-docs/github-copilot-integration.md](ai-docs/github-copilot-integration.md).
+### When to Use Each Approach
+
+- **Traditional**: Feature development, external tool integration (Kiro/Spec Kit), team onboarding, complex architecture decisions
+- **Copilot Native**: Code reviews, quick fixes, documentation updates, testing single functions, security reviews
+
+Both approaches leverage the same 12-agent methodology and expert personas. See [AGENTS.md](AGENTS.md) for complete agent details and [ai-docs/github-copilot-integration.md](ai-docs/github-copilot-integration.md) for implementation guidance.

@@ -1,6 +1,31 @@
-I'm excited to share some significant updates we've made to our AI Dev Playbook based on insights from leading AI productivity research and community feedback. These enhancements will help us get even better results from our AI-assisted development workflow.
+I'm excited to share some significant updates we've made to our AI Dev Playbook based on insights from leading AI productivity research, community feedback, and the latest GitHub Copilot and VS Code features. These enhancements will help us get even better results from our AI-assisted development workflow.
 
-## 🎯 What's New: Five Major Enhancements
+## ⚡ Latest: VS Code v1.104 & GitHub Copilot Integration (September 2025)
+
+### New VS Code v1.104 Support
+We've integrated the latest VS Code features for enhanced AI development:
+
+- **AGENTS.md File**: New repository-root file that provides persistent context to VS Code's chat agents about our 12-agent methodology and expert personas
+- **Enhanced Repository Custom Instructions**: Deeper integration with GitHub Copilot's repository awareness features
+- **Improved Workspace Context**: Better utilization of VS Code's enhanced workspace understanding capabilities
+
+### Dual Workflow Approach
+The AI Dev Playbook now offers two complementary workflows with the same expert-driven methodology:
+
+- **Traditional Workflow** (`@workspace ai-dev/prompts/`): Best for complex, multi-step features requiring careful context management and artifact persistence
+- **Copilot Native Workflow** (`@prompt` commands): Ideal for quick, focused tasks that benefit from conversational AI interaction
+
+**Key Enhancement**: Complete side-by-side documentation showing both approaches throughout all guides, with clear guidance on when to use each.
+
+### Documentation Updates
+- **README.md**: Real-world example now shows both workflow approaches
+- **GitHub Copilot Integration Guide**: Enhanced with comprehensive comparison tables
+- **All Setup Guides**: Updated with dual workflow support
+- **Integration Assistant**: Now creates AGENTS.md file automatically
+
+**Impact**: Teams can choose the workflow approach that best fits their task complexity and preferences while maintaining the same expert personas and methodology.
+
+## 🎯 Previous Major Enhancements
 
 ### 1. Incident Management Workflow
 We've expanded the AI Dev Playbook beyond development into production support:
@@ -80,20 +105,23 @@ For teams adopting these new techniques, we recommend starting with:
 
 ## 🔧 What's Available Now
 
-All enhancements are available in both formats:
+All enhancements are available through our dual workflow approach:
 
 **Traditional Workflow** (`@workspace ai-dev/prompts/`):
 - 12 enhanced agent templates with expert personas (including Incident Management)
-- Advanced context engineering capabilities
-- New Compactor Agent for context management
-- External tool artifact processing in Specification Agent
-- Incident Triage and Fix agents for production support
+- Advanced context engineering capabilities  
+- Full artifact persistence between workflow steps
+- Context Compactor Agent for large project management
+- External tool artifact processing (Kiro, Spec Kit)
+- Complete audit trail in AIDEV.md project ledger
 
-**GitHub Copilot Native** (`@prompt` commands):
-- Enhanced prompt files with expert personas
-- Quick access to context compaction and incident response
-- Repository-wide custom instructions
+**Copilot Native Workflow** (`@prompt` commands):
+- 12 prompt files mirroring agent methodology with same expert personas
+- Native VS Code integration with enhanced repository awareness
+- AGENTS.md file providing persistent context to VS Code chat
+- Quick access to all agent capabilities through conversational interface
 - Automatic awareness of external tool artifacts in `.ai-dev/memory/`
+- Speed-optimized for single-agent tasks and rapid iterations
 
 **External Tool Integration**:
 - Kiro artifact consolidation workflows
@@ -111,22 +139,34 @@ Track these new metrics as we adopt the enhancements:
 
 ## 🎓 Learning Resources
 
-New documentation available:
+Updated and new documentation available:
+- **AGENTS.md**: Complete 12-agent methodology reference for VS Code v1.104+ chat context
 - **Context Engineering Guide**: `/ai-docs/context-engineering-guide.md`
 - **Advanced AI Techniques**: `/ai-docs/advanced-ai-techniques.md`  
-- **Enhanced Adoption Guide**: `/ai-docs/adoption-guide.md` (with external tool integration use cases)
-- **Updated Workflow Guide**: `/ai-docs/ai-dev-playbook-workflow.md`
-- **Documents-First Guide**: `/docs/documents-first-guide.md` (with Kiro and Spec Kit workflows)
+- **Enhanced Adoption Guide**: `/ai-docs/adoption-guide.md` (with AGENTS.md integration and external tool use cases)
+- **Updated Workflow Guide**: `/ai-docs/ai-dev-playbook-workflow.md` (with dual workflow examples)
+- **Documents-First Guide**: `/docs/documents-first-guide.md` (with dual workflow and external tool support)
 - **Spec-Driven Development**: `/ai-docs/spec-driven-development.md` (with tool selection guidance)
-- **GitHub Copilot Integration**: `/ai-docs/github-copilot-integration.md` (with external tool awareness)
+- **GitHub Copilot Integration**: `/ai-docs/github-copilot-integration.md` (comprehensive dual workflow comparison)
 
 ## 🏃‍♂️ Next Steps
 
-1. **Immediate**: Try the enhanced personas in your current work (Martin Fowler for refactoring, Richard Feynman for documentation)
-2. **This Week**: Experiment with context engineering on a complex feature
-3. **Next Sprint**: Implement plan-centric code reviews for AI-assisted features
-4. **External Tool Teams**: If using Kiro or Spec Kit, try the new integration workflows in `.ai-dev/memory/`
-5. **Ongoing**: Track persona effectiveness and external tool integration benefits, share learnings with the team
+### For Teams New to AI Dev Playbook:
+1. **Start with Integration Assistant**: Use `@workspace integration-assistant.prompt.md` for automated setup
+2. **Choose Your Workflow**: Try both traditional (`@workspace`) and Copilot native (`@prompt`) approaches
+3. **Explore AGENTS.md**: Reference the new agent methodology guide for VS Code chat context
+
+### For Existing Teams:
+1. **Update Documentation**: Your existing prompts work unchanged, new features are additive
+2. **Try Dual Workflows**: Experiment with `@prompt` commands for quick tasks
+3. **VS Code v1.104**: Benefit from AGENTS.md providing automatic context to chat agents
+4. **Enhanced Personas**: Continue using Martin Fowler for refactoring, Richard Feynman for documentation
+
+### General Adoption:
+1. **This Week**: Experiment with dual workflow approach and context engineering on a complex feature  
+2. **Next Sprint**: Implement plan-centric code reviews for AI-assisted features
+3. **External Tool Teams**: If using Kiro or Spec Kit, try the enhanced integration workflows
+4. **Ongoing**: Track which workflow approach works best for different types of tasks
 
 ## Questions & Feedback
 
