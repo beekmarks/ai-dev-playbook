@@ -42,7 +42,7 @@ This AI-powered integration assistant will:
 - ✅ **Analyze your repository** structure and technology stack
 - ✅ **Choose the right architecture** (single project vs monorepo patterns)
 - ✅ **Create customized prompts** with your actual project context
-- ✅ **Set up complete workflow** with all 12 development steps (including Context Compactor and Incident Management)
+- ✅ **Set up complete workflow** with all 13 development steps (including Context Compactor, Incident Management, and Legacy Code Analysis)
 - ✅ **Implement advanced context engineering** with gather-and-glean strategies
 - ✅ **Generate operational documentation** for your team
 

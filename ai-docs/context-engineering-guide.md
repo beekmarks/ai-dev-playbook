@@ -9,7 +9,7 @@ Context engineering is the strategic practice of gathering, filtering, and prese
 ### Phase 1: Gather
 Systematically collect all potentially relevant information before engaging with AI agents:
 
-**Information Sources:**
+**Core Information Sources:**
 - Requirements documents and tickets
 - Related code files and modules
 - Architecture diagrams and design docs
@@ -18,11 +18,53 @@ Systematically collect all potentially relevant information before engaging with
 - API documentation
 - Test files and examples
 
+**Extended Context Sources:**
+
+**Data Architecture & Analytics:**
+- Data lineage diagrams and data catalogs
+- ETL pipeline documentation and data flow maps
+- Data model schemas, relationships, and validation rules
+- Data quality metrics and monitoring dashboards
+- ML model documentation and training data specifications
+
+**Operations & Infrastructure:**
+- Runtime logs and historical error patterns
+- Configuration files and environment settings
+- Monitoring dashboards and alerting rules
+- Deployment scripts and infrastructure as code
+- Performance metrics and capacity planning documentation
+- Service mesh configuration and routing rules
+
+**Security & Compliance:**
+- Security guidelines and compliance requirements
+- Data privacy rules and regulations (GDPR, CCPA, HIPAA, etc.)
+- Authentication and authorization patterns
+- Security audit reports and vulnerability assessments
+- Penetration testing results and remediation plans
+
+**API & Integration Context:**
+- Existing API documentation (Postman collections, Swagger/OpenAPI specs)
+- Third-party API contracts, rate limits, and SLA documentation
+- Event schemas and message queue documentation
+- Webhook configurations and callback specifications
+- Service dependency maps and circuit breaker configurations
+
+**Business & Domain Context:**
+- User journey maps and workflow documentation
+- Business process documentation and decision trees
+- Regulatory and compliance requirements
+- Performance SLAs and business success metrics
+- User personas and accessibility requirements
+
 **Storage Strategy:**
 Store gathered information in `.ai-dev/memory/` using descriptive filenames:
 - `{feature-name}-context.md` - All gathered information
 - `{feature-name}-related-code.md` - Relevant existing code snippets
 - `{feature-name}-requirements.md` - Extracted requirements and constraints
+- `{feature-name}-data-context.md` - Data lineage, schemas, and quality rules
+- `{feature-name}-security-context.md` - Security requirements and compliance rules
+- `{feature-name}-ops-context.md` - Infrastructure, monitoring, and deployment context
+- `{feature-name}-api-context.md` - API contracts, integration points, and service dependencies
 
 ### Phase 2: Glean
 Filter and distill the gathered information to create focused, noise-free context:

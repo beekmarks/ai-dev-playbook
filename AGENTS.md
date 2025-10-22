@@ -1,6 +1,6 @@
 # AI Dev Playbook Agents
 
-This repository implements a 12-agent AI-assisted development methodology. Each agent represents a specialized role with expert personas to provide focused, high-quality assistance throughout the software development lifecycle.
+This repository implements a 13-agent AI-assisted development methodology. Each agent represents a specialized role with expert personas to provide focused, high-quality assistance throughout the software development lifecycle, including legacy code analysis and modernization.
 
 ## Core Development Workflow (Agents 00-08)
 
@@ -46,12 +46,17 @@ This repository implements a 12-agent AI-assisted development methodology. Each 
 **Traditional**: `@workspace ai-dev/prompts/05-refactor-agent.md`  
 **Copilot Native**: `@prompt refactor-code`
 
-### 06. Documenter Agent
-**Purpose**: Create clear, comprehensive documentation for features and APIs  
-**Expert Persona**: Technical writer with deep understanding of the codebase  
-**When to Use**: After implementation is complete and stable  
+# 06. Documenter Agent
+**Purpose**: Create audience-specific documentation and maintain living documentation synchronized with code  
+**Expert Persona**: Richard Feynman (clear explanation) with audience-tailored communication  
+**When to Use**: After implementation is complete and stable, or when documentation validation is needed  
 **Traditional**: `@workspace ai-dev/prompts/06-documenter-agent.md`  
 **Copilot Native**: `@prompt document-code`
+
+**Key Features:**
+- Audience-aware documentation (New Developer, SRE, Product Manager, etc.)
+- Living documentation validation and synchronization
+- Tailored complexity and examples for specified audiences
 
 ### 07. Security Reviewer Agent
 **Purpose**: Identify security vulnerabilities and recommend fixes  
@@ -67,7 +72,7 @@ This repository implements a 12-agent AI-assisted development methodology. Each 
 **Traditional**: `@workspace ai-dev/prompts/08-archiver-agent.md`  
 **Copilot Native**: `@prompt archive-work`
 
-## Specialized Support Agents (Agents 09-11)
+## Specialized Support Agents (Agents 09-12)
 
 ### 09. Compactor Agent
 **Purpose**: Distill and summarize large amounts of context for efficient AI processing  
@@ -89,6 +94,19 @@ This repository implements a 12-agent AI-assisted development methodology. Each 
 **When to Use**: After incident triage, to implement appropriate fixes  
 **Traditional**: `@workspace ai-dev/prompts/11-incident-fix-agent.md`  
 **Copilot Native**: `@prompt incident-fix`
+
+### 12. Legacy Code Analyzer Agent
+**Purpose**: Reverse-engineer and document existing undocumented legacy code  
+**Expert Persona**: Software archaeologist combining Robert C. Martin and Eric Evans approaches  
+**When to Use**: When encountering undocumented legacy systems that need understanding  
+**Traditional**: `@workspace ai-dev/prompts/12-legacy-analyzer-agent.md`  
+**Copilot Native**: `@prompt analyze-legacy-code`
+
+**Key Features:**
+- Systematic code archaeology and pattern recognition
+- Business domain extraction from implementation
+- Technical debt assessment and modernization roadmap
+- Foundation preparation for AI Dev Playbook workflows
 
 ## Key Principles
 

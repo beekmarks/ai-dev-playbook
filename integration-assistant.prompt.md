@@ -151,8 +151,8 @@ Create repository and/or application-level GitHub Copilot configurations:
 ## Phase 4: Quality Assurance
 
 ### Validation Checklist
-- ✅ **Complete Coverage**: 12 workflow prompts in each development location (including Compactor and Incident Management agents)
-- ✅ **AGENTS.md File**: VS Code v1.104+ agent context file created at repository root with 12-agent methodology
+- ✅ **Complete Coverage**: 13 workflow prompts in each development location (including Compactor, Incident Management, and Legacy Analysis agents)
+- ✅ **AGENTS.md File**: VS Code v1.104+ agent context file created at repository root with 13-agent methodology
 - ✅ **Variables File Created**: `.ai-dev/config/variables.json` exists with extracted project values
 - ✅ **Expert Personas**: All agents include appropriate expert personas for the technology stack
 - ✅ **Context Engineering**: Planner and other agents include gather-and-glean strategies

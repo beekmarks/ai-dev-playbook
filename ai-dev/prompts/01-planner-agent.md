@@ -17,12 +17,42 @@
 **Phase 1: Context Gathering and Analysis**
 1. Analyze the user's request and identify all information sources needed for planning.
 2. If specifications are available (typically in .ai-dev/memory/*-spec.md), use them as the primary source of truth.
-3. Identify and gather additional context including:
+3. Systematically gather context from multiple sources, including:
+
+   **Core Development Context:**
    * Related existing code and modules
    * Similar implementations or patterns in the codebase
    * Dependencies and integration points
    * Architecture diagrams or design documents
    * Any constraints or requirements documents
+
+   **Extended Context Sources (based on audience needs):**
+   * **Data Architecture** (for Data Scientists):
+     - Data lineage diagrams and data catalogs
+     - ETL pipeline documentation
+     - Data model schemas and relationships
+     - Data quality rules and validation logic
+   * **Operations Context** (for SREs):
+     - Runtime logs and historical error patterns
+     - Configuration files and environment settings
+     - Monitoring dashboards and alerting rules
+     - Deployment scripts and infrastructure code
+     - Performance metrics and capacity planning docs
+   * **Security Context** (for all audiences):
+     - Security guidelines and compliance requirements
+     - Data privacy rules and regulations (GDPR, CCPA, etc.)
+     - Authentication and authorization patterns
+     - Security audit reports and vulnerability assessments
+   * **API and Integration Context**:
+     - Existing API documentation (Postman collections, Swagger/OpenAPI specs)
+     - Third-party API contracts and rate limits
+     - Service mesh configuration and routing rules
+     - Event schemas and message queue documentation
+   * **Business Context**:
+     - User journey maps and workflow documentation
+     - Business process documentation
+     - Regulatory and compliance requirements
+     - Performance SLAs and business metrics
 
 **Phase 2: Context Filtering and Planning**
 4. Filter the gathered context to focus on information directly relevant to the implementation.

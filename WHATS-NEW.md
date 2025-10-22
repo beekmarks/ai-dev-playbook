@@ -1,6 +1,38 @@
 I'm excited to share some significant updates we've made to our AI Dev Playbook based on insights from leading AI productivity research, community feedback, and the latest GitHub Copilot and VS Code features. These enhancements will help us get even better results from our AI-assisted development workflow.
 
-## ⚡ Latest: VS Code v1.104 & GitHub Copilot Integration (September 2025)
+## ⚡ Latest: Enhanced Documentation & Legacy Code Analysis (October 2025)
+
+### Audience-Aware Documentation
+Based on research showing that documentation effectiveness depends on audience-specific content, we've enhanced our documentation capabilities:
+
+- **Documenter Agent**: Now asks for target audience (New Developer, SRE, Product Manager, etc.) and tailors output accordingly
+- **Living Documentation**: Validates and updates existing documentation to stay synchronized with code changes
+- **Multi-Mode Operation**: Create new documentation or maintain existing documentation as living assets
+- **GitHub Copilot Integration**: Enhanced `@prompt document-code` with audience awareness
+
+### Legacy Code Analysis Workflow
+New 13th agent for reverse-engineering undocumented legacy systems:
+
+- **Legacy Code Analyzer Agent**: Systematic code archaeology using Robert C. Martin and Eric Evans methodologies
+- **Business Domain Extraction**: Reverse-engineers business logic and domain knowledge from implementation
+- **Technical Debt Assessment**: Identifies modernization opportunities and refactoring priorities
+- **AI Dev Playbook Integration**: Creates foundation documentation for applying structured workflows to legacy systems
+- **GitHub Copilot Integration**: Quick access via `@prompt analyze-legacy-code`
+
+### Enhanced Context Engineering
+Expanded context sources based on industry best practices for comprehensive AI context management:
+
+- **Data Architecture Context**: Data lineage diagrams, ETL documentation, data quality rules
+- **Operations Context**: Runtime logs, monitoring dashboards, infrastructure documentation
+- **Security Context**: Compliance requirements, audit reports, authentication patterns
+- **API Context**: Postman collections, Swagger specs, third-party API contracts
+- **Business Context**: User journeys, regulatory requirements, performance SLAs
+
+**Impact**: Teams can now leverage AI Dev Playbook for the complete software lifecycle, from legacy modernization through production documentation maintenance.
+
+## 🎯 Previous Major Enhancements
+
+### VS Code v1.104 & GitHub Copilot Integration (September 2025)
 
 ### New VS Code v1.104 Support
 We've integrated the latest VS Code features for enhanced AI development:
